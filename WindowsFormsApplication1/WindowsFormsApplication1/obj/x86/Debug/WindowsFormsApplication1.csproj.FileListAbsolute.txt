@@ -33,3 +33,8 @@ F:\Hovedprosjekt\V1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\
 F:\Hovedprosjekt\V1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FormChat.resources
 F:\Hovedprosjekt\V1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FormJB.resources
 F:\Hovedprosjekt\V1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.JBplayer.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt2\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.WMPLib.dll
+D:\Users\Nicklas\Desktop\Hovedprosjekt2\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\AxInterop.WMPLib.dll
+D:\Users\Nicklas\Desktop\Hovedprosjekt2\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+D:\Users\Nicklas\Desktop\Hovedprosjekt2\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\Users\Nicklas\Desktop\Hovedprosjekt2\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace Prototype
 {
     partial class JBplayer
     {

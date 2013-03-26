@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WindowsFormsApplication1
+namespace Prototype
 {
     public class Jukebox
     {
-        Form1 form1;
+        Base_offscreen form1;
         public JBplayer jbPlayer;
         public FormJB formJB;
 
-        public Jukebox(Form1 frm)
+        public Jukebox(Base_offscreen frm)
         {
             InitializeComponent();
             form1 = frm;

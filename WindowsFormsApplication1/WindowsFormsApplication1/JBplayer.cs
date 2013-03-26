@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using WMPLib;
 
-namespace WindowsFormsApplication1
+namespace Prototype
 {
     public partial class JBplayer : Form
     {
