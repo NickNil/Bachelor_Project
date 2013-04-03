@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Prototype
+namespace Prototype_Solution
 {
     public partial class Chat_screen : Form
     {

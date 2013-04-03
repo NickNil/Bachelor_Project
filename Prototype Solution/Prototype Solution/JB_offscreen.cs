@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using WMPLib;
 
-namespace Prototype
+namespace Prototype_Solution
 {
     public partial class JB_offscreen : Form
     {
@@ -56,7 +56,7 @@ namespace Prototype
                 Console.WriteLine(er);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Multiselect = true;
@@ -72,6 +72,13 @@ namespace Prototype
 
         private void mediaP_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
+            if (mediaP_controls.currentItem != null)
+            {
+                jb_screen.textNowP.Text = (mediaP_controls.currentItem.getItemInfo("Title") + " - " +
+                    mediaP_controls.currentItem.getItemInfo("Artist"));
+                Console.WriteLine("derp");
+            }      
+
             if (mediaP.playState == WMPPlayState.wmppsMediaEnded)
             {
                
@@ -85,7 +92,11 @@ namespace Prototype
         public void updateTxt()
         {
             listBox_songs.DataSource = null;
-            listBox_songs.DataSource = songs;          
+            listBox_songs.DataSource = songs;
+            jb_screen.listBox_songs.DataSource = null;
+            jb_screen.listBox_songs.DataSource = songs;
+
+           
         }
 
         private void btnPlay_Click(object sender, EventArgs e)

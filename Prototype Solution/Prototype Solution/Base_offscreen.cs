@@ -8,12 +8,13 @@ using System.Text;
 using System.Windows.Forms;
 using WMPLib;
 
-namespace Prototype
+namespace Prototype_Solution
 {
     public partial class Base_offscreen : Form
     {
         Base_screen base_screen;
         public Jukebox jukebox;
+        public Chat chat;
 
         public Base_offscreen()
         {
@@ -24,22 +25,22 @@ namespace Prototype
         {            
             //Jukebox
             jukebox = new Jukebox(this);
-            jukebox.jb_offscreen.TopLevel = false;
-            this.splitContainer1.Panel1.Controls.Add(jukebox.jb_offscreen);
-            jukebox.jb_offscreen.Show();
+            form_Load(jukebox.jb_offscreen, splitContainer1.Panel1);
 
-            //Form2
-            base_screen = new Base_screen(this);
+            //Chat
+            chat = new Chat(this);
+            form_Load(chat.chat_offscreen, splitContainer1.Panel2);
+
+            //Base_screen
+            base_screen = new Base_screen(jukebox.jb_screen, chat.chat_screen);
             base_screen.Show();
         }
-   
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void form_Load(Form form, SplitterPanel location)
         {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                base_screen.chat_screen.textChat.Text += textBox1.Text;
-                textBox1.Clear();
-            }
+            form.TopLevel = false;
+            location.Controls.Add(form);
+            form.Show(); 
         }
     }
 }

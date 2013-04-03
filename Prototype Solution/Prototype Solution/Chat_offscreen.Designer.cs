@@ -1,6 +1,6 @@
 ﻿namespace Prototype_Solution
 {
-    partial class Chat_screen
+    partial class Chat_offscreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,41 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textChat = new System.Windows.Forms.RichTextBox();
+            this.textToChat = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textChat
+            // textToChat
             // 
-            this.textChat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textChat.Location = new System.Drawing.Point(0, 0);
-            this.textChat.MaxLength = 100;
-            this.textChat.Name = "textChat";
-            this.textChat.ReadOnly = true;
-            this.textChat.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.textChat.Size = new System.Drawing.Size(284, 261);
-            this.textChat.TabIndex = 0;
-            this.textChat.Text = "";
-            this.textChat.TextChanged += new System.EventHandler(this.textChat_TextChanged);
+            this.textToChat.Location = new System.Drawing.Point(28, 36);
+            this.textToChat.Name = "textToChat";
+            this.textToChat.Size = new System.Drawing.Size(219, 20);
+            this.textToChat.TabIndex = 0;
+            this.textToChat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textToChat_TextChanged);
             // 
-            // FormChat
+            // Chat_offscreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textChat);
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.textToChat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormChat";
-            this.Text = "FormChat";
+            this.Name = "Chat_offscreen";
+            this.Text = "Chat_offscreen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormChat_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        public System.Windows.Forms.RichTextBox textChat;
-
+        private System.Windows.Forms.TextBox textToChat;
     }
 }

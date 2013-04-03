@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Prototype
+namespace Prototype_Solution
 {
     public partial class JB_screen : Form
     {
@@ -17,13 +17,8 @@ namespace Prototype
             InitializeComponent();
         }
 
-        private void FormJB_Load(object sender, EventArgs e)
+        private void JB_screen_Load(object sender, EventArgs e)
         {
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

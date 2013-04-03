@@ -1,4 +1,4 @@
-﻿namespace Prototype
+﻿namespace Prototype_Solution
 {
     partial class Base_screen
     {
@@ -42,6 +42,7 @@
             this.splitContainer1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -56,6 +57,7 @@
             this.splitContainer1.Panel2.Tag = "";
             this.splitContainer1.Size = new System.Drawing.Size(598, 430);
             this.splitContainer1.SplitterDistance = 301;
+            this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 1;
             // 
             // splitContainer2
@@ -63,13 +65,11 @@
             this.splitContainer2.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(0);
             this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
             this.splitContainer2.Size = new System.Drawing.Size(598, 301);
             this.splitContainer2.SplitterDistance = 199;
+            this.splitContainer2.SplitterWidth = 1;
             this.splitContainer2.TabIndex = 0;
             // 
             // Base_screen
@@ -79,7 +79,7 @@
             this.ClientSize = new System.Drawing.Size(598, 430);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Base_screen";
-            this.Text = "Form2";
+            this.Text = "Base_screen";
             this.Load += new System.EventHandler(this.Base_screen_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

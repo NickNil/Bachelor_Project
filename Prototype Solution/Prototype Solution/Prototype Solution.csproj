@@ -58,6 +58,13 @@
     <Compile Include="Base_screen.designer.cs">
       <DependentUpon>Base_screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chat.cs" />
+    <Compile Include="Chat_offscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chat_offscreen.Designer.cs">
+      <DependentUpon>Chat_offscreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chat_screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Base_screen.resx">
       <DependentUpon>Base_screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat_offscreen.resx">
+      <DependentUpon>Chat_offscreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chat_screen.resx">
       <DependentUpon>Chat_screen.cs</DependentUpon>

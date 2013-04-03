@@ -1,4 +1,4 @@
-﻿namespace Prototype
+﻿namespace Prototype_Solution
 {
     partial class JB_screen
     {
@@ -28,37 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.listBox_songs = new System.Windows.Forms.ListBox();
+            this.textNowP = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // listBox_songs
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(284, 261);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.listBox_songs.BackColor = System.Drawing.SystemColors.Window;
+            this.listBox_songs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox_songs.FormattingEnabled = true;
+            this.listBox_songs.Items.AddRange(new object[] {
+            "No songs added"});
+            this.listBox_songs.Location = new System.Drawing.Point(0, 0);
+            this.listBox_songs.Margin = new System.Windows.Forms.Padding(0);
+            this.listBox_songs.Name = "listBox_songs";
+            this.listBox_songs.Size = new System.Drawing.Size(284, 241);
+            this.listBox_songs.TabIndex = 0;
             // 
-            // FormJB
+            // textNowP
+            // 
+            this.textNowP.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textNowP.Location = new System.Drawing.Point(0, 241);
+            this.textNowP.Margin = new System.Windows.Forms.Padding(0);
+            this.textNowP.Name = "textNowP";
+            this.textNowP.Size = new System.Drawing.Size(284, 20);
+            this.textNowP.TabIndex = 1;
+            // 
+            // JB_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.listBox_songs);
+            this.Controls.Add(this.textNowP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormJB";
-            this.Text = "FormJB";
+            this.Name = "JB_screen";
+            this.Text = "JB_screen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormJB_Load);
+            this.Load += new System.EventHandler(this.JB_screen_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        public System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.ListBox listBox_songs;
+        public System.Windows.Forms.TextBox textNowP;
+
 
 
 

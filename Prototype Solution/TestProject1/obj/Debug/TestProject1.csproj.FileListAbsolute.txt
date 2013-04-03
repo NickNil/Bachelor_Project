@@ -1,0 +1,10 @@
+C:\Users\student\Desktop\temp\Prototype Solution\TestProject1\bin\Debug\TestProject1.dll
+C:\Users\student\Desktop\temp\Prototype Solution\TestProject1\bin\Debug\TestProject1.pdb
+C:\Users\student\Desktop\temp\Prototype Solution\TestProject1\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\student\Desktop\temp\Prototype Solution\TestProject1\bin\Debug\Prototype Solution.exe
+C:\Users\student\Desktop\temp\Prototype Solution\TestProject1\bin\Debug\Prototype Solution.pdb
+C:\Users\student\Desktop\temp\Prototype Solution\TestProject1\bin\Debug\Prototype Solution_Accessor.exe
+C:\Users\student\Desktop\temp\Prototype Solution\TestProject1\bin\Debug\Prototype Solution_Accessor.pdb
+C:\Users\student\Desktop\temp\Prototype Solution\TestProject1\obj\Debug\TestProject1.csprojResolveAssemblyReference.cache
+C:\Users\student\Desktop\temp\Prototype Solution\TestProject1\obj\Debug\TestProject1.dll
+C:\Users\student\Desktop\temp\Prototype Solution\TestProject1\obj\Debug\TestProject1.pdb

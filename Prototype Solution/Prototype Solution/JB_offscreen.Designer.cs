@@ -1,4 +1,4 @@
-﻿namespace Prototype
+﻿namespace Prototype_Solution
 {
     partial class JB_offscreen
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JB_offscreen));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
@@ -45,15 +45,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.mediaP)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(3, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Add songs";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAdd.Location = new System.Drawing.Point(3, 6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add songs";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // splitContainer1
             // 
@@ -70,14 +70,15 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnStop);
             this.splitContainer1.Panel1.Controls.Add(this.btnPause);
             this.splitContainer1.Panel1.Controls.Add(this.btnPlay);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel1.Controls.Add(this.mediaP);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.listBox_songs);
             this.splitContainer1.Size = new System.Drawing.Size(315, 295);
-            this.splitContainer1.SplitterDistance = 155;
+            this.splitContainer1.SplitterDistance = 111;
+            this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 5;
             // 
             // btnNext
@@ -148,10 +149,10 @@
             // mediaP
             // 
             this.mediaP.Enabled = true;
-            this.mediaP.Location = new System.Drawing.Point(12, 84);
+            this.mediaP.Location = new System.Drawing.Point(12, 41);
             this.mediaP.Name = "mediaP";
             this.mediaP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mediaP.OcxState")));
-            this.mediaP.Size = new System.Drawing.Size(279, 68);
+            this.mediaP.Size = new System.Drawing.Size(279, 64);
             this.mediaP.TabIndex = 6;
             this.mediaP.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.mediaP_PlayStateChange);
             // 
@@ -163,7 +164,7 @@
             "No songs added"});
             this.listBox_songs.Location = new System.Drawing.Point(0, 0);
             this.listBox_songs.Name = "listBox_songs";
-            this.listBox_songs.Size = new System.Drawing.Size(315, 136);
+            this.listBox_songs.Size = new System.Drawing.Size(315, 183);
             this.listBox_songs.TabIndex = 1;
             // 
             // JB_offscreen
@@ -189,7 +190,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ListBox listBox_songs;
         private AxWMPLib.AxWindowsMediaPlayer mediaP;

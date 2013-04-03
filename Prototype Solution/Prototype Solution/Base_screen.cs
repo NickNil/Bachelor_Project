@@ -7,44 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Prototype
+namespace Prototype_Solution
 {
     public partial class Base_screen : Form
     {
-        Base_offscreen base_offscreen;
-        public Chat_screen chat_screen;
+        Form form_1, form_2;
 
         public Base_screen()
         {
             InitializeComponent();
         }
 
-        public Base_screen(Base_offscreen frm)
+        public Base_screen(Form frm1, Form frm2)
         {
             InitializeComponent();
-            base_offscreen = frm;
+            form_1 = frm1;
+            form_2 = frm2;  
         }
 
         private void Base_screen_Load(object sender, EventArgs e)
         {
-            chat_screen = new Chat_screen();
-           
-
-            chat_screen.TopLevel = false;
-            base_offscreen.jukebox.jb_screen.TopLevel = false;
-            
-            this.splitContainer2.Panel2.Controls.Add(base_offscreen.jukebox.jb_screen);
-            this.splitContainer2.Panel1.Controls.Add(chat_screen);
-
-            chat_screen.Show();
-            base_offscreen.jukebox.jb_screen.Show();
+            //Jukebox
+            form_Load(form_1, splitContainer2.Panel2);
+            //Chat
+            form_Load(form_2, splitContainer2.Panel1);          
         }
 
-        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        private void form_Load(Form form, SplitterPanel location)
         {
-
+            form.TopLevel = false;
+            location.Controls.Add(form);
+            form.Show(); 
         }
-
-
     }
 }

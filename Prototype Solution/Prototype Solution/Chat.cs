@@ -5,20 +5,20 @@ using System.Text;
 
 namespace Prototype_Solution
 {
-    public class Jukebox
+    public class Chat
     {
-        public JB_offscreen jb_offscreen;
-        public JB_screen jb_screen;
+        public Chat_screen chat_screen;
+        public Chat_offscreen chat_offscreen;
 
-        public Jukebox()
+        public Chat()
         {
             InitializeComponent();
         }
-        public Jukebox(Base_offscreen frm)
+        public Chat(Base_offscreen frm)
         {
             InitializeComponent();
-            jb_screen = new JB_screen();
-            jb_offscreen = new JB_offscreen(jb_screen);
+            chat_screen = new Chat_screen();
+            chat_offscreen = new Chat_offscreen(chat_screen);
             
         }
 
