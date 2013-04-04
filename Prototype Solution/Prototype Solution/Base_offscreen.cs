@@ -16,6 +16,7 @@ namespace Prototype_Solution
         public Jukebox jukebox;
         public Chat chat;
         ListView list;
+        List<SplitterPanel> container = new List<SplitterPanel>();
 
         public Base_offscreen()
         {
@@ -24,27 +25,37 @@ namespace Prototype_Solution
         public Base_offscreen(ListView list)
         {
             InitializeComponent();
-            this.list = list;                    
+            this.list = list;
+            
         }
 
         private void Base_offscreen_Load(object sender, EventArgs e)
-        {        
+        {
+            int items = 0;
+            container.Add(splitContainer1.Panel1);
+            container.Add(splitContainer1.Panel2);
+
             foreach (ListViewItem item in list.CheckedItems)
             {
                 Console.WriteLine(item.Text);
+                if (item.Text.Equals("Jukebox"))
+                {
+                    jukebox = new Jukebox(this);
+                    form_Load(jukebox.jb_offscreen, container[items]);
+                    items++;
+                }
+                else if(item.Text.Equals("Chat"))
+                {
+                    chat = new Chat(this);
+                    form_Load(chat.chat_offscreen, container[items]);
+                    items++;
+
+                }
             }
 
-            ////Jukebox
-            //jukebox = new Jukebox(this);
-            //form_Load(jukebox.jb_offscreen, splitContainer1.Panel1);
-
-            ////Chat
-            //chat = new Chat(this);
-            //form_Load(chat.chat_offscreen, splitContainer1.Panel2);
-
-            ////Base_screen
-            //base_screen = new Base_screen(jukebox.jb_screen, chat.chat_screen);
-            //base_screen.Show();
+            //Base_screen
+            base_screen = new Base_screen(jukebox.jb_screen, chat.chat_screen);
+            base_screen.Show();
         }
 
         private void form_Load(Form form, SplitterPanel location)
