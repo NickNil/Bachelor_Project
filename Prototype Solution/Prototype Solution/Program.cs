@@ -15,7 +15,7 @@ namespace Prototype_Solution
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Base_offscreen());
+            Application.Run(new Start());
         }
-    }
+    } 
 }

@@ -15,25 +15,36 @@ namespace Prototype_Solution
         Base_screen base_screen;
         public Jukebox jukebox;
         public Chat chat;
+        ListView list;
 
         public Base_offscreen()
         {
-            InitializeComponent();                                
+            InitializeComponent();
+        }
+        public Base_offscreen(ListView list)
+        {
+            InitializeComponent();
+            this.list = list;                    
         }
 
         private void Base_offscreen_Load(object sender, EventArgs e)
-        {            
-            //Jukebox
-            jukebox = new Jukebox(this);
-            form_Load(jukebox.jb_offscreen, splitContainer1.Panel1);
+        {        
+            foreach (ListViewItem item in list.CheckedItems)
+            {
+                Console.WriteLine(item.Text);
+            }
 
-            //Chat
-            chat = new Chat(this);
-            form_Load(chat.chat_offscreen, splitContainer1.Panel2);
+            ////Jukebox
+            //jukebox = new Jukebox(this);
+            //form_Load(jukebox.jb_offscreen, splitContainer1.Panel1);
 
-            //Base_screen
-            base_screen = new Base_screen(jukebox.jb_screen, chat.chat_screen);
-            base_screen.Show();
+            ////Chat
+            //chat = new Chat(this);
+            //form_Load(chat.chat_offscreen, splitContainer1.Panel2);
+
+            ////Base_screen
+            //base_screen = new Base_screen(jukebox.jb_screen, chat.chat_screen);
+            //base_screen.Show();
         }
 
         private void form_Load(Form form, SplitterPanel location)
