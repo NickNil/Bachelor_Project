@@ -1,0 +1,9 @@
+c:\users\student\documents\visual studio 2010\Projects\HPWeb1\HPWeb1\bin\HPWeb1.dll
+c:\users\student\documents\visual studio 2010\Projects\HPWeb1\HPWeb1\bin\HPWeb1.pdb
+c:\users\student\documents\visual studio 2010\Projects\HPWeb1\HPWeb1\obj\Debug\ResolveAssemblyReference.cache
+c:\users\student\documents\visual studio 2010\Projects\HPWeb1\HPWeb1\obj\Debug\HPWeb1.dll
+c:\users\student\documents\visual studio 2010\Projects\HPWeb1\HPWeb1\obj\Debug\HPWeb1.pdb
+C:\Users\student\Desktop\HPWeb1\HPWeb1\obj\Debug\HPWeb1.dll
+C:\Users\student\Desktop\HPWeb1\HPWeb1\bin\HPWeb1.dll
+C:\Users\student\Desktop\HPWeb1\HPWeb1\bin\HPWeb1.pdb
+C:\Users\student\Desktop\HPWeb1\HPWeb1\obj\Debug\HPWeb1.pdb
