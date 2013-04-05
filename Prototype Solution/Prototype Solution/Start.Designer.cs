@@ -31,10 +31,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox_0 = new System.Windows.Forms.ListBox();
+            this.listBox_1 = new System.Windows.Forms.ListBox();
+            this.listBox_2 = new System.Windows.Forms.ListBox();
+            this.listBox_names = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -67,7 +67,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.listBox4);
+            this.splitContainer1.Panel2.Controls.Add(this.listBox_2);
             this.splitContainer1.Size = new System.Drawing.Size(150, 142);
             this.splitContainer1.SplitterDistance = 105;
             this.splitContainer1.TabIndex = 2;
@@ -82,77 +82,77 @@
             // 
             this.splitContainer2.Panel1.AllowDrop = true;
             this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.splitContainer2.Panel1.Controls.Add(this.listBox2);
+            this.splitContainer2.Panel1.Controls.Add(this.listBox_0);
             this.splitContainer2.Panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
             this.splitContainer2.Panel1.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.listBox3);
+            this.splitContainer2.Panel2.Controls.Add(this.listBox_1);
             this.splitContainer2.Size = new System.Drawing.Size(150, 105);
             this.splitContainer2.TabIndex = 0;
             // 
-            // listBox2
+            // listBox_0
             // 
-            this.listBox2.AllowDrop = true;
-            this.listBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(0, 0);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(50, 105);
-            this.listBox2.TabIndex = 0;
-            this.listBox2.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
-            this.listBox2.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
-            this.listBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
+            this.listBox_0.AllowDrop = true;
+            this.listBox_0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox_0.FormattingEnabled = true;
+            this.listBox_0.Location = new System.Drawing.Point(0, 0);
+            this.listBox_0.Name = "listBox_0";
+            this.listBox_0.Size = new System.Drawing.Size(50, 105);
+            this.listBox_0.TabIndex = 0;
+            this.listBox_0.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
+            this.listBox_0.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
+            this.listBox_0.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
             // 
-            // listBox3
+            // listBox_1
             // 
-            this.listBox3.AllowDrop = true;
-            this.listBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(0, 0);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(96, 105);
-            this.listBox3.TabIndex = 0;
-            this.listBox3.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
-            this.listBox3.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
-            this.listBox3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
+            this.listBox_1.AllowDrop = true;
+            this.listBox_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox_1.FormattingEnabled = true;
+            this.listBox_1.Location = new System.Drawing.Point(0, 0);
+            this.listBox_1.Name = "listBox_1";
+            this.listBox_1.Size = new System.Drawing.Size(96, 105);
+            this.listBox_1.TabIndex = 0;
+            this.listBox_1.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
+            this.listBox_1.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
+            this.listBox_1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
             // 
-            // listBox4
+            // listBox_2
             // 
-            this.listBox4.AllowDrop = true;
-            this.listBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(0, 0);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(150, 33);
-            this.listBox4.TabIndex = 0;
-            this.listBox4.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
-            this.listBox4.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
-            this.listBox4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
+            this.listBox_2.AllowDrop = true;
+            this.listBox_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox_2.FormattingEnabled = true;
+            this.listBox_2.Location = new System.Drawing.Point(0, 0);
+            this.listBox_2.Name = "listBox_2";
+            this.listBox_2.Size = new System.Drawing.Size(150, 33);
+            this.listBox_2.TabIndex = 0;
+            this.listBox_2.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
+            this.listBox_2.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
+            this.listBox_2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
             // 
-            // listBox1
+            // listBox_names
             // 
-            this.listBox1.AllowDrop = true;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.listBox_names.AllowDrop = true;
+            this.listBox_names.FormattingEnabled = true;
+            this.listBox_names.Items.AddRange(new object[] {
             "Jukebox",
             "Chat",
-            "Test"});
-            this.listBox1.Location = new System.Drawing.Point(21, 27);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 3;
-            this.listBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
-            this.listBox1.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
-            this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
+            "Ad_Image"});
+            this.listBox_names.Location = new System.Drawing.Point(21, 27);
+            this.listBox_names.Name = "listBox_names";
+            this.listBox_names.Size = new System.Drawing.Size(120, 95);
+            this.listBox_names.TabIndex = 3;
+            this.listBox_names.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
+            this.listBox_names.DragOver += new System.Windows.Forms.DragEventHandler(this.listBox_DragOver);
+            this.listBox_names.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
             // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 435);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBox_names);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.button1);
             this.Name = "Start";
@@ -175,10 +175,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.ListBox listBox_names;
+        private System.Windows.Forms.ListBox listBox_0;
+        private System.Windows.Forms.ListBox listBox_1;
+        private System.Windows.Forms.ListBox listBox_2;
 
     }
 }

@@ -46,6 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ad_Image.cs" />
+    <Compile Include="Ad_Image_offscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_Image_offscreen.Designer.cs">
+      <DependentUpon>Ad_Image_offscreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ad_Image_screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_Image_screen.Designer.cs">
+      <DependentUpon>Ad_Image_screen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Base_offscreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +105,24 @@
     <Compile Include="Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="test2.Designer.cs">
+      <DependentUpon>test2.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Ad_Image_offscreen.resx">
+      <DependentUpon>Ad_Image_offscreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ad_Image_Screen.resx">
+      <DependentUpon>Ad_Image_screen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Base_offscreen.resx">
       <DependentUpon>Base_offscreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +153,12 @@
     </Compile>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test2.resx">
+      <DependentUpon>test2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

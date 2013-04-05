@@ -11,6 +11,20 @@ namespace Prototype_Solution
 {
     public partial class Start : Form
     {
+        public struct modules
+        {
+            public string name;
+            public int location;
+            public Form form;
+
+            public modules(string name, int location)
+            {
+                this.name = name;
+                this.location = location;
+                form = null;
+            }
+        }
+
         public Start()
         {
             InitializeComponent();
@@ -22,23 +36,41 @@ namespace Prototype_Solution
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ListView listView1 = new ListView();
-           
-            if(listBox2.Items.Count == 1)
-                listView1.Items.Add(listBox2.Items[0].ToString());
-            if (listBox3.Items.Count == 1)
-                listView1.Items.Add(listBox3.Items[0].ToString());
-            if (listBox4.Items.Count == 1)
-                listView1.Items.Add(listBox4.Items[0].ToString());
+            List<modules> list = new List<modules>();
 
-            if (listView1.Items.Count <= 3)
+            //listBox2
+            if (listBox_0.Items.Count < 2)
             {
-                Base_offscreen base_offscreen = new Base_offscreen(listView1);
-                this.Hide();
-                base_offscreen.ShowDialog();
-                this.Close();
-
+                if (listBox_0.Items.Count == 1)
+                    list.Add(new modules(listBox_0.Items[0].ToString(), 0));
             }
+            else
+                return;
+
+            //listBox3
+            if (listBox_1.Items.Count < 2)
+            {
+                if (listBox_1.Items.Count == 1)
+                    list.Add(new modules(listBox_1.Items[0].ToString(), 1));
+            }
+            else
+                return;
+
+            //listBox4
+            if (listBox_2.Items.Count < 2)
+            {
+                if (listBox_2.Items.Count == 1)
+                    list.Add(new modules(listBox_2.Items[0].ToString(), 2));
+            }
+            else
+                return;
+
+
+            Base_offscreen base_offscreen = new Base_offscreen(list);
+            this.Hide();
+            base_offscreen.ShowDialog();
+            this.Close();
+
         }
 
         private void listBox_MouseDown(object sender, MouseEventArgs e)

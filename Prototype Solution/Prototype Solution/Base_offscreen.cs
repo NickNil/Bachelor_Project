@@ -15,46 +15,56 @@ namespace Prototype_Solution
         Base_screen base_screen;
         public Jukebox jukebox;
         public Chat chat;
-        ListView list;
+        public Ad_Image ad_image;
+        List<Start.modules> modList;
         List<SplitterPanel> container = new List<SplitterPanel>();
+       
 
         public Base_offscreen()
         {
             InitializeComponent();
         }
-        public Base_offscreen(ListView list)
+        public Base_offscreen(List<Start.modules> list)
         {
             InitializeComponent();
-            this.list = list;
-            
+            modList = list;           
         }
 
         private void Base_offscreen_Load(object sender, EventArgs e)
         {
-            int items = 0;
-            container.Add(splitContainer1.Panel1);
+            container.Add(splitContainer2.Panel1);
+            container.Add(splitContainer2.Panel2);
             container.Add(splitContainer1.Panel2);
 
-            foreach (ListViewItem item in list.CheckedItems)
+            for (int i = 0; i < modList.Count; i++)
             {
-                Console.WriteLine(item.Text);
-                if (item.Text.Equals("Jukebox"))
-                {
-                    jukebox = new Jukebox(this);
-                    form_Load(jukebox.jb_offscreen, container[items]);
-                    items++;
-                }
-                else if(item.Text.Equals("Chat"))
-                {
-                    chat = new Chat(this);
-                    form_Load(chat.chat_offscreen, container[items]);
-                    items++;
+                Start.modules item = modList[i];
 
+                if (item.name.Equals("Jukebox"))
+                {
+                    jukebox = new Jukebox();
+                    form_Load(jukebox.jb_offscreen, container[item.location]);
+                    item.form = jukebox.jb_screen;
                 }
+                else if (item.name.Equals("Chat"))
+                {
+                    chat = new Chat();
+                    form_Load(chat.chat_offscreen, container[item.location]);
+                    item.form = chat.chat_screen;
+                }
+                else if (item.name.Equals("Ad_Image"))
+                {
+                    ad_image = new Ad_Image();
+                    form_Load(ad_image.ad_image_offscreen, container[item.location]);
+                    item.form = ad_image.ad_image_screen;
+                }
+                modList[i] = item;
             }
 
+            
+
             //Base_screen
-            base_screen = new Base_screen(jukebox.jb_screen, chat.chat_screen);
+            base_screen = new Base_screen(modList);
             base_screen.Show();
         }
 
@@ -63,6 +73,22 @@ namespace Prototype_Solution
             form.TopLevel = false;
             location.Controls.Add(form);
             form.Show(); 
+        }
+
+        private void splitContainer2_Resize(object sender, EventArgs e)
+        {
+
+            try
+            {
+                splitContainer2.Refresh();
+            }
+            catch (Exception ex) { Console.WriteLine("\n" + ex); }
+            
+        }
+
+        private void splitContainer1_Resize(object sender, EventArgs e)
+        {
+            splitContainer1.Refresh();
         }
     }
 }

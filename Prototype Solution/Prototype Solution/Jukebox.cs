@@ -13,10 +13,6 @@ namespace Prototype_Solution
         public Jukebox()
         {
             InitializeComponent();
-        }
-        public Jukebox(Base_offscreen frm)
-        {
-            InitializeComponent();
             jb_screen = new JB_screen();
             jb_offscreen = new JB_offscreen(jb_screen);
             

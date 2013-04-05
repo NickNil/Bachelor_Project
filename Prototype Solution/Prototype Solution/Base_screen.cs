@@ -11,26 +11,30 @@ namespace Prototype_Solution
 {
     public partial class Base_screen : Form
     {
-        Form form_1, form_2;
+        List<SplitterPanel> container = new List<SplitterPanel>();
+        List<Start.modules> modList;
 
         public Base_screen()
         {
             InitializeComponent();
         }
 
-        public Base_screen(Form frm1, Form frm2)
+        public Base_screen(List<Start.modules> list)
         {
             InitializeComponent();
-            form_1 = frm1;
-            form_2 = frm2;  
+            modList = list;
         }
 
         private void Base_screen_Load(object sender, EventArgs e)
         {
-            //Jukebox
-            form_Load(form_1, splitContainer2.Panel2);
-            //Chat
-            form_Load(form_2, splitContainer2.Panel1);          
+            container.Add(splitContainer2.Panel1);
+            container.Add(splitContainer2.Panel2);
+            container.Add(splitContainer1.Panel2);
+
+            foreach (Start.modules item in modList)
+            {
+                form_Load(item.form, container[item.location]);
+            }         
         }
 
         private void form_Load(Form form, SplitterPanel location)

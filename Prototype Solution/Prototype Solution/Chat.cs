@@ -13,10 +13,6 @@ namespace Prototype_Solution
         public Chat()
         {
             InitializeComponent();
-        }
-        public Chat(Base_offscreen frm)
-        {
-            InitializeComponent();
             chat_screen = new Chat_screen();
             chat_offscreen = new Chat_offscreen(chat_screen);
             
