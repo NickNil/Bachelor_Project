@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace Prototype_Solution
 {
-    public partial class Ad_Image_offscreen : Form
+    public partial class Ad_Image_offscreen : UserControl
     {
         Ad_Image_screen ad_image_screen;
 
-        public Ad_Image_offscreen(Ad_Image_screen frm)
+        public Ad_Image_offscreen(Ad_Image_screen ad_image_screen)
         {
             InitializeComponent();
-            ad_image_screen = frm;
+            this.ad_image_screen = ad_image_screen;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

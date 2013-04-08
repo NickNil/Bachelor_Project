@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ad_Image.cs" />
-    <Compile Include="Ad_Image_offscreen.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Modules\Ad_Image\Ad_Image.cs" />
+    <Compile Include="Modules\Ad_Image\Ad_Image_offscreen.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ad_Image_offscreen.Designer.cs">
+    <Compile Include="Modules\Ad_Image\Ad_Image_offscreen.Designer.cs">
       <DependentUpon>Ad_Image_offscreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ad_Image_screen.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Modules\Ad_Image\Ad_Image_screen.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ad_Image_screen.Designer.cs">
+    <Compile Include="Modules\Ad_Image\Ad_Image_screen.Designer.cs">
       <DependentUpon>Ad_Image_screen.cs</DependentUpon>
     </Compile>
     <Compile Include="Base_offscreen.cs">
@@ -71,56 +71,45 @@
     <Compile Include="Base_screen.designer.cs">
       <DependentUpon>Base_screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chat.cs" />
-    <Compile Include="Chat_offscreen.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Modules\Chat\Chat.cs" />
+    <Compile Include="Modules\Chat\Chat_offscreen.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Chat_offscreen.Designer.cs">
+    <Compile Include="Modules\Chat\Chat_offscreen.Designer.cs">
       <DependentUpon>Chat_offscreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chat_screen.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Modules\Chat\Chat_screen.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Chat_screen.designer.cs">
+    <Compile Include="Modules\Chat\Chat_screen.designer.cs">
       <DependentUpon>Chat_screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="JB_screen.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Modules\Jukebox\JB_screen.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="JB_screen.designer.cs">
+    <Compile Include="Modules\Jukebox\JB_screen.designer.cs">
       <DependentUpon>JB_screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="JB_offscreen.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Modules\Jukebox\JB_offscreen.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="JB_offscreen.Designer.cs">
+    <Compile Include="Modules\Jukebox\JB_offscreen.Designer.cs">
       <DependentUpon>JB_offscreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jukebox.cs" />
+    <Compile Include="Modules\Jukebox\Jukebox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
-    <Compile Include="test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="test2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="test2.Designer.cs">
-      <DependentUpon>test2.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Ad_Image_offscreen.resx">
+    <EmbeddedResource Include="Modules\Ad_Image\Ad_Image_offscreen.resx">
       <DependentUpon>Ad_Image_offscreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ad_Image_Screen.resx">
+    <EmbeddedResource Include="Modules\Ad_Image\Ad_Image_Screen.resx">
       <DependentUpon>Ad_Image_screen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base_offscreen.resx">
@@ -129,16 +118,16 @@
     <EmbeddedResource Include="Base_screen.resx">
       <DependentUpon>Base_screen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chat_offscreen.resx">
+    <EmbeddedResource Include="Modules\Chat\Chat_offscreen.resx">
       <DependentUpon>Chat_offscreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chat_screen.resx">
+    <EmbeddedResource Include="Modules\Chat\Chat_screen.resx">
       <DependentUpon>Chat_screen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JB_screen.resx">
+    <EmbeddedResource Include="Modules\Jukebox\JB_screen.resx">
       <DependentUpon>JB_screen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JB_offscreen.resx">
+    <EmbeddedResource Include="Modules\Jukebox\JB_offscreen.resx">
       <DependentUpon>JB_offscreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -154,12 +143,7 @@
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="test.resx">
-      <DependentUpon>test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="test2.resx">
-      <DependentUpon>test2.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -190,19 +174,37 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\next_icon.png" />
+    <None Include="Modules\Jukebox\Resources\next_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pause_icon.png" />
+    <None Include="Modules\Jukebox\Resources\pause_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\play_icon.png" />
+    <None Include="Modules\Jukebox\Resources\play_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\prev_icon.png" />
+    <None Include="Modules\Jukebox\Resources\prev_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\stop_icon.png" />
+    <None Include="Modules\Jukebox\Resources\stop_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start\screen2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start\screen2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start\screen3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start\screen3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start\screen3_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start\screen3_4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

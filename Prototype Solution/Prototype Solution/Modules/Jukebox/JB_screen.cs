@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Prototype_Solution
 {
-    public partial class JB_screen : Form
+    public partial class JB_screen : UserControl
     {
 
         public JB_screen()

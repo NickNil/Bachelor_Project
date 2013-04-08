@@ -1,6 +1,6 @@
 ﻿namespace Prototype_Solution
 {
-    partial class Ad_Image_screen
+    partial class Chat_offscreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.textToChat = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // pictureBox
+            // textToChat
             // 
-            this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(284, 261);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
+            this.textToChat.Location = new System.Drawing.Point(28, 36);
+            this.textToChat.Name = "textToChat";
+            this.textToChat.Size = new System.Drawing.Size(219, 20);
+            this.textToChat.TabIndex = 0;
+            this.textToChat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textToChat_TextChanged);
             // 
-            // Ad_Image_screen
+            // Chat_offscreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.pictureBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Ad_Image_screen";
-            this.Text = "Ad_Image_screen";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.textToChat);
+            this.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Name = "Chat_offscreen";
+            this.Text = "Chat_offscreen";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        public System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.TextBox textToChat;
     }
 }

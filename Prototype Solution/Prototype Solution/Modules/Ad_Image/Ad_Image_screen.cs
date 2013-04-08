@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Prototype_Solution
 {
-    public partial class Ad_Image_screen : Form
+    public partial class Ad_Image_screen : UserControl
     {
         public Ad_Image_screen()
         {

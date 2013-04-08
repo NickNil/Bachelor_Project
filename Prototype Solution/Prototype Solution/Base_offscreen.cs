@@ -43,20 +43,20 @@ namespace Prototype_Solution
                 if (item.name.Equals("Jukebox"))
                 {
                     jukebox = new Jukebox();
-                    form_Load(jukebox.jb_offscreen, container[item.location]);
-                    item.form = jukebox.jb_screen;
+                    control_Load(jukebox.jb_offscreen, container[item.location]);
+                    item.userControl = jukebox.jb_screen;
                 }
                 else if (item.name.Equals("Chat"))
                 {
                     chat = new Chat();
-                    form_Load(chat.chat_offscreen, container[item.location]);
-                    item.form = chat.chat_screen;
+                    control_Load(chat.chat_offscreen, container[item.location]);
+                    item.userControl = chat.chat_screen;
                 }
                 else if (item.name.Equals("Ad_Image"))
                 {
                     ad_image = new Ad_Image();
-                    form_Load(ad_image.ad_image_offscreen, container[item.location]);
-                    item.form = ad_image.ad_image_screen;
+                    control_Load(ad_image.ad_image_offscreen, container[item.location]);
+                    item.userControl = ad_image.ad_image_screen;
                 }
                 modList[i] = item;
             }
@@ -68,27 +68,10 @@ namespace Prototype_Solution
             base_screen.Show();
         }
 
-        private void form_Load(Form form, SplitterPanel location)
+        private void control_Load(UserControl userControl, SplitterPanel location)
         {
-            form.TopLevel = false;
-            location.Controls.Add(form);
-            form.Show(); 
-        }
-
-        private void splitContainer2_Resize(object sender, EventArgs e)
-        {
-
-            try
-            {
-                splitContainer2.Refresh();
-            }
-            catch (Exception ex) { Console.WriteLine("\n" + ex); }
-            
-        }
-
-        private void splitContainer1_Resize(object sender, EventArgs e)
-        {
-            splitContainer1.Refresh();
+            location.Controls.Add(userControl);
+            userControl.Show(); 
         }
     }
 }

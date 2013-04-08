@@ -45,17 +45,16 @@
             this.textChat.Text = "";
             this.textChat.TextChanged += new System.EventHandler(this.textChat_TextChanged);
             // 
-            // FormChat
+            // Chat_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.textChat);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormChat";
-            this.Text = "FormChat";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormChat_Load);
+            this.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Name = "Chat_screen";
+            this.Text = "Chat_screen";
+            this.Load += new System.EventHandler(this.Chat_screen_Load);
             this.ResumeLayout(false);
 
         }

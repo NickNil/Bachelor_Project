@@ -33,15 +33,14 @@ namespace Prototype_Solution
 
             foreach (Start.modules item in modList)
             {
-                form_Load(item.form, container[item.location]);
+                control_Load(item.userControl, container[item.location]);
             }         
         }
 
-        private void form_Load(Form form, SplitterPanel location)
+        private void control_Load(UserControl userControl, SplitterPanel location)
         {
-            form.TopLevel = false;
-            location.Controls.Add(form);
-            form.Show(); 
+            location.Controls.Add(userControl);
+            userControl.Show(); 
         }
     }
 }

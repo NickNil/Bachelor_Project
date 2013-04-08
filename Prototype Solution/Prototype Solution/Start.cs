@@ -15,19 +15,25 @@ namespace Prototype_Solution
         {
             public string name;
             public int location;
-            public Form form;
+            public UserControl userControl;
 
             public modules(string name, int location)
             {
                 this.name = name;
                 this.location = location;
-                form = null;
+                userControl = null;
             }
         }
 
         public Start()
         {
             InitializeComponent();
+
+            nrOfModules.SelectedIndex = Properties.Settings.Default.nrOfModules;
+            contextMenuStrip.Items.Add("Jukebox");
+            contextMenuStrip.Items.Add("Chat");
+            contextMenuStrip.Items.Add("Ad_Image");
+            contextMenuStrip.ItemClicked += new ToolStripItemClickedEventHandler(contextMenuStrip_ItemClicked);
         }
 
         private void Start_Load(object sender, EventArgs e)
@@ -38,41 +44,46 @@ namespace Prototype_Solution
         {
             List<modules> list = new List<modules>();
 
-            //listBox2
-            if (listBox_0.Items.Count < 2)
-            {
-                if (listBox_0.Items.Count == 1)
-                    list.Add(new modules(listBox_0.Items[0].ToString(), 0));
-            }
-            else
-                return;
+            ////listBox2
+            //if (listBox_0.Items.Count < 2)
+            //{
+            //    if (listBox_0.Items.Count == 1)
+            //        list.Add(new modules(listBox_0.Items[0].ToString(), 0));
+            //}
+            //else
+            //    return;
 
-            //listBox3
-            if (listBox_1.Items.Count < 2)
-            {
-                if (listBox_1.Items.Count == 1)
-                    list.Add(new modules(listBox_1.Items[0].ToString(), 1));
-            }
-            else
-                return;
+            ////listBox3
+            //if (listBox_1.Items.Count < 2)
+            //{
+            //    if (listBox_1.Items.Count == 1)
+            //        list.Add(new modules(listBox_1.Items[0].ToString(), 1));
+            //}
+            //else
+            //    return;
 
-            //listBox4
-            if (listBox_2.Items.Count < 2)
-            {
-                if (listBox_2.Items.Count == 1)
-                    list.Add(new modules(listBox_2.Items[0].ToString(), 2));
-            }
-            else
-                return;
+            ////listBox4
+            //if (listBox_2.Items.Count < 2)
+            //{
+            //    if (listBox_2.Items.Count == 1)
+            //        list.Add(new modules(listBox_2.Items[0].ToString(), 2));
+            //}
+            //else
+            //    return;
 
 
             Base_offscreen base_offscreen = new Base_offscreen(list);
             this.Hide();
+
+            //Save last used in settings
+            Properties.Settings.Default.nrOfModules = nrOfModules.SelectedIndex;
+            Properties.Settings.Default.Save();
+
             base_offscreen.ShowDialog();
             this.Close();
-
         }
 
+        //Drag
         private void listBox_MouseDown(object sender, MouseEventArgs e)
         {
             ListBox temp = (ListBox)sender;
@@ -90,11 +101,13 @@ namespace Prototype_Solution
             }
         }
 
+        //Drop mouse icon
         private void listBox_DragOver(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.All;
         }
 
+        //Drop
         private void listBox_DragDrop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.StringFormat))
@@ -102,9 +115,172 @@ namespace Prototype_Solution
                 string str = (string)e.Data.GetData(
                     DataFormats.StringFormat);
 
-                ListBox temp = (ListBox)sender;
-                temp.Items.Add(str);
+               ((ListBox)sender).Items.Add(str);
             }
+        }
+
+        private void picBtn_Click(object sender, EventArgs e)
+        {
+            string name = ((PictureBox)sender).Image.Tag.ToString();
+            panel1.Controls.Clear();
+            setPanel(name);
+        }
+
+        private void nrOfModules_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nr = ((ComboBox)sender).SelectedItem.ToString();
+            panel1.Controls.Clear();
+
+            switch (nr)
+            {
+                case "1":
+                    picBtn1.Visible = false;
+                    picBtn2.Visible = false;
+                    picBtn3.Visible = false;
+                    picBtn4.Visible = false;
+                    setPanel(nr);
+                    break;
+                case "2":
+                    picBtn1.Image = Properties.Resources.screen2_1;
+                    picBtn1.Image.Tag = "2_1";
+                    picBtn1.Visible = true;
+                    picBtn2.Image = Properties.Resources.screen2_2;
+                    picBtn2.Image.Tag = "2_2";
+                    picBtn2.Visible = true;
+                    picBtn3.Visible = false;
+                    picBtn4.Visible = false;
+                    break;
+                case "3":
+                    picBtn1.Image = Properties.Resources.screen3_1;
+                    picBtn1.Image.Tag = "3_1";
+                    picBtn1.Visible = true;
+                    picBtn2.Image = Properties.Resources.screen3_2;
+                    picBtn2.Image.Tag = "3_2";
+                    picBtn2.Visible = true;
+                    picBtn3.Image = Properties.Resources.screen3_3;
+                    picBtn3.Image.Tag = "3_3";
+                    picBtn3.Visible = true;
+                    picBtn4.Image = Properties.Resources.screen3_4;
+                    picBtn4.Image.Tag = "3_4";
+                    picBtn4.Visible = true;
+                    break;
+                case "4":
+                    picBtn1.Visible = false;
+                    picBtn2.Visible = false;
+                    picBtn3.Visible = false;
+                    picBtn4.Visible = false;
+                    setPanel(nr);
+                    break;
+            }
+
+            
+        }
+
+        private SplitContainer split1;
+        private SplitContainer split2;
+        List<ListBox> box;
+        ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
+
+        private void setPanel(string pic)
+        {
+            box = new List<ListBox>();
+            split1 = new SplitContainer();
+            split2 = new SplitContainer();
+            split1.BackColor = Color.White;
+            split1.BorderStyle = split2.BorderStyle = BorderStyle.Fixed3D;
+
+            for(int i = 0;i<4;i++)
+            {
+                box.Add(new ListBox());
+                box[i].Name = "box" + i;
+                box[i].ContextMenuStrip = contextMenuStrip;
+                box[i].Dock = DockStyle.Fill;
+            }
+
+            switch (pic)
+            {
+                case "1":
+                    panel1.Controls.Add(box[0]);
+                    break;
+                case "2_1":
+                    split1.Panel1.Controls.Add(box[0]);
+                    split1.Panel2.Controls.Add(box[1]);
+                    split1.Orientation = Orientation.Horizontal;
+                    split1.Dock = DockStyle.Fill;
+                    panel1.Controls.Add(split1);
+                    break;
+                case "2_2":
+                    split1.Panel1.Controls.Add(box[0]);
+                    split1.Panel2.Controls.Add(box[1]);
+                    split1.Dock = DockStyle.Fill;
+                    panel1.Controls.Add(split1);
+                    break;
+                case "3_1":
+                    split1.Panel1.Controls.Add(box[0]);
+                    split2.Panel1.Controls.Add(box[1]);
+                    split2.Panel2.Controls.Add(box[2]);
+                    split1.Dock = DockStyle.Fill;                   
+                    split1.Orientation = Orientation.Horizontal;
+                    split1.Panel2.Controls.Add(split2);
+                    split2.Dock = DockStyle.Fill;                   
+                    panel1.Controls.Add(split1);
+                    split2.SplitterDistance = split2.Width / 2;
+                    break;
+                case "3_2":
+                    split1.Panel2.Controls.Add(box[0]);
+                    split2.Panel1.Controls.Add(box[1]);
+                    split2.Panel2.Controls.Add(box[2]);
+                    split2.Dock = DockStyle.Fill;
+                    split1.Orientation = Orientation.Horizontal;
+                    split1.Panel1.Controls.Add(split2);
+                    split1.Dock = DockStyle.Fill;
+                    panel1.Controls.Add(split1);
+                    split2.SplitterDistance = split2.Width / 2;
+                    break;
+                case "3_3":
+                    split1.Panel2.Controls.Add(box[0]);
+                    split2.Panel1.Controls.Add(box[1]);
+                    split2.Panel2.Controls.Add(box[2]);
+                    split2.Dock = DockStyle.Fill;
+                    split2.Orientation = Orientation.Horizontal;
+                    split1.Panel1.Controls.Add(split2);
+                    split1.Dock = DockStyle.Fill;
+                    panel1.Controls.Add(split1);
+                    split2.SplitterDistance = split2.Height / 2;
+                    break;
+                case "3_4":
+                    split1.Panel1.Controls.Add(box[0]);
+                    split2.Panel1.Controls.Add(box[1]);
+                    split2.Panel2.Controls.Add(box[2]);
+                    split2.Dock = DockStyle.Fill;
+                    split2.Orientation = Orientation.Horizontal;
+                    split1.Panel2.Controls.Add(split2);
+                    split1.Dock = DockStyle.Fill;
+                    panel1.Controls.Add(split1);
+                    split2.SplitterDistance = split2.Height / 2;
+                    break;
+                case "4":
+                    split1.Panel1.Controls.Add(box[0]);
+                    split1.Panel2.Controls.Add(box[1]);
+                    split2.Panel1.Controls.Add(box[2]);
+                    split2.Panel2.Controls.Add(box[3]);
+                    split1.Width = panel1.Width;
+                    split1.Height = panel1.Height / 2;
+                    split2.Dock = DockStyle.Fill;
+                    panel1.Controls.Add(split1);
+                    panel1.Controls.Add(split2);
+                    split2.SplitterDistance = split2.Width / 2;
+                    break;
+            }
+            split1.SplitterDistance = split1.Width / 2;
+        }
+
+        public void contextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ListBox temp = (ListBox)(((ContextMenuStrip)sender).SourceControl);
+            if (temp.Items.Count > 0)
+                temp.Items.Clear();
+            temp.Items.Add(e.ClickedItem.Text);
         }
     }
 }

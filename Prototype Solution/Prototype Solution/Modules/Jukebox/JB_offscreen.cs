@@ -10,7 +10,7 @@ using WMPLib;
 
 namespace Prototype_Solution
 {
-    public partial class JB_offscreen : Form
+    public partial class JB_offscreen : UserControl
     {
         Timer timer = new Timer();
         List<string> songs = new List<string>();
@@ -22,11 +22,11 @@ namespace Prototype_Solution
             InitializeComponent();
         }
         
-        public JB_offscreen(JB_screen frm)
+        public JB_offscreen(JB_screen jb_screen)
         {
             InitializeComponent();
 
-            jb_screen = frm;
+            this.jb_screen = jb_screen;
             mediaP_controls = (WMPLib.IWMPControls3)mediaP.Ctlcontrols;
 
             timer.Tick += new EventHandler(timer_Tick);

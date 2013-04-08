@@ -1,6 +1,6 @@
 ﻿namespace Prototype_Solution
 {
-    partial class Ad_Image_offscreen
+    partial class Ad_Image_screen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAdd
+            // pictureBox
             // 
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdd.Location = new System.Drawing.Point(0, 0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(284, 261);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add Image";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(284, 261);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
             // 
-            // Ad_Image_offscreen
+            // Ad_Image_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.btnAdd);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Ad_Image_offscreen";
-            this.Text = "Ad_Image_offscreen";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Controls.Add(this.pictureBox);
+            this.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Name = "Ad_Image_screen";
+            this.Text = "Ad_Image_screen";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnAdd;
+        public System.Windows.Forms.PictureBox pictureBox;
     }
 }

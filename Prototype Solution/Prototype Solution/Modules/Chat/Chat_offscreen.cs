@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Prototype_Solution
 {
-    public partial class Chat_offscreen : Form
+    public partial class Chat_offscreen : UserControl
     {
         Chat_screen chat_screen;
 
@@ -18,10 +18,10 @@ namespace Prototype_Solution
             InitializeComponent();
         }
 
-        public Chat_offscreen(Chat_screen frm)
+        public Chat_offscreen(Chat_screen chat_screen)
         {
             InitializeComponent();
-            chat_screen = frm;
+            this.chat_screen = chat_screen;
         }
 
         private void textToChat_TextChanged(object sender, KeyPressEventArgs e)

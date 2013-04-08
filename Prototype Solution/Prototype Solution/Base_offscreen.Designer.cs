@@ -48,25 +48,26 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(714, 562);
-            this.splitContainer1.SplitterDistance = 398;
-            this.splitContainer1.SplitterWidth = 1;
+            this.splitContainer1.SplitterDistance = 417;
             this.splitContainer1.TabIndex = 5;
-            this.splitContainer1.Resize += new System.EventHandler(this.splitContainer1_Resize);
             // 
             // splitContainer2
             // 
-            this.splitContainer2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.splitContainer2.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.InfoText;
-            this.splitContainer2.Size = new System.Drawing.Size(714, 398);
-            this.splitContainer2.SplitterDistance = 337;
+            this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.Control;
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainer2.Size = new System.Drawing.Size(714, 417);
+            this.splitContainer2.SplitterDistance = 338;
             this.splitContainer2.TabIndex = 0;
-            this.splitContainer2.Resize += new System.EventHandler(this.splitContainer2_Resize);
             // 
             // Base_offscreen
             // 
