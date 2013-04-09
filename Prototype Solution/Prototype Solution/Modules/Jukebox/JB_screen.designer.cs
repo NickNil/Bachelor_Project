@@ -61,10 +61,9 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.listBox_songs);
             this.Controls.Add(this.textNowP);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Name = "JB_screen";
             this.Text = "JB_screen";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.JB_screen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

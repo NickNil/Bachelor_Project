@@ -9,9 +9,10 @@ namespace HPWeb1
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        Connection c;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            c = new Connection();
         }
 
         protected void BtnSend_Click(object sender, EventArgs e)
@@ -19,6 +20,8 @@ namespace HPWeb1
             TextBox chatText = (TextBox)HeadLoginView.FindControl("TBMsg");
             string username = HeadLoginView.FindControl("HeadLoginName").Page.User.Identity.Name;
             string chatInput = username + ": " + chatText.Text;
+            chatText.Text = "";
+            c.Send(chatInput);
         }
     }
 }

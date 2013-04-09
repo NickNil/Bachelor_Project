@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace Prototype_Solution
 {
-    public partial class JB_screen : Form
+    public partial class Ad_Image_screen : UserControl
     {
-
-        public JB_screen()
+        public Ad_Image_screen()
         {
             InitializeComponent();
-        }
-
-        private void JB_screen_Load(object sender, EventArgs e)
-        {
         }
     }
 }

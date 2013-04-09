@@ -10,7 +10,7 @@ using WMPLib;
 
 namespace Prototype_Solution
 {
-    public partial class JB_offscreen : Form
+    public partial class JB_offscreen : UserControl
     {
         Timer timer = new Timer();
         List<string> songs = new List<string>();
@@ -22,11 +22,11 @@ namespace Prototype_Solution
             InitializeComponent();
         }
         
-        public JB_offscreen(JB_screen frm)
+        public JB_offscreen(JB_screen jb_screen)
         {
             InitializeComponent();
 
-            jb_screen = frm;
+            this.jb_screen = jb_screen;
             mediaP_controls = (WMPLib.IWMPControls3)mediaP.Ctlcontrols;
 
             timer.Tick += new EventHandler(timer_Tick);
@@ -74,9 +74,13 @@ namespace Prototype_Solution
         {
             if (mediaP_controls.currentItem != null)
             {
-                jb_screen.textNowP.Text = (mediaP_controls.currentItem.getItemInfo("Title") + " - " +
-                    mediaP_controls.currentItem.getItemInfo("Artist"));
-                Console.WriteLine("derp");
+                if (mediaP_controls.get_isAvailable("stop"))
+                {
+                    jb_screen.textNowP.Text = ("Now Playing: " + mediaP_controls.currentItem.getItemInfo("Title") + " - " +
+                        mediaP_controls.currentItem.getItemInfo("Artist"));
+                }
+                else
+                    jb_screen.textNowP.Text = "Now Playing: ";
             }      
 
             if (mediaP.playState == WMPPlayState.wmppsMediaEnded)
@@ -91,10 +95,21 @@ namespace Prototype_Solution
 
         public void updateTxt()
         {
+            List<string> songs2 = new List<string>(songs);
+
+            //Remove file path & file extension
+            for (int i = 0; i < songs.Count; i++)
+            {
+                //Remove path
+                songs2[i] = songs2[i].Substring(songs2[i].LastIndexOf("\\") + 1, songs2[i].LastIndexOf(".")-1 - songs2[i].LastIndexOf("\\"));
+
+                songs2[i] = songs2[i].Replace("_", " ");
+            }
+
             listBox_songs.DataSource = null;
-            listBox_songs.DataSource = songs;
+            listBox_songs.DataSource = songs2;
             jb_screen.listBox_songs.DataSource = null;
-            jb_screen.listBox_songs.DataSource = songs;
+            jb_screen.listBox_songs.DataSource = songs2;
 
            
         }
