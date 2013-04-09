@@ -11,13 +11,15 @@ namespace Prototype_Solution
 {
     public partial class Start : Form
     {
+        Base_offscreen base_offscreen;
+
         public struct modules
         {
             public string name;
-            public int location;
+            public string location;
             public UserControl userControl;
 
-            public modules(string name, int location)
+            public modules(string name, string location)
             {
                 this.name = name;
                 this.location = location;
@@ -44,35 +46,30 @@ namespace Prototype_Solution
         {
             List<modules> list = new List<modules>();
 
-            ////listBox2
-            //if (listBox_0.Items.Count < 2)
-            //{
-            //    if (listBox_0.Items.Count == 1)
-            //        list.Add(new modules(listBox_0.Items[0].ToString(), 0));
-            //}
-            //else
-            //    return;
+            foreach (ListBox listBox in box)
+            {
+                if (listBox.Items.Count <= 0)
+                    return;
+            }
 
-            ////listBox3
-            //if (listBox_1.Items.Count < 2)
-            //{
-            //    if (listBox_1.Items.Count == 1)
-            //        list.Add(new modules(listBox_1.Items[0].ToString(), 1));
-            //}
-            //else
-            //    return;
+            if (nrOfModules.SelectedItem.ToString() == "1" || nrOfModules.SelectedItem.ToString() == "4")
+            {
+                foreach (ListBox listBox in box)
+                {
+                    list.Add(new modules(listBox.Items[0].ToString(), listBox.Name));
+                }
+                base_offscreen = new Base_offscreen(list, nrOfModules.SelectedItem.ToString());
+            }
+            else
+            {
+                foreach (ListBox listBox in box)
+                {
+                    list.Add(new modules(listBox.Items[0].ToString(), listBox.Name));
+                }
+                base_offscreen = new Base_offscreen(list, picName);
+            }
 
-            ////listBox4
-            //if (listBox_2.Items.Count < 2)
-            //{
-            //    if (listBox_2.Items.Count == 1)
-            //        list.Add(new modules(listBox_2.Items[0].ToString(), 2));
-            //}
-            //else
-            //    return;
-
-
-            Base_offscreen base_offscreen = new Base_offscreen(list);
+            
             this.Hide();
 
             //Save last used in settings
@@ -119,11 +116,12 @@ namespace Prototype_Solution
             }
         }
 
+        string picName;
         private void picBtn_Click(object sender, EventArgs e)
         {
-            string name = ((PictureBox)sender).Image.Tag.ToString();
+            picName = ((PictureBox)sender).Image.Tag.ToString();
             panel1.Controls.Clear();
-            setPanel(name);
+            setPanel(picName);
         }
 
         private void nrOfModules_SelectedIndexChanged(object sender, EventArgs e)
@@ -189,12 +187,13 @@ namespace Prototype_Solution
             split1.BackColor = Color.White;
             split1.BorderStyle = split2.BorderStyle = BorderStyle.Fixed3D;
 
-            for(int i = 0;i<4;i++)
+            for(int i = 0;i<int.Parse(nrOfModules.SelectedItem.ToString());i++)
             {
                 box.Add(new ListBox());
                 box[i].Name = "box" + i;
                 box[i].ContextMenuStrip = contextMenuStrip;
                 box[i].Dock = DockStyle.Fill;
+                box[i].BorderStyle = BorderStyle.None;
             }
 
             switch (pic)
