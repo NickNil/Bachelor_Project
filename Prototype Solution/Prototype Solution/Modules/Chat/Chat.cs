@@ -16,6 +16,7 @@ namespace Prototype_Solution
             chat_screen = new Chat_screen();
             chat_offscreen = new Chat_offscreen(chat_screen);
             
+            
         }
 
         private void InitializeComponent()
