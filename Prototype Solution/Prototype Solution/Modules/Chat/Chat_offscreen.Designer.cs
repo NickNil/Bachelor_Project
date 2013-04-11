@@ -43,11 +43,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.textToChat);
-            this.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Name = "Chat_offscreen";
-            this.Text = "Chat_offscreen";
+            this.Size = new System.Drawing.Size(1264, 850);
             this.ResumeLayout(false);
             this.PerformLayout();
 

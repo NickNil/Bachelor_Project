@@ -19,7 +19,7 @@ namespace Prototype_Solution
         List<Start.modules> modList;
         SplitContainer split1, split2;
         string layout;
-       
+        Connection connection;
 
         public Base_offscreen()
         {
@@ -34,8 +34,16 @@ namespace Prototype_Solution
 
         private void Base_offscreen_Load(object sender, EventArgs e)
         {
-            createLayout();                      
+            chat = null;
+            jukebox = null;
+            ad_image = null;
 
+
+
+            createLayout();
+
+            connection = new Connection(chat, jukebox);
+            
             //Base_screen
             base_screen = new Base_screen(modList, layout);
             base_screen.Show();
@@ -63,6 +71,7 @@ namespace Prototype_Solution
                 temp = ad_image.ad_image_offscreen;
             }
             modList[nr] = item;
+            
             return temp;
         }
 

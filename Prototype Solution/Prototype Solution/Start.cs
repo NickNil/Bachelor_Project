@@ -12,6 +12,7 @@ namespace Prototype_Solution
     public partial class Start : Form
     {
         Base_offscreen base_offscreen;
+        String selectedLayout;
 
         public struct modules
         {
@@ -32,6 +33,14 @@ namespace Prototype_Solution
             InitializeComponent();
 
             nrOfModules.SelectedIndex = Properties.Settings.Default.nrOfModules;
+            selectedLayout = Properties.Settings.Default.selectedLayout;
+            if (nrOfModules.SelectedIndex == 1 || nrOfModules.SelectedIndex == 2)
+            {
+                if(selectedLayout != null)
+                    setPanel(selectedLayout);
+            }
+                
+
             contextMenuStrip.Items.Add("Jukebox");
             contextMenuStrip.Items.Add("Chat");
             contextMenuStrip.Items.Add("Ad_Image");
@@ -42,7 +51,7 @@ namespace Prototype_Solution
         {
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnStart_Click(object sender, EventArgs e)
         {
             List<modules> list = new List<modules>();
 
@@ -119,8 +128,10 @@ namespace Prototype_Solution
         string picName;
         private void picBtn_Click(object sender, EventArgs e)
         {
-            picName = ((PictureBox)sender).Image.Tag.ToString();
+            picName = ((Button)sender).Image.Tag.ToString();
             panel1.Controls.Clear();
+
+            Properties.Settings.Default.selectedLayout = picName;
             setPanel(picName);
         }
 
@@ -171,7 +182,8 @@ namespace Prototype_Solution
                     break;
             }
 
-            
+            if(box != null)
+                CheckBoxes();
         }
 
         private SplitContainer split1;
@@ -272,14 +284,41 @@ namespace Prototype_Solution
                     break;
             }
             split1.SplitterDistance = split1.Width / 2;
+
+            if (box != null)
+                CheckBoxes();
         }
 
         public void contextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             ListBox temp = (ListBox)(((ContextMenuStrip)sender).SourceControl);
+
+            foreach (ListBox boks in box)
+            {
+                if (boks.Items.Count > 0 && boks.Items[0].ToString() == e.ClickedItem.Text)
+                    boks.Items.Clear();
+            }
+
             if (temp.Items.Count > 0)
                 temp.Items.Clear();
             temp.Items.Add(e.ClickedItem.Text);
+
+            CheckBoxes();
+        }
+
+        public void CheckBoxes()
+        {
+            int boxes = 0;
+            foreach (ListBox boks in box)
+            {
+                if (boks.Items.Count == 1)
+                    boxes++;
+            }
+
+            if (boxes == int.Parse(nrOfModules.Text))
+                btnStart.Enabled = true;
+            else
+                btnStart.Enabled = false;
         }
     }
 }

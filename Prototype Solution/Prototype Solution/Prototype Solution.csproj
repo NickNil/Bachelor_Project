@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection.cs" />
     <Compile Include="Modules\Ad_Image\Ad_Image.cs" />
     <Compile Include="Modules\Ad_Image\Ad_Image_offscreen.cs">
       <SubType>UserControl</SubType>
@@ -84,17 +85,17 @@
     <Compile Include="Modules\Chat\Chat_screen.designer.cs">
       <DependentUpon>Chat_screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Jukebox\JB_screen.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Modules\Jukebox\JB_screen.designer.cs">
-      <DependentUpon>JB_screen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modules\Jukebox\JB_offscreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Modules\Jukebox\JB_offscreen.Designer.cs">
       <DependentUpon>JB_offscreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Jukebox\JB_screen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Jukebox\JB_screen.designer.cs">
+      <DependentUpon>JB_screen.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Jukebox\Jukebox.cs" />
     <Compile Include="Program.cs" />
@@ -124,11 +125,11 @@
     <EmbeddedResource Include="Modules\Chat\Chat_screen.resx">
       <DependentUpon>Chat_screen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Jukebox\JB_screen.resx">
-      <DependentUpon>JB_screen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modules\Jukebox\JB_offscreen.resx">
       <DependentUpon>JB_offscreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Jukebox\JB_screen.resx">
+      <DependentUpon>JB_screen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -174,21 +175,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Modules\Jukebox\Resources\next_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Modules\Jukebox\Resources\pause_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Modules\Jukebox\Resources\play_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Modules\Jukebox\Resources\prev_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Modules\Jukebox\Resources\stop_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Start\screen2_1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +191,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Start\screen3_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Modules\Jukebox\Resources\next_icon.png" />
+    <Content Include="Modules\Jukebox\Resources\pause_icon.png" />
+    <Content Include="Modules\Jukebox\Resources\play_icon.png" />
+    <Content Include="Modules\Jukebox\Resources\prev_icon.png" />
+    <Content Include="Modules\Jukebox\Resources\stop_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HPWeb2\HPWeb2\HPWeb2\HPWeb2.csproj">
+      <Project>{A71706E8-893F-4A4D-B031-FFA148C23425}</Project>
+      <Name>HPWeb2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

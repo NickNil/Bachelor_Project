@@ -11,7 +11,7 @@ namespace Prototype_Solution
 {
     public partial class Chat_offscreen : UserControl
     {
-        Chat_screen chat_screen;
+        //Chat_screen chat_screen;
 
         public Chat_offscreen()
         {
@@ -21,14 +21,14 @@ namespace Prototype_Solution
         public Chat_offscreen(Chat_screen chat_screen)
         {
             InitializeComponent();
-            this.chat_screen = chat_screen;
+            //this.chat_screen = chat_screen;
         }
 
         private void textToChat_TextChanged(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                chat_screen.textChat.Text += textToChat.Text;
+                //chat_screen.textChat.Text += textToChat.Text;
                 textToChat.Clear();
             }
         }
