@@ -20,7 +20,7 @@ namespace HPWeb1
         {
             TextBox chatText = (TextBox)HeadLoginView.FindControl("TBMsg");
             string username = HeadLoginView.FindControl("HeadLoginName").Page.User.Identity.Name;
-            string chatInput = username + ": " + chatText.Text;
+            string chatInput = "Chat=" + username + ": " + chatText.Text;
             chatText.Text = "";
             c.Send(chatInput);
         }

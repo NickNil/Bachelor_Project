@@ -6,14 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-//using WMPLib;
+using WMPLib;
 
 namespace Prototype_Solution
 {
     public partial class Base_offscreen : Form
     {
         Base_screen base_screen;
-        //public Jukebox jukebox;
+        public Jukebox jukebox;
         public Chat chat;
         public Ad_Image ad_image;
         List<Start.modules> modList;
@@ -34,8 +34,16 @@ namespace Prototype_Solution
 
         private void Base_offscreen_Load(object sender, EventArgs e)
         {
-            createLayout();                      
+            chat = null;
+            jukebox = null;
+            ad_image = null;
 
+
+
+            createLayout();
+
+            connection = new Connection(chat, jukebox);
+            
             //Base_screen
             base_screen = new Base_screen(modList, layout);
             base_screen.Show();
@@ -44,13 +52,13 @@ namespace Prototype_Solution
         private UserControl selectMods(Start.modules item, int nr)
         {
             UserControl temp;
-            /*if (item.name.Equals("Jukebox"))
+            if (item.name.Equals("Jukebox"))
             {
                 jukebox = new Jukebox();
                 item.userControl = jukebox.jb_screen;
                 temp = jukebox.jb_offscreen;
             }
-            else */if (item.name.Equals("Chat"))
+            else if (item.name.Equals("Chat"))
             {
                 chat = new Chat();
                 item.userControl = chat.chat_screen;
@@ -63,7 +71,7 @@ namespace Prototype_Solution
                 temp = ad_image.ad_image_offscreen;
             }
             modList[nr] = item;
-             connection = new Connection(chat.chat_screen);
+            
             return temp;
         }
 

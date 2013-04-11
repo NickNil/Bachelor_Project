@@ -13,18 +13,21 @@ namespace Prototype_Solution
 { 
     class Connection
     {
-        Chat_screen chat_screen;
+        Chat chat;
+        Jukebox jukebox;
 
         SocketPermission permission;
         Socket sListener;
         IPEndPoint ipEndPoint;
         Socket handler;
 
-        public Connection(Chat_screen c)
+        public Connection(Chat chat, Jukebox jukebox)
         {
             try
             {
-                chat_screen = c;
+                this.chat = chat;
+                this.jukebox = jukebox;
+                
 
                 permission = new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts);
 
@@ -99,7 +102,11 @@ namespace Prototype_Solution
                     content += Encoding.Unicode.GetString(buffer, 0,
                         bytesRead);
 
-                    chat_screen.SetText(content);
+                    if(content.IndexOf("Chat=") == 0)
+                        TryChat(content.Remove(0, 5));
+
+                    if (content.IndexOf("Jukebox=") == 0)
+                        TryJukebox(content.Remove(0, 8));
 
 
                     byte[] buffernew = new byte[1024];
@@ -113,6 +120,18 @@ namespace Prototype_Solution
             }
             catch (Exception exc) { Debug.WriteLine(exc.ToString()); } 
             
+        }
+
+        public void TryChat(string content)
+        {
+            if (chat != null)
+                chat.chat_screen.SetText(content);
+        }
+
+        public void TryJukebox(string content)
+        {
+            if (jukebox != null)
+                Debug.WriteLine(content);
         }
     }
 }
