@@ -85,19 +85,6 @@
     <Compile Include="Modules\Chat\Chat_screen.designer.cs">
       <DependentUpon>Chat_screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Jukebox\JB_screen.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Modules\Jukebox\JB_screen.designer.cs">
-      <DependentUpon>JB_screen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\Jukebox\JB_offscreen.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Modules\Jukebox\JB_offscreen.Designer.cs">
-      <DependentUpon>JB_offscreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\Jukebox\Jukebox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
@@ -124,12 +111,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Chat\Chat_screen.resx">
       <DependentUpon>Chat_screen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Jukebox\JB_screen.resx">
-      <DependentUpon>JB_screen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Jukebox\JB_offscreen.resx">
-      <DependentUpon>JB_offscreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -173,21 +154,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Modules\Jukebox\Resources\next_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Modules\Jukebox\Resources\pause_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Modules\Jukebox\Resources\play_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Modules\Jukebox\Resources\prev_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Modules\Jukebox\Resources\stop_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Start\screen2_1.png" />

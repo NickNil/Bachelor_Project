@@ -15,7 +15,7 @@ namespace Prototype_Solution
             InitializeComponent();
             chat_screen = new Chat_screen();
             chat_offscreen = new Chat_offscreen(chat_screen);
-            Connection c = new Connection(chat_screen);
+            
             
         }
 
