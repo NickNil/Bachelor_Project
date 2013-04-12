@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JB_offscreen));
             this.btnAdd = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnSavePlaylist = new System.Windows.Forms.Button();
+            this.btnPlaylist = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
@@ -66,6 +68,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnSavePlaylist);
+            this.splitContainer1.Panel1.Controls.Add(this.btnPlaylist);
             this.splitContainer1.Panel1.Controls.Add(this.btnNext);
             this.splitContainer1.Panel1.Controls.Add(this.btnPrev);
             this.splitContainer1.Panel1.Controls.Add(this.btnStop);
@@ -77,10 +81,30 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.listBox_songs);
-            this.splitContainer1.Size = new System.Drawing.Size(315, 295);
+            this.splitContainer1.Size = new System.Drawing.Size(1042, 589);
             this.splitContainer1.SplitterDistance = 111;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 5;
+            // 
+            // btnSavePlaylist
+            // 
+            this.btnSavePlaylist.Location = new System.Drawing.Point(3, 31);
+            this.btnSavePlaylist.Name = "btnSavePlaylist";
+            this.btnSavePlaylist.Size = new System.Drawing.Size(75, 23);
+            this.btnSavePlaylist.TabIndex = 13;
+            this.btnSavePlaylist.Text = "Save Playlist";
+            this.btnSavePlaylist.UseVisualStyleBackColor = true;
+            this.btnSavePlaylist.Click += new System.EventHandler(this.btnSavePlaylist_Click);
+            // 
+            // btnPlaylist
+            // 
+            this.btnPlaylist.Location = new System.Drawing.Point(3, 56);
+            this.btnPlaylist.Name = "btnPlaylist";
+            this.btnPlaylist.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaylist.TabIndex = 12;
+            this.btnPlaylist.Text = "Load Playlist";
+            this.btnPlaylist.UseVisualStyleBackColor = true;
+            this.btnPlaylist.Click += new System.EventHandler(this.btnPlaylist_Click);
             // 
             // btnNext
             // 
@@ -150,10 +174,10 @@
             // mediaP
             // 
             this.mediaP.Enabled = true;
-            this.mediaP.Location = new System.Drawing.Point(12, 41);
+            this.mediaP.Location = new System.Drawing.Point(84, 42);
             this.mediaP.Name = "mediaP";
             this.mediaP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mediaP.OcxState")));
-            this.mediaP.Size = new System.Drawing.Size(279, 64);
+            this.mediaP.Size = new System.Drawing.Size(279, 66);
             this.mediaP.TabIndex = 6;
             this.mediaP.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.mediaP_PlayStateChange);
             // 
@@ -165,18 +189,17 @@
             "No songs added"});
             this.listBox_songs.Location = new System.Drawing.Point(0, 0);
             this.listBox_songs.Name = "listBox_songs";
-            this.listBox_songs.Size = new System.Drawing.Size(315, 183);
+            this.listBox_songs.Size = new System.Drawing.Size(1042, 477);
             this.listBox_songs.TabIndex = 1;
+            this.listBox_songs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox_songs_KeyDown);
             // 
             // JB_offscreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 295);
             this.Controls.Add(this.splitContainer1);
-            this.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Name = "JB_offscreen";
-            this.Text = "JB_offscreen";
+            this.Size = new System.Drawing.Size(1042, 589);
             this.Load += new System.EventHandler(this.JB_offscreen_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -199,5 +222,7 @@
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.Button btnPlaylist;
+        private System.Windows.Forms.Button btnSavePlaylist;
     }
 }

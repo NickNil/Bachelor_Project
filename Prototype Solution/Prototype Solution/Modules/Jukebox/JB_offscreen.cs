@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using WMPLib;
+using System.IO;
 
 namespace Prototype_Solution
 {
@@ -60,6 +61,7 @@ namespace Prototype_Solution
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Multiselect = true;
+            fileDialog.Filter = "Music(*.mp3)|*.mp3";
             fileDialog.ShowDialog();
 
             songs.Clear();
@@ -179,6 +181,61 @@ namespace Prototype_Solution
                 songs.RemoveAt(0);
                 songs.Add(tempItem);
                 updateTxt();
+            }
+        }
+
+        private void btnPlaylist_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Jukebox(*.itp)|*.itp";
+            fileDialog.ShowDialog();
+
+            if(fileDialog.FileName != string.Empty)
+                LoadPlaylist(fileDialog.FileName);
+        }
+
+        private void LoadPlaylist(string fileName)
+        {
+            try
+            {
+                using (StreamReader streamReader = new StreamReader(fileName))
+                {
+                    string line;
+                    songs.Clear();
+                    while ((line = streamReader.ReadLine()) != null)
+                    {
+                        songs.Add(line);
+                    }
+                    updateTxt();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        private void btnSavePlaylist_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fileDialog = new SaveFileDialog();
+            fileDialog.FileName = "Playlist.itp";
+            fileDialog.Filter = "Jukebox(*.itp)|*.itp";
+            fileDialog.ShowDialog();
+
+            string name = fileDialog.FileName;
+            File.WriteAllLines(name, songs);
+        }
+
+        private void listBox_songs_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (songs.Count > 0)
+                {
+                    songs.RemoveAt(listBox_songs.SelectedIndex);
+                    updateTxt();
+                }
             }
         }
     }

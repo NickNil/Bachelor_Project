@@ -199,12 +199,6 @@
     <Content Include="Modules\Jukebox\Resources\prev_icon.png" />
     <Content Include="Modules\Jukebox\Resources\stop_icon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\HPWeb2\HPWeb2\HPWeb2\HPWeb2.csproj">
-      <Project>{A71706E8-893F-4A4D-B031-FFA148C23425}</Project>
-      <Name>HPWeb2</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
