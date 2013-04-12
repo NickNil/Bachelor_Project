@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPWeb2", "HPWeb2\HPWeb2.csproj", "{A71706E8-893F-4A4D-B031-FFA148C23425}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype Solution", "..\..\Prototype Solution\Prototype Solution\Prototype Solution.csproj", "{68B435FC-E90B-41AA-B3F8-BF4FDB8DE2B1}"
