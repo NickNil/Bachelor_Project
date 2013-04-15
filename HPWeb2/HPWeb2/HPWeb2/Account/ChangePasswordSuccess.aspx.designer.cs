@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HPWeb2.Account
+namespace HPWeb1.Account
 {
 
 

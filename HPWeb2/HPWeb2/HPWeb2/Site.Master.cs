@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HPWeb2
+namespace HPWeb1
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {

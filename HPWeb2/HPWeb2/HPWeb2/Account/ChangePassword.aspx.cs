@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HPWeb2.Account
+namespace HPWeb1.Account
 {
     public partial class ChangePassword : System.Web.UI.Page
     {

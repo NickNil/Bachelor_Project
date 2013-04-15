@@ -6,7 +6,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HPWeb2.Account
+namespace HPWeb1.Account
 {
     public partial class Register : System.Web.UI.Page
     {

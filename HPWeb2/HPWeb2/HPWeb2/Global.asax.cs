@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace HPWeb2
+namespace HPWeb1
 {
     public class Global : System.Web.HttpApplication
     {

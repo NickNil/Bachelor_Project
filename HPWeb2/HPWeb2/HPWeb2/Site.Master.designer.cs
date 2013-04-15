@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HPWeb2 {
+namespace HPWeb1 {
     
     
     public partial class SiteMaster {
