@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="True"
-    CodeBehind="Chat.aspx.cs" Inherits="HPWeb1.WebForm1" %>
+    CodeBehind="Chat.aspx.cs" Inherits="HPWeb2.WebForm1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>

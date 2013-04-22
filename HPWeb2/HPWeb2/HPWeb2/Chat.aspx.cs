@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HPWeb1
+namespace HPWeb2
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        Connection c;
+        Connection_C c;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            c = new Connection();
+            c = new Connection_C();
         }
 
         protected void BtnSend_Click(object sender, EventArgs e)

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HPWeb1 {
+namespace HPWeb2 {
     
     
     public partial class WebForm1 {

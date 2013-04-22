@@ -11,17 +11,19 @@ using System.Diagnostics;
 
 namespace Prototype_Solution
 { 
-    class Connection
+    class Connection_S
     {
         Chat chat;
         Jukebox jukebox;
+
+        string playlist;
 
         SocketPermission permission;
         Socket sListener;
         IPEndPoint ipEndPoint;
         Socket handler;
 
-        public Connection(Chat chat, Jukebox jukebox)
+        public Connection_S(Chat chat, Jukebox jukebox)
         {
             try
             {
@@ -46,7 +48,7 @@ namespace Prototype_Solution
 
                 sListener.Bind(ipEndPoint);
 
-                sListener.Listen(10);
+                sListener.Listen(100);
 
                 AsyncCallback aCallback = new AsyncCallback(AcceptCallback);
                 sListener.BeginAccept(aCallback, sListener);
@@ -122,6 +124,39 @@ namespace Prototype_Solution
             
         }
 
+        public void Send_msg(string message)
+        {
+            try
+            {
+
+                // Prepare the reply message  
+                byte[] byteData =
+                    Encoding.Unicode.GetBytes(message);
+
+                // Sends data asynchronously to a connected Socket  
+                handler.BeginSend(byteData, 0, byteData.Length, 0,
+                    new AsyncCallback(SendCallback), handler);
+            }
+            catch (Exception exc) { Debug.WriteLine(exc.ToString()); } 
+
+        }
+
+        public void SendCallback(IAsyncResult ar)
+        {
+            try
+            {
+                // A Socket which has sent the data to remote host  
+                Socket handler = (Socket)ar.AsyncState;
+
+                // The number of bytes sent to the Socket  
+                int bytesSend = handler.EndSend(ar);
+                Console.WriteLine(
+                    "Sent {0} bytes to Client", bytesSend);
+            }
+            catch (Exception exc) { Debug.WriteLine(exc.ToString()); }
+        } 
+
+
         public void TryChat(string content)
         {
             if (chat != null)
@@ -131,7 +166,19 @@ namespace Prototype_Solution
         public void TryJukebox(string content)
         {
             if (jukebox != null)
-                Debug.WriteLine(content);
+            {
+                if (content.Contains("Page Load"))
+                {
+                    foreach(string song in jukebox.jb_offscreen.songs2)
+                        playlist += song + "\n";
+                    Send_msg(playlist);
+                }
+                else
+                {
+                    MessageBox.Show("vote recieved for " + content);
+                }
+
+            }
         }
     }
 }
