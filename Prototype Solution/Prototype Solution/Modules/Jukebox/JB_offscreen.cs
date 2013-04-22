@@ -110,8 +110,13 @@ namespace Prototype_Solution
 
             listBox_songs.DataSource = null;
             listBox_songs.DataSource = songs2;
-            jb_screen.listBox_songs.DataSource = null;
-            jb_screen.listBox_songs.DataSource = songs2;
+
+            jb_screen.label1.Text = String.Empty;
+            foreach (string str in songs2)
+            {
+                jb_screen.label1.Text += str + "\n";
+            }
+            
 
            
         }

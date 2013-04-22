@@ -28,40 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textChat = new System.Windows.Forms.RichTextBox();
+            this.textChat = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textChat
             // 
+            this.textChat.AutoSize = true;
             this.textChat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textChat.ForeColor = System.Drawing.Color.DarkOrange;
             this.textChat.Location = new System.Drawing.Point(0, 0);
-            this.textChat.MaxLength = 100;
             this.textChat.Name = "textChat";
-            this.textChat.ReadOnly = true;
-            this.textChat.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.textChat.Size = new System.Drawing.Size(284, 261);
-            this.textChat.TabIndex = 0;
-            this.textChat.Text = "";
-            this.textChat.TextChanged += new System.EventHandler(this.textChat_TextChanged);
+            this.textChat.Size = new System.Drawing.Size(0, 29);
+            this.textChat.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.textChat);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1042, 589);
+            this.panel1.TabIndex = 3;
             // 
             // Chat_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textChat);
-            this.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Controls.Add(this.panel1);
             this.Name = "Chat_screen";
-            this.Text = "Chat_screen";
-            this.Load += new System.EventHandler(this.Chat_screen_Load);
+            this.Size = new System.Drawing.Size(1042, 589);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.RichTextBox textChat;
+        public System.Windows.Forms.Label textChat;
+        private System.Windows.Forms.Panel panel1;
 
     }
 }

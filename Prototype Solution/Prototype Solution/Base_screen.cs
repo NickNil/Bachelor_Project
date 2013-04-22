@@ -42,6 +42,8 @@ namespace Prototype_Solution
         {
             split1 = new SplitContainer();
             split2 = new SplitContainer();
+            split1.BackColor = Color.Transparent;
+            split2.BackColor = Color.Transparent;
             split1.BorderStyle = split2.BorderStyle = BorderStyle.Fixed3D;
 
             switch (layout)

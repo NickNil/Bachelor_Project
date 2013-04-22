@@ -28,43 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox_songs = new System.Windows.Forms.ListBox();
             this.textNowP = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // listBox_songs
-            // 
-            this.listBox_songs.BackColor = System.Drawing.SystemColors.Window;
-            this.listBox_songs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox_songs.FormattingEnabled = true;
-            this.listBox_songs.Items.AddRange(new object[] {
-            "No songs added"});
-            this.listBox_songs.Location = new System.Drawing.Point(0, 0);
-            this.listBox_songs.Margin = new System.Windows.Forms.Padding(0);
-            this.listBox_songs.Name = "listBox_songs";
-            this.listBox_songs.Size = new System.Drawing.Size(284, 241);
-            this.listBox_songs.TabIndex = 0;
             // 
             // textNowP
             // 
             this.textNowP.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textNowP.Location = new System.Drawing.Point(0, 241);
+            this.textNowP.Location = new System.Drawing.Point(0, 569);
             this.textNowP.Margin = new System.Windows.Forms.Padding(0);
             this.textNowP.Name = "textNowP";
-            this.textNowP.Size = new System.Drawing.Size(284, 20);
+            this.textNowP.Size = new System.Drawing.Size(1042, 20);
             this.textNowP.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "No Songs";
             // 
             // JB_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.listBox_songs);
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textNowP);
-            this.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Name = "JB_screen";
-            this.Text = "JB_screen";
-            this.Load += new System.EventHandler(this.JB_screen_Load);
+            this.Size = new System.Drawing.Size(1042, 589);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,12 +67,7 @@
 
         #endregion
 
-        public System.Windows.Forms.ListBox listBox_songs;
         public System.Windows.Forms.TextBox textNowP;
-
-
-
-
-
+        public System.Windows.Forms.Label label1;
     }
 }

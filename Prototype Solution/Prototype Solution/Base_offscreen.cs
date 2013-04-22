@@ -71,6 +71,8 @@ namespace Prototype_Solution
                 temp = ad_image.ad_image_offscreen;
             }
             modList[nr] = item;
+
+           // item.userControl.BackColor = Color.FromArgb(0, 0, 0, 0);
             
             return temp;
         }

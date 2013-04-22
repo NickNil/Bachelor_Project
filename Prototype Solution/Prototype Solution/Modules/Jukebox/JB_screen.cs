@@ -16,9 +16,5 @@ namespace Prototype_Solution
         {
             InitializeComponent();
         }
-
-        private void JB_screen_Load(object sender, EventArgs e)
-        {
-        }
     }
 }

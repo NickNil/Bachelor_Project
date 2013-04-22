@@ -11,11 +11,16 @@ namespace Prototype_Solution
 {
     public partial class Chat_screen : UserControl
     {
+        int maxLines;
+        List<string> chatList;
         delegate void SetTextCallback(string text);
 
         public Chat_screen()
         {
             InitializeComponent();
+            chatList = new List<string>();
+            maxLines = this.Size.Height / textChat.Font.Height;
+            Console.WriteLine(maxLines);
         }
 
         public void SetText(string text)
@@ -30,20 +35,21 @@ namespace Prototype_Solution
             }
             else
             {
-                this.textChat.Text += text;
+                this.WriteText(text);
             }
         }
 
-        private void Chat_screen_Load(object sender, EventArgs e)
+        public void WriteText(string text)
         {
+            //Auto scroll
+            maxLines = (panel1.Parent.Parent.Height / textChat.Font.Height);
+            if (chatList.Count >= maxLines)
+                chatList.RemoveAt(0);
+            chatList.Add(text);
 
-        }
-
-        private void textChat_TextChanged(object sender, EventArgs e)
-        {           
-            textChat.SelectionStart = textChat.Text.Length;
-            textChat.ScrollToCaret();
-            textChat.Text += Environment.NewLine;
+            textChat.Text = String.Empty;
+            foreach (string str in chatList)
+                textChat.Text += str + "\n";
         }
     }
 }

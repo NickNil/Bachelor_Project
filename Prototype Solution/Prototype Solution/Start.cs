@@ -36,8 +36,11 @@ namespace Prototype_Solution
             selectedLayout = Properties.Settings.Default.selectedLayout;
             if (nrOfModules.SelectedIndex == 1 || nrOfModules.SelectedIndex == 2)
             {
-                if(selectedLayout != null)
+                if (selectedLayout != null)
+                {
                     setPanel(selectedLayout);
+                    picName = selectedLayout;
+                }
             }
                 
 
@@ -54,6 +57,7 @@ namespace Prototype_Solution
         private void btnStart_Click(object sender, EventArgs e)
         {
             List<modules> list = new List<modules>();
+
 
             foreach (ListBox listBox in box)
             {

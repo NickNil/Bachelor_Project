@@ -98,6 +98,9 @@
       <DependentUpon>JB_screen.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Jukebox\Jukebox.cs" />
+    <Compile Include="ListBox_Transparent.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
@@ -198,6 +201,7 @@
     <Content Include="Modules\Jukebox\Resources\play_icon.png" />
     <Content Include="Modules\Jukebox\Resources\prev_icon.png" />
     <Content Include="Modules\Jukebox\Resources\stop_icon.png" />
+    <None Include="Resources\background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
