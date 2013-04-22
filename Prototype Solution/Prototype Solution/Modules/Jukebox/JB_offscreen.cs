@@ -14,7 +14,7 @@ namespace Prototype_Solution
     public partial class JB_offscreen : UserControl
     {
         Timer timer = new Timer();
-        List<string> songs = new List<string>();
+        List<Song> songs = new List<Song>();
         public List<string> songs2;
         JB_screen jb_screen;
         WMPLib.IWMPControls3 mediaP_controls;
@@ -49,7 +49,7 @@ namespace Prototype_Solution
                 mediaP.URL = songs[0].ToString();
                 string tempItem = songs[0].ToString();
                 songs.RemoveAt(0);
-                songs.Add(tempItem);
+                songs.Add(new Song(tempItem));
                 timer.Stop();
                 updateTxt();
             }
@@ -68,7 +68,7 @@ namespace Prototype_Solution
             songs.Clear();
             foreach (string name in fileDialog.FileNames)
             {
-                songs.Add(name);
+                songs.Add(new Song(name));
             }
             updateTxt();
         }
@@ -98,15 +98,17 @@ namespace Prototype_Solution
 
         public void updateTxt()
         {
-            songs2 = new List<string>(songs);
+            songs2 = new List<string>();
 
             //Remove file path & file extension
             for (int i = 0; i < songs.Count; i++)
             {
                 //Remove path
-                songs2[i] = songs2[i].Substring(songs2[i].LastIndexOf("\\") + 1, songs2[i].LastIndexOf(".")-1 - songs2[i].LastIndexOf("\\"));
+                songs[i].name = songs[i].path.Substring(songs[i].path.LastIndexOf("\\") + 1, songs[i].path.LastIndexOf(".") - 1 - songs[i].path.LastIndexOf("\\"));
 
-                songs2[i] = songs2[i].Replace("_", " ");
+                songs[i].name = songs[i].name.Replace("_", " ");
+
+                songs2.Add(songs[i].votes + ": " + songs[i].name);
             }
 
             listBox_songs.DataSource = null;
@@ -135,7 +137,7 @@ namespace Prototype_Solution
                 mediaP.URL = songs[0].ToString();
                 string tempItem = songs[0].ToString();
                 songs.RemoveAt(0);
-                songs.Add(tempItem);
+                songs.Add(new Song(tempItem));
                 updateTxt();
             }
 
@@ -185,7 +187,7 @@ namespace Prototype_Solution
                 mediaP.URL = songs[0].ToString();
                 string tempItem = songs[0].ToString();
                 songs.RemoveAt(0);
-                songs.Add(tempItem);
+                songs.Add(new Song(tempItem));
                 updateTxt();
             }
         }
@@ -210,7 +212,7 @@ namespace Prototype_Solution
                     songs.Clear();
                     while ((line = streamReader.ReadLine()) != null)
                     {
-                        songs.Add(line);
+                        songs.Add(new Song(line));
                     }
                     updateTxt();
                 }
@@ -229,8 +231,12 @@ namespace Prototype_Solution
             fileDialog.Filter = "Jukebox(*.itp)|*.itp";
             fileDialog.ShowDialog();
 
+            List<string> temp = new List<string>();
+            for (int i = 0; i < songs.Count; i++)
+                temp.Add(songs[i].ToString());
+
             string name = fileDialog.FileName;
-            File.WriteAllLines(name, songs);
+            File.WriteAllLines(name, temp);
         }
 
         private void listBox_songs_KeyDown(object sender, KeyEventArgs e)
@@ -243,6 +249,15 @@ namespace Prototype_Solution
                     updateTxt();
                 }
             }
+        }
+
+        public void Vote(string name)
+        {
+            foreach (Song song in songs)
+                song.newVote(name);
+            songs.Sort(delegate(Song s1, Song s2) { return s2.votes.CompareTo(s1.votes); }); ;
+            updateTxt();
+
         }
     }
 }

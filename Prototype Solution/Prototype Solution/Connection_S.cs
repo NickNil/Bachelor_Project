@@ -175,7 +175,7 @@ namespace Prototype_Solution
                 }
                 else
                 {
-                    MessageBox.Show("vote recieved for " + content);
+                    jukebox.jb_offscreen.Vote(content);
                 }
 
             }
