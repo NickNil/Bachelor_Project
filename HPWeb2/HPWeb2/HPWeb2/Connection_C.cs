@@ -9,15 +9,16 @@ using System.Net;
 using System.Net.Sockets;
 //http://www.codeproject.com/Articles/463947/Working-with-Sockets-in-Csharp
 
-namespace HPWeb1
+namespace HPWeb2
 {
-    public class Connection
+    public class Connection_C
     {
-        
+        public string receivedData;
+    
         byte[] bytes = new byte[1024];
         Socket senderSock;
 
-        public Connection()
+        public Connection_C()
         {
             try
             {
@@ -51,6 +52,7 @@ namespace HPWeb1
 
                 // Establishes a connection to a remote host  
                 senderSock.Connect(ipEndPoint);
+
             }
             catch (Exception exc) { Debug.WriteLine(exc.ToString()); } 
         }
@@ -66,5 +68,31 @@ namespace HPWeb1
             }
             catch (Exception exc) { Debug.WriteLine(exc.ToString()); } 
         }
+
+        public void ReceiveDataFromServer()
+        {
+            try
+            {
+                // Receives data from a bound Socket.  
+                int bytesRec = senderSock.Receive(bytes);
+
+                // Converts byte array to string  
+                String theMessageToReceive = Encoding.Unicode.GetString(bytes, 0, bytesRec);
+
+                // Continues to read the data till data isn't available  
+                /*while (senderSock.Available > 0)
+                {
+                    bytesRec = senderSock.Receive(bytes);
+                    theMessageToReceive += Encoding.Unicode.GetString(bytes, 0, bytesRec);
+                }*/
+
+                receivedData = theMessageToReceive;
+
+
+            }
+            catch (Exception exc) { Debug.WriteLine(exc.ToString()); }
+        } 
+
+
     }
 }

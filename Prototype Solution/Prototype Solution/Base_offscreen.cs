@@ -19,7 +19,7 @@ namespace Prototype_Solution
         List<Start.modules> modList;
         SplitContainer split1, split2;
         string layout;
-        Connection connection;
+        Connection_S connection;
 
         public Base_offscreen()
         {
@@ -42,7 +42,7 @@ namespace Prototype_Solution
 
             createLayout();
 
-            connection = new Connection(chat, jukebox);
+            connection = new Connection_S(chat, jukebox);
             
             //Base_screen
             base_screen = new Base_screen(modList, layout);

@@ -15,6 +15,7 @@ namespace Prototype_Solution
     {
         Timer timer = new Timer();
         List<string> songs = new List<string>();
+        public List<string> songs2;
         JB_screen jb_screen;
         WMPLib.IWMPControls3 mediaP_controls;
 
@@ -97,7 +98,7 @@ namespace Prototype_Solution
 
         public void updateTxt()
         {
-            List<string> songs2 = new List<string>(songs);
+            songs2 = new List<string>(songs);
 
             //Remove file path & file extension
             for (int i = 0; i < songs.Count; i++)

@@ -34,7 +34,7 @@
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
                         <asp:MenuItem NavigateUrl="~/Chat.aspx" Text="Chat"/>
-                        <asp:MenuItem NavigateUrl="~/JukeboxA.aspx" Text="Jukebox"/>
+                        <asp:MenuItem NavigateUrl="~/Jukebox.aspx" Text="Jukebox"/>
                     </Items>
                 </asp:Menu>
             </div>
