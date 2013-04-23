@@ -35,10 +35,11 @@
             // 
             // textChat
             // 
+            this.textChat.AutoEllipsis = true;
             this.textChat.AutoSize = true;
             this.textChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textChat.ForeColor = System.Drawing.Color.DarkOrange;
+            this.textChat.ForeColor = System.Drawing.Color.Gold;
             this.textChat.Location = new System.Drawing.Point(0, 0);
             this.textChat.Name = "textChat";
             this.textChat.Size = new System.Drawing.Size(0, 29);
@@ -51,16 +52,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1042, 589);
+            this.panel1.Size = new System.Drawing.Size(927, 521);
             this.panel1.TabIndex = 3;
             // 
             // Chat_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Name = "Chat_screen";
-            this.Size = new System.Drawing.Size(1042, 589);
+            this.Size = new System.Drawing.Size(927, 521);
+            this.Resize += new System.EventHandler(this.Chat_screen_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -11,7 +11,7 @@ namespace Prototype_Solution
 {
     public partial class Chat_screen : UserControl
     {
-        int maxLines;
+        const int MAX = 100;
         List<string> chatList;
         delegate void SetTextCallback(string text);
 
@@ -19,8 +19,6 @@ namespace Prototype_Solution
         {
             InitializeComponent();
             chatList = new List<string>();
-            maxLines = this.Size.Height / textChat.Font.Height;
-            Console.WriteLine(maxLines);
         }
 
         public void SetText(string text)
@@ -41,15 +39,44 @@ namespace Prototype_Solution
 
         public void WriteText(string text)
         {
+            if (text == String.Empty)
+                return;
+
+            //New line
+            Size textSize = TextRenderer.MeasureText(text, textChat.Font);
+            if (textSize.Width > Width)
+            {
+                WriteText(text.Substring(0, text.Length / 2));
+                WriteText(text.Substring(text.Length / 2));
+                return;
+            }
+
             //Auto scroll
-            maxLines = (panel1.Parent.Parent.Height / textChat.Font.Height);
-            if (chatList.Count >= maxLines)
+            int maxLines = (Height / textSize.Height);
+            while (chatList.Count >= MAX)
                 chatList.RemoveAt(0);
             chatList.Add(text);
 
             textChat.Text = String.Empty;
-            foreach (string str in chatList)
-                textChat.Text += str + "\n";
+            if (chatList.Count > maxLines)
+                foreach (string str in chatList.GetRange(chatList.Count - maxLines, maxLines))
+                    textChat.Text += str + "\n";
+            else
+                foreach (string str in chatList)
+                    textChat.Text += str + "\n";
+        }
+
+        private void Chat_screen_Resize(object sender, EventArgs e)
+        {
+            Size textSize = TextRenderer.MeasureText("blah", textChat.Font);
+            int maxLines = (Height / textSize.Height);
+            textChat.Text = String.Empty;
+            if (chatList.Count > maxLines)
+                foreach (string str in chatList.GetRange(chatList.Count - maxLines, maxLines))
+                    textChat.Text += str + "\n";
+            else
+                foreach (string str in chatList)
+                    textChat.Text += str + "\n";
         }
     }
 }

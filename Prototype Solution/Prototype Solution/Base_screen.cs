@@ -44,7 +44,12 @@ namespace Prototype_Solution
             split2 = new SplitContainer();
             split1.BackColor = Color.Transparent;
             split2.BackColor = Color.Transparent;
+            split1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer_SplitterMoved);
+            split1.Resize += new System.EventHandler(this.splitContainer_Resize);
+            split2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer_SplitterMoved);
+            split2.Resize += new System.EventHandler(this.splitContainer_Resize);
             split1.BorderStyle = split2.BorderStyle = BorderStyle.Fixed3D;
+            
 
             switch (layout)
             {
@@ -123,6 +128,32 @@ namespace Prototype_Solution
                     split2.SplitterDistance = split2.Width / 2;
                     break;
             }
+        }
+
+        private void splitContainer_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+            SplitContainer tempContainer = (SplitContainer)sender;
+
+            if(tempContainer.Panel1.Controls.Count > 0)
+                tempContainer.Panel1.Controls[0].Size = new Size(tempContainer.Panel1.Width, tempContainer.Panel1.Height);
+            if(tempContainer.Panel2.Controls.Count > 0)
+                tempContainer.Panel2.Controls[0].Size = new Size(tempContainer.Panel2.Width, tempContainer.Panel2.Height);
+        }
+
+        private void splitContainer_Resize(object sender, EventArgs e)
+        {
+            SplitContainer tempContainer = (SplitContainer)sender;
+
+            if (tempContainer.Panel1.Controls.Count > 0)
+                tempContainer.Panel1.Controls[0].Size = new Size(tempContainer.Panel1.Width, tempContainer.Panel1.Height);
+            if (tempContainer.Panel2.Controls.Count > 0)
+                tempContainer.Panel2.Controls[0].Size = new Size(tempContainer.Panel2.Width, tempContainer.Panel2.Height);
+        }
+
+        private void Base_screen_Resize(object sender, EventArgs e)
+        {
+            if (this.Controls.Count == 1)
+                this.Controls[0].Size = this.Size;
         }
     }
 }

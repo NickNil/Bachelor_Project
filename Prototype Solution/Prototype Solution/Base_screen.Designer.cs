@@ -37,14 +37,18 @@
             this.BackgroundImage = global::Prototype_Solution.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(598, 430);
+            this.DoubleBuffered = true;
             this.Name = "Base_screen";
+            this.Padding = new System.Windows.Forms.Padding(50);
             this.Text = "Base_screen";
             this.Load += new System.EventHandler(this.Base_screen_Load);
+            this.Resize += new System.EventHandler(this.Base_screen_Resize);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
 
 
 

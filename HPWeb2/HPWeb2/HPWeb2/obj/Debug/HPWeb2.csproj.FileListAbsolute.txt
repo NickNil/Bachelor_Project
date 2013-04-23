@@ -16,3 +16,8 @@ D:\Users\Nicklas\Desktop\Hovedprosjekt2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.dl
 D:\Users\Nicklas\Desktop\Hovedprosjekt2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.pdb
 D:\Users\Nicklas\Desktop\Hovedprosjekt2\HPWeb2\HPWeb2\HPWeb2\bin\HPWeb2.dll
 D:\Users\Nicklas\Desktop\Hovedprosjekt2\HPWeb2\HPWeb2\HPWeb2\bin\HPWeb2.pdb
+D:\Programming\Hovedprosjekt\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\bin\HPWeb2.dll
+D:\Programming\Hovedprosjekt\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\bin\HPWeb2.pdb
+D:\Programming\Hovedprosjekt\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.csprojResolveAssemblyReference.cache
+D:\Programming\Hovedprosjekt\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.dll
+D:\Programming\Hovedprosjekt\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.pdb

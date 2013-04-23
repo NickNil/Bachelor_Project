@@ -15,7 +15,7 @@ namespace Prototype_Solution
     {
         Timer timer = new Timer();
         List<Song> songs = new List<Song>();
-        public List<string> songs2;
+        public List<string> songs2 = new List<string>();
         JB_screen jb_screen;
         WMPLib.IWMPControls3 mediaP_controls;
 
@@ -111,6 +111,17 @@ namespace Prototype_Solution
                 songs2.Add(songs[i].votes + ": " + songs[i].name);
             }
 
+            updateLocal();
+        }
+
+        public void updateLocal()
+        {
+            if (jb_screen.label1.InvokeRequired)
+            {
+                jb_screen.label1.Invoke(new MethodInvoker(updateLocal));
+                return;
+            }
+
             listBox_songs.DataSource = null;
             listBox_songs.DataSource = songs2;
 
@@ -119,11 +130,9 @@ namespace Prototype_Solution
             {
                 jb_screen.label1.Text += str + "\n";
             }
-            
-
-           
         }
 
+        #region MediaPlayer Buttons
         private void btnPlay_Click(object sender, EventArgs e)
         {
             // Check first to be sure the operation is valid.
@@ -191,6 +200,7 @@ namespace Prototype_Solution
                 updateTxt();
             }
         }
+        #endregion
 
         private void btnPlaylist_Click(object sender, EventArgs e)
         {

@@ -128,14 +128,16 @@ namespace Prototype_Solution
         {
             try
             {
+                if (message != null)
+                {
+                    // Prepare the reply message  
+                    byte[] byteData =
+                        Encoding.Unicode.GetBytes(message);
 
-                // Prepare the reply message  
-                byte[] byteData =
-                    Encoding.Unicode.GetBytes(message);
-
-                // Sends data asynchronously to a connected Socket  
-                handler.BeginSend(byteData, 0, byteData.Length, 0,
-                    new AsyncCallback(SendCallback), handler);
+                    // Sends data asynchronously to a connected Socket  
+                    handler.BeginSend(byteData, 0, byteData.Length, 0,
+                        new AsyncCallback(SendCallback), handler);
+                }
             }
             catch (Exception exc) { Debug.WriteLine(exc.ToString()); } 
 
@@ -165,20 +167,28 @@ namespace Prototype_Solution
 
         public void TryJukebox(string content)
         {
-            if (jukebox != null)
+            try
             {
-                if (content.Contains("Page Load"))
+                if (jukebox != null)
                 {
-                    foreach(string song in jukebox.jb_offscreen.songs2)
-                        playlist += song + "\n";
-                    Send_msg(playlist);
-                }
-                else
-                {
-                    jukebox.jb_offscreen.Vote(content);
-                }
+                    if (content.Contains("Page Load"))
+                    {
+                        foreach (string song in jukebox.jb_offscreen.songs2)
+                            playlist += song + "\n";
 
+                        if (playlist != String.Empty)
+                            Send_msg(playlist);
+                        else
+                            return; //Gi error!!
+                    }
+                    else
+                    {
+                        jukebox.jb_offscreen.Vote(content);
+                    }
+
+                }
             }
+            catch (Exception exc) { Debug.WriteLine("Error \n\n " + exc.ToString()); }
         }
     }
 }
