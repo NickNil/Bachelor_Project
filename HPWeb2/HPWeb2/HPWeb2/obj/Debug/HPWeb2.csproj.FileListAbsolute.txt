@@ -21,3 +21,8 @@ D:\Programming\Hovedprosjekt\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\bin\HPWeb2.pdb
 D:\Programming\Hovedprosjekt\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.csprojResolveAssemblyReference.cache
 D:\Programming\Hovedprosjekt\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.dll
 D:\Programming\Hovedprosjekt\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.pdb
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.csprojResolveAssemblyReference.cache
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.dll
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.pdb
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\bin\HPWeb2.dll
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\bin\HPWeb2.pdb

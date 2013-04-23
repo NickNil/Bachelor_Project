@@ -4,17 +4,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-        <AnonymousTemplate>
-            [ <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a>
-            ]
-        </AnonymousTemplate>
-        <LoggedInTemplate>
-            <asp:LoginName ID="HeadLoginName" runat="server" />
-            <asp:TextBox ID="TBMsg" runat="server">
-            </asp:TextBox>
-            <asp:Button ID="BtnSend" runat="server" Text="Send" onclick="BtnSend_Click" />
+    <asp:MultiView ID="MultiView" runat="server">
 
-        </LoggedInTemplate>
-    </asp:LoginView>
+    <asp:View ID="View1" runat="server">
+        <asp:Label ID="logInLb" Text="What is your name?" runat="server"/>
+        <asp:TextBox ID="tbName" runat="server" />
+        <asp:Button ID="btnSaveToCookie" Text="Save!" runat="server" OnClick="btnSaveToCookie_Click" />
+    </asp:View>
+
+    <asp:View ID="View2" runat="server">
+        
+        <asp:Label ID="lbName" runat="server" />
+        <asp:TextBox ID="TBMsg" runat="server" />
+        <asp:Button ID="BtnSend" runat="server" Text="Send" OnClick="BtnSend_Click"/>
+        <asp:Button ID="BtnLogOut" runat="server" Text="Log out" OnClick="BtnLogOut_Click"/>
+    </asp:View>
+
+    </asp:MultiView>
 </asp:Content>
