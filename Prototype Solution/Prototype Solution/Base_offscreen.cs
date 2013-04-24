@@ -20,6 +20,14 @@ namespace Prototype_Solution
         SplitContainer split1, split2;
         string layout;
         Connection_S connection;
+        public static List<string> blackList = new List<string>();
+
+        public static bool CheckBlacklist(string ip)
+        {
+            if (blackList.Contains(ip))
+                return true;
+            return false;
+        }
 
         public Base_offscreen()
         {

@@ -38,6 +38,7 @@ namespace Prototype_Solution
 
                 IPHostEntry ipHost = Dns.GetHostEntry("");
                 IPAddress ipAddr = ipHost.AddressList[0];
+
                 ipEndPoint = new IPEndPoint(ipAddr, 3447);
 
                 sListener = new Socket(
@@ -45,6 +46,8 @@ namespace Prototype_Solution
                     SocketType.Stream,
                     ProtocolType.Tcp
                     );
+
+                
 
                 sListener.Bind(ipEndPoint);
 
@@ -67,6 +70,11 @@ namespace Prototype_Solution
 
                 listener = (Socket)ar.AsyncState;
                 handler = listener.EndAccept(ar);
+
+                //Check blacklist
+                string ip = ((IPEndPoint)(handler.RemoteEndPoint)).Address.ToString();
+                if (Base_offscreen.CheckBlacklist(ip))
+                    return;
 
                 handler.NoDelay = false;
 
@@ -96,6 +104,7 @@ namespace Prototype_Solution
                 handler = (Socket)obj[1];
 
                 string content = string.Empty;
+                string ip = string.Empty;
 
                 int bytesRead = handler.EndReceive(ar);
 
@@ -104,11 +113,16 @@ namespace Prototype_Solution
                     content += Encoding.Unicode.GetString(buffer, 0,
                         bytesRead);
 
-                    if(content.IndexOf("Chat=") == 0)
-                        TryChat(content.Remove(0, 5));
+                    if (content.IndexOf("IP=") == 0)
+                        content = CheckIP(content, ref ip);
 
-                    if (content.IndexOf("Jukebox=") == 0)
+                    if (content.IndexOf("Chat=") == 0)
+                        TryChat(content.Remove(0, 5), ip);
+
+                    else if (content.IndexOf("Jukebox=") == 0)
                         TryJukebox(content.Remove(0, 8));
+                    else
+                        return;
 
 
                     byte[] buffernew = new byte[1024];
@@ -156,13 +170,22 @@ namespace Prototype_Solution
                     "Sent {0} bytes to Client", bytesSend);
             }
             catch (Exception exc) { Debug.WriteLine(exc.ToString()); }
-        } 
+        }
 
+        public string CheckIP(string content, ref string ip)
+        {
+            content = content.Remove(0, content.IndexOf("[") + 1);
+            ip = content.Remove(content.IndexOf("]"));
+            if (Base_offscreen.CheckBlacklist(ip))
+                return "";
+            else
+                return content.Remove(0, content.IndexOf("]") + 1);
+        }
 
-        public void TryChat(string content)
+        public void TryChat(string content, string ip)
         {
             if (chat != null)
-                chat.chat_screen.SetText(content);
+                chat.chat_offscreen.SetText(content, ip);
         }
 
         public void TryJukebox(string content)
@@ -176,7 +199,7 @@ namespace Prototype_Solution
                         foreach (string song in jukebox.jb_offscreen.songs2)
                             playlist += song + "\n";
 
-                        if (playlist != String.Empty)
+                        if (playlist != null)
                             Send_msg(playlist);
                         else
                             return; //Gi error!!
@@ -186,7 +209,7 @@ namespace Prototype_Solution
                         jukebox.jb_offscreen.Vote(content);
                     }
 
-                }
+                } 
             }
             catch (Exception exc) { Debug.WriteLine("Error \n\n " + exc.ToString()); }
         }

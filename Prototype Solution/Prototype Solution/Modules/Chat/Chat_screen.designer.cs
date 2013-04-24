@@ -64,7 +64,6 @@
             this.DoubleBuffered = true;
             this.Name = "Chat_screen";
             this.Size = new System.Drawing.Size(927, 521);
-            this.Resize += new System.EventHandler(this.Chat_screen_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

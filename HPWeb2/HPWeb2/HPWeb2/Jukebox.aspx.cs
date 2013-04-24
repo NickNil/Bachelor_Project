@@ -18,7 +18,8 @@ namespace HPWeb2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            c = new Connection_C();
+            if (c == null)
+                c = new Connection_C();
             if (songList.Items.Count == 0)
                 createList();
             

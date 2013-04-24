@@ -21,7 +21,21 @@ namespace HPWeb2
             }
             else
                 MultiView.ActiveViewIndex = 0;
+            
             c = new Connection_C();
+        }
+
+        protected string CheckIP()
+        {
+            String ip =
+                HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+            if (string.IsNullOrEmpty(ip))
+            {
+                ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+            }
+
+            return ("IP=[" + ip + "]");
         }
 
         protected void btnSaveToCookie_Click(object sender, EventArgs e)
@@ -41,7 +55,8 @@ namespace HPWeb2
 
             TextBox chatText = TBMsg;
             string username = cookie["Name"];
-            string chatInput = "Chat=" + username + ": " + chatText.Text;
+            string chatInput = CheckIP();
+            chatInput += "Chat=" + username + ": " + chatText.Text;
             chatText.Text = "";
             c.Send(chatInput);
 

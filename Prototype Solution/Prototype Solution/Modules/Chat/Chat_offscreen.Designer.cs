@@ -28,31 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textToChat = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // textToChat
+            // listBox1
             // 
-            this.textToChat.Location = new System.Drawing.Point(28, 36);
-            this.textToChat.Name = "textToChat";
-            this.textToChat.Size = new System.Drawing.Size(219, 20);
-            this.textToChat.TabIndex = 0;
-            this.textToChat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textToChat_TextChanged);
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(1264, 850);
+            this.listBox1.TabIndex = 0;
+            this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
             // 
             // Chat_offscreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textToChat);
+            this.Controls.Add(this.listBox1);
             this.Name = "Chat_offscreen";
             this.Size = new System.Drawing.Size(1264, 850);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textToChat;
+        private System.Windows.Forms.ListBox listBox1;
+
     }
 }

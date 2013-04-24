@@ -48,13 +48,16 @@ namespace HPWeb2
                     ProtocolType.Tcp     // Specifies the protocols   
                     );
 
+                // Set the timeout for synchronous receive methods to 3 seconds (3000 milliseconds)
+                senderSock.ReceiveTimeout = 3000; //Without this ReceiveDataFromServer hangs if jukebox playlist is empty??
+
                 senderSock.NoDelay = false;   // Using the Nagle algorithm  
 
                 // Establishes a connection to a remote host  
                 senderSock.Connect(ipEndPoint);
 
             }
-            catch (Exception exc) { Debug.WriteLine(exc.ToString()); } 
+            catch (Exception exc) { Debug.WriteLine(exc.ToString()); }
         }
 
         public void Send(string s)

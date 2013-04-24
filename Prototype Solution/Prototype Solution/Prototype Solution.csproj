@@ -73,6 +73,7 @@
       <DependentUpon>Base_screen.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Chat\Chat.cs" />
+    <Compile Include="Modules\Chat\ChatText.cs" />
     <Compile Include="Modules\Chat\Chat_offscreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -98,9 +99,6 @@
       <DependentUpon>JB_screen.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Jukebox\Jukebox.cs" />
-    <Compile Include="ListBox_Transparent.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Modules\Jukebox\Song.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
