@@ -14,6 +14,15 @@ namespace Prototype_Solution
         public Chat_screen()
         {
             InitializeComponent();
+
         }
+
+        #region Private Methods
+
+        private void Chat_screen_Resize(object sender, EventArgs e)
+        {
+            this.Controls[0].Size = this.Size;
+        }
+        #endregion
     }
 }

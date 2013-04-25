@@ -15,6 +15,16 @@ namespace Prototype_Solution
         public JB_screen()
         {
             InitializeComponent();
+            
+            //Reduce flickering
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+                               ControlStyles.UserPaint |
+                               ControlStyles.OptimizedDoubleBuffer, true);
+        }
+
+        private void JB_screen_Resize(object sender, EventArgs e)
+        {
+            label1.Height = this.Parent.Height - textNowP.Height;
         }
     }
 }

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.textChat = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textChat
@@ -45,35 +43,24 @@
             this.textChat.Size = new System.Drawing.Size(0, 29);
             this.textChat.TabIndex = 2;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.textChat);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(927, 521);
-            this.panel1.TabIndex = 3;
-            // 
             // Chat_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.textChat);
             this.DoubleBuffered = true;
             this.Name = "Chat_screen";
             this.Size = new System.Drawing.Size(927, 521);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Resize += new System.EventHandler(this.Chat_screen_Resize);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         public System.Windows.Forms.Label textChat;
-        private System.Windows.Forms.Panel panel1;
 
     }
 }

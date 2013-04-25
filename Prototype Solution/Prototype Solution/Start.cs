@@ -13,6 +13,11 @@ namespace Prototype_Solution
     {
         Base_offscreen base_offscreen;
         String selectedLayout;
+        string picName;
+        private SplitContainer split1;
+        private SplitContainer split2;
+        List<ListBox> box;
+        ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
 
         public struct modules
         {
@@ -43,16 +48,13 @@ namespace Prototype_Solution
                 }
             }
                 
-
             contextMenuStrip.Items.Add("Jukebox");
             contextMenuStrip.Items.Add("Chat");
             contextMenuStrip.Items.Add("Ad_Image");
             contextMenuStrip.ItemClicked += new ToolStripItemClickedEventHandler(contextMenuStrip_ItemClicked);
         }
 
-        private void Start_Load(object sender, EventArgs e)
-        {
-        }
+        #region Private Methods
 
         private void btnStart_Click(object sender, EventArgs e)
         {
@@ -82,7 +84,7 @@ namespace Prototype_Solution
                 base_offscreen = new Base_offscreen(list, picName);
             }
 
-            
+
             this.Hide();
 
             //Save last used in settings
@@ -93,47 +95,10 @@ namespace Prototype_Solution
             this.Close();
         }
 
-        //Drag
-        private void listBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            ListBox temp = (ListBox)sender;
-            if (temp.Items.Count == 0)
-                return;
-
-            int index = temp.IndexFromPoint(e.X, e.Y);
-            string s = temp.Items[index].ToString();
-            DragDropEffects dde1 = DoDragDrop(s,
-                DragDropEffects.All);
-
-            if (dde1 == DragDropEffects.All)
-            {
-                temp.Items.RemoveAt(temp.IndexFromPoint(e.X, e.Y));
-            }
-        }
-
-        //Drop mouse icon
-        private void listBox_DragOver(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.All;
-        }
-
-        //Drop
-        private void listBox_DragDrop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.StringFormat))
-            {
-                string str = (string)e.Data.GetData(
-                    DataFormats.StringFormat);
-
-               ((ListBox)sender).Items.Add(str);
-            }
-        }
-
-        string picName;
         private void picBtn_Click(object sender, EventArgs e)
         {
             picName = ((Button)sender).Image.Tag.ToString();
-            panel1.Controls.Clear();
+            modulePanel.Controls.Clear();
 
             Properties.Settings.Default.selectedLayout = picName;
             setPanel(picName);
@@ -142,7 +107,7 @@ namespace Prototype_Solution
         private void nrOfModules_SelectedIndexChanged(object sender, EventArgs e)
         {
             string nr = ((ComboBox)sender).SelectedItem.ToString();
-            panel1.Controls.Clear();
+            modulePanel.Controls.Clear();
 
             switch (nr)
             {
@@ -186,14 +151,9 @@ namespace Prototype_Solution
                     break;
             }
 
-            if(box != null)
+            if (box != null)
                 CheckBoxes();
         }
-
-        private SplitContainer split1;
-        private SplitContainer split2;
-        List<ListBox> box;
-        ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
 
         private void setPanel(string pic)
         {
@@ -203,7 +163,7 @@ namespace Prototype_Solution
             split1.BackColor = Color.White;
             split1.BorderStyle = split2.BorderStyle = BorderStyle.Fixed3D;
 
-            for(int i = 0;i<int.Parse(nrOfModules.SelectedItem.ToString());i++)
+            for (int i = 0; i < int.Parse(nrOfModules.SelectedItem.ToString()); i++)
             {
                 box.Add(new ListBox());
                 box[i].Name = "box" + i;
@@ -215,30 +175,30 @@ namespace Prototype_Solution
             switch (pic)
             {
                 case "1":
-                    panel1.Controls.Add(box[0]);
+                    modulePanel.Controls.Add(box[0]);
                     break;
                 case "2_1":
                     split1.Panel1.Controls.Add(box[0]);
                     split1.Panel2.Controls.Add(box[1]);
                     split1.Orientation = Orientation.Horizontal;
                     split1.Dock = DockStyle.Fill;
-                    panel1.Controls.Add(split1);
+                    modulePanel.Controls.Add(split1);
                     break;
                 case "2_2":
                     split1.Panel1.Controls.Add(box[0]);
                     split1.Panel2.Controls.Add(box[1]);
                     split1.Dock = DockStyle.Fill;
-                    panel1.Controls.Add(split1);
+                    modulePanel.Controls.Add(split1);
                     break;
                 case "3_1":
                     split1.Panel1.Controls.Add(box[0]);
                     split2.Panel1.Controls.Add(box[1]);
                     split2.Panel2.Controls.Add(box[2]);
-                    split1.Dock = DockStyle.Fill;                   
+                    split1.Dock = DockStyle.Fill;
                     split1.Orientation = Orientation.Horizontal;
                     split1.Panel2.Controls.Add(split2);
-                    split2.Dock = DockStyle.Fill;                   
-                    panel1.Controls.Add(split1);
+                    split2.Dock = DockStyle.Fill;
+                    modulePanel.Controls.Add(split1);
                     split2.SplitterDistance = split2.Width / 2;
                     break;
                 case "3_2":
@@ -249,7 +209,7 @@ namespace Prototype_Solution
                     split1.Orientation = Orientation.Horizontal;
                     split1.Panel1.Controls.Add(split2);
                     split1.Dock = DockStyle.Fill;
-                    panel1.Controls.Add(split1);
+                    modulePanel.Controls.Add(split1);
                     split2.SplitterDistance = split2.Width / 2;
                     break;
                 case "3_3":
@@ -260,7 +220,7 @@ namespace Prototype_Solution
                     split2.Orientation = Orientation.Horizontal;
                     split1.Panel1.Controls.Add(split2);
                     split1.Dock = DockStyle.Fill;
-                    panel1.Controls.Add(split1);
+                    modulePanel.Controls.Add(split1);
                     split2.SplitterDistance = split2.Height / 2;
                     break;
                 case "3_4":
@@ -271,7 +231,7 @@ namespace Prototype_Solution
                     split2.Orientation = Orientation.Horizontal;
                     split1.Panel2.Controls.Add(split2);
                     split1.Dock = DockStyle.Fill;
-                    panel1.Controls.Add(split1);
+                    modulePanel.Controls.Add(split1);
                     split2.SplitterDistance = split2.Height / 2;
                     break;
                 case "4":
@@ -279,11 +239,11 @@ namespace Prototype_Solution
                     split1.Panel2.Controls.Add(box[1]);
                     split2.Panel1.Controls.Add(box[2]);
                     split2.Panel2.Controls.Add(box[3]);
-                    split1.Width = panel1.Width;
-                    split1.Height = panel1.Height / 2;
+                    split1.Width = modulePanel.Width;
+                    split1.Height = modulePanel.Height / 2;
                     split2.Dock = DockStyle.Fill;
-                    panel1.Controls.Add(split1);
-                    panel1.Controls.Add(split2);
+                    modulePanel.Controls.Add(split1);
+                    modulePanel.Controls.Add(split2);
                     split2.SplitterDistance = split2.Width / 2;
                     break;
             }
@@ -292,6 +252,9 @@ namespace Prototype_Solution
             if (box != null)
                 CheckBoxes();
         }
+        #endregion
+
+        #region Public Methods
 
         public void contextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -323,6 +286,7 @@ namespace Prototype_Solution
                 btnStart.Enabled = true;
             else
                 btnStart.Enabled = false;
-        }
+        }  
+        #endregion        
     }
 }

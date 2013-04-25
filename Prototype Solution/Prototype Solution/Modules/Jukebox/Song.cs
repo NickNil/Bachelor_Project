@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace Prototype_Solution
 {
+    /// <summary>
+    /// Contains song name, path and number of votes.
+    /// </summary>
     public class Song 
 
     {

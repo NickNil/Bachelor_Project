@@ -34,17 +34,7 @@ namespace Prototype_Solution
             contextMenuStrip.ItemClicked += new ToolStripItemClickedEventHandler(contextMenuStrip_ItemClicked);
         }
 
-        private void contextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            ChatText test = (ChatText)(((ListBox)(((ContextMenuStrip)sender).SourceControl)).SelectedItem);
-            if (e.ClickedItem.Text == "Delete")
-                throw new NotImplementedException();
-            else if (e.ClickedItem.Text == "Ban IP")
-            {
-                if(!Base_offscreen.CheckBlacklist(test.ip))
-                    Base_offscreen.blackList.Add(test.ip);
-            }
-        }
+        #region Public Methods
 
         public void SetText(string text, string ip)
         {
@@ -67,7 +57,7 @@ namespace Prototype_Solution
             if (text == String.Empty)
                 return;
 
-            //New line
+            //If text.width > screen.width then split text at center and try again
             Size textSize = TextRenderer.MeasureText(text, chat_screen.textChat.Font);
             if (textSize.Width > chat_screen.Width)
             {
@@ -85,26 +75,42 @@ namespace Prototype_Solution
             chat_screen.textChat.Text = String.Empty;
             if (listBox1.Items.Count > maxLines)
             {
-                for(int i = listBox1.Items.Count - maxLines; i < maxLines; i++)
+                for(int i = listBox1.Items.Count - maxLines; i < listBox1.Items.Count; i++)
                 {
-                    chat_screen.textChat.Text += listBox1.Items[i].ToString() + "\n";
+                    chat_screen.textChat.Text += ((ChatText)listBox1.Items[i]).text + "\n";
                 }
             }
             else
                 foreach (ChatText str in listBox1.Items)
                     chat_screen.textChat.Text += str.text + "\n";
         }
+        #endregion
+
+        #region Private Methods
+
+        private void contextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ChatText test = (ChatText)(((ListBox)(((ContextMenuStrip)sender).SourceControl)).SelectedItem);
+            if (e.ClickedItem.Text == "Delete")
+                throw new NotImplementedException();
+            else if (e.ClickedItem.Text == "Ban IP")
+            {
+                if (!Base_offscreen.CheckBlacklist(test.ip))
+                    Base_offscreen.blackList.Add(test.ip);
+            }
+        }
 
         private void Chat_screen_Resize(object sender, EventArgs e)
         {
+            //Get height of font
             Size textSize = TextRenderer.MeasureText("blah", chat_screen.textChat.Font);
             int maxLines = (chat_screen.Height / textSize.Height);
             chat_screen.textChat.Text = String.Empty;
             if (listBox1.Items.Count > maxLines)
             {
-                for (int i = listBox1.Items.Count - maxLines; i < maxLines; i++)
+                for (int i = listBox1.Items.Count - maxLines; i < listBox1.Items.Count; i++)
                 {
-                    chat_screen.textChat.Text += listBox1.Items[i].ToString() + "\n";
+                    chat_screen.textChat.Text += ((ChatText)listBox1.Items[i]).text + "\n";
                 }
             }
             else
@@ -112,6 +118,7 @@ namespace Prototype_Solution
                     chat_screen.textChat.Text += str.text + "\n";
         }
 
+        //Select on right mouse click
         private void listBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
@@ -119,5 +126,16 @@ namespace Prototype_Solution
                 listBox1.SelectedIndex = listBox1.IndexFromPoint(e.X, e.Y);
             }
         }
+
+        //Moderator chat
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                WriteText("Moderator: " + textBox1.Text, "Offscreen");
+                textBox1.Text = string.Empty;
+            }
+        }
+        #endregion
     }
 }

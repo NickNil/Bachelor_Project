@@ -11,7 +11,7 @@ namespace Prototype_Solution
 {
     public partial class Base_screen : Form
     {
-        SplitContainer split1, split2;
+        NonFlickerSplitContainer split1, split2;
         List<Start.modules> modList;
         string layout;
 
@@ -27,6 +27,8 @@ namespace Prototype_Solution
             this.layout = layout;
         }
 
+        #region Private Methods
+
         private void Base_screen_Load(object sender, EventArgs e)
         {
             createLayout();       
@@ -40,8 +42,8 @@ namespace Prototype_Solution
 
         private void createLayout()
         {
-            split1 = new SplitContainer();
-            split2 = new SplitContainer();
+            split1 = new NonFlickerSplitContainer();
+            split2 = new NonFlickerSplitContainer();
             split1.BackColor = Color.Transparent;
             split2.BackColor = Color.Transparent;
             split1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer_SplitterMoved);
@@ -55,7 +57,12 @@ namespace Prototype_Solution
             {
                 case "1":
                     UserControl temp = modList[0].userControl;
-                    this.Controls.Add(temp);
+                    Panel layoutPanel = new Panel();
+                    layoutPanel.BackColor = Color.Transparent;
+                    layoutPanel.Resize += new System.EventHandler(this.layoutPanel_Resize);
+                    layoutPanel.Dock = DockStyle.Fill;
+                    layoutPanel.Controls.Add(temp);
+                    this.Controls.Add(layoutPanel);
                     temp.Show();
                     break;
                 case "2_1":
@@ -132,7 +139,7 @@ namespace Prototype_Solution
 
         private void splitContainer_SplitterMoved(object sender, SplitterEventArgs e)
         {
-            SplitContainer tempContainer = (SplitContainer)sender;
+            NonFlickerSplitContainer tempContainer = (NonFlickerSplitContainer)sender;
 
             if(tempContainer.Panel1.Controls.Count > 0)
                 tempContainer.Panel1.Controls[0].Size = new Size(tempContainer.Panel1.Width, tempContainer.Panel1.Height);
@@ -142,7 +149,7 @@ namespace Prototype_Solution
 
         private void splitContainer_Resize(object sender, EventArgs e)
         {
-            SplitContainer tempContainer = (SplitContainer)sender;
+            NonFlickerSplitContainer tempContainer = (NonFlickerSplitContainer)sender;
 
             if (tempContainer.Panel1.Controls.Count > 0)
                 tempContainer.Panel1.Controls[0].Size = new Size(tempContainer.Panel1.Width, tempContainer.Panel1.Height);
@@ -150,10 +157,15 @@ namespace Prototype_Solution
                 tempContainer.Panel2.Controls[0].Size = new Size(tempContainer.Panel2.Width, tempContainer.Panel2.Height);
         }
 
-        private void Base_screen_Resize(object sender, EventArgs e)
+        private void layoutPanel_Resize(object sender, EventArgs e)
         {
-            if (this.Controls.Count == 1)
-                this.Controls[0].Size = this.Size;
+            Panel tempPanel = (Panel)sender;
+
+            if (tempPanel.Controls.Count > 0)
+            {
+                tempPanel.Controls[0].Size = tempPanel.Size;
+            }
         }
+        #endregion
     }
 }

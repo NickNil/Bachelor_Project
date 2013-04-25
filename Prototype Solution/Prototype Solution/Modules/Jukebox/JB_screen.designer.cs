@@ -28,29 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textNowP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textNowP = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // textNowP
-            // 
-            this.textNowP.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textNowP.Location = new System.Drawing.Point(0, 569);
-            this.textNowP.Margin = new System.Windows.Forms.Padding(0);
-            this.textNowP.Name = "textNowP";
-            this.textNowP.Size = new System.Drawing.Size(1042, 20);
-            this.textNowP.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1042, 589);
+            this.label1.Size = new System.Drawing.Size(1042, 313);
             this.label1.TabIndex = 2;
             this.label1.Text = "No Songs";
+            // 
+            // textNowP
+            // 
+            this.textNowP.BackColor = System.Drawing.Color.Transparent;
+            this.textNowP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.textNowP.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textNowP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNowP.ForeColor = System.Drawing.Color.Gold;
+            this.textNowP.Location = new System.Drawing.Point(0, 366);
+            this.textNowP.Name = "textNowP";
+            this.textNowP.Size = new System.Drawing.Size(1042, 29);
+            this.textNowP.TabIndex = 3;
+            this.textNowP.Text = "Now Playing:";
             // 
             // JB_screen
             // 
@@ -60,15 +65,15 @@
             this.Controls.Add(this.textNowP);
             this.Controls.Add(this.label1);
             this.Name = "JB_screen";
-            this.Size = new System.Drawing.Size(1042, 589);
+            this.Size = new System.Drawing.Size(1042, 395);
+            this.Resize += new System.EventHandler(this.JB_screen_Resize);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        public System.Windows.Forms.TextBox textNowP;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label textNowP;
     }
 }

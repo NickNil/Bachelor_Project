@@ -32,6 +32,8 @@ namespace HPWeb2
             playlistString = c.receivedData;
             if (playlistString != null)
             {
+                playList.Clear();
+                songList.Items.Clear();
                 while (playlistString.IndexOf("\n") != -1)
                 {
                     i = playlistString.IndexOf("\n");

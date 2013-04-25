@@ -100,6 +100,9 @@
     </Compile>
     <Compile Include="Modules\Jukebox\Jukebox.cs" />
     <Compile Include="Modules\Jukebox\Song.cs" />
+    <Compile Include="NonFlickerSplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />

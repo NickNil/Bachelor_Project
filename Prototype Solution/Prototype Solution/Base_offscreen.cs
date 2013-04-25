@@ -17,28 +17,24 @@ namespace Prototype_Solution
         public Chat chat;
         public Ad_Image ad_image;
         List<Start.modules> modList;
-        SplitContainer split1, split2;
+        NonFlickerSplitContainer split1, split2;
         string layout;
         Connection_S connection;
         public static List<string> blackList = new List<string>();
-
-        public static bool CheckBlacklist(string ip)
-        {
-            if (blackList.Contains(ip))
-                return true;
-            return false;
-        }
 
         public Base_offscreen()
         {
             InitializeComponent();
         }
+
         public Base_offscreen(List<Start.modules> list, string layout)
         {
             InitializeComponent();
             modList = list;
             this.layout = layout;
         }
+
+        #region Private Methods
 
         private void Base_offscreen_Load(object sender, EventArgs e)
         {
@@ -51,7 +47,7 @@ namespace Prototype_Solution
             createLayout();
 
             connection = new Connection_S(chat, jukebox);
-            
+
             //Base_screen
             base_screen = new Base_screen(modList, layout);
             base_screen.Show();
@@ -80,22 +76,31 @@ namespace Prototype_Solution
             }
             modList[nr] = item;
 
-           // item.userControl.BackColor = Color.FromArgb(0, 0, 0, 0);
-            
             return temp;
         }
 
         private void createLayout()
         {
-            split1 = new SplitContainer();
-            split2 = new SplitContainer();
+            split1 = new NonFlickerSplitContainer();
+            split2 = new NonFlickerSplitContainer();
+            split1.BackColor = Color.Transparent;
+            split2.BackColor = Color.Transparent;
+            split1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer_SplitterMoved);
+            split1.Resize += new System.EventHandler(this.splitContainer_Resize);
+            split2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer_SplitterMoved);
+            split2.Resize += new System.EventHandler(this.splitContainer_Resize);
             split1.BorderStyle = split2.BorderStyle = BorderStyle.Fixed3D;
 
             switch (layout)
             {
                 case "1":
-                    UserControl temp = selectMods(modList[0], 0); 
-                    this.Controls.Add(temp);
+                    UserControl temp = selectMods(modList[0], 0);
+                    Panel layoutPanel = new Panel();
+                    layoutPanel.BackColor = Color.Transparent;
+                    layoutPanel.Resize += new System.EventHandler(this.layoutPanel_Resize);
+                    layoutPanel.Dock = DockStyle.Fill;
+                    layoutPanel.Controls.Add(temp);
+                    this.Controls.Add(layoutPanel);
                     temp.Show();
                     break;
                 case "2_1":
@@ -170,10 +175,52 @@ namespace Prototype_Solution
             }
         }
 
+        private void layoutPanel_Resize(object sender, EventArgs e)
+        {
+            Panel tempPanel = (Panel)sender;
+
+            if (tempPanel.Controls.Count > 0)
+            {
+                tempPanel.Controls[0].Size = tempPanel.Size;
+            }
+        }
+
         private void control_Load(UserControl userControl, SplitterPanel location)
         {
             location.Controls.Add(userControl);
-            userControl.Show(); 
+            userControl.Show();
         }
+
+        private void splitContainer_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+            SplitContainer tempContainer = (SplitContainer)sender;
+
+            if (tempContainer.Panel1.Controls.Count > 0)
+                tempContainer.Panel1.Controls[0].Size = new Size(tempContainer.Panel1.Width, tempContainer.Panel1.Height);
+            if (tempContainer.Panel2.Controls.Count > 0)
+                tempContainer.Panel2.Controls[0].Size = new Size(tempContainer.Panel2.Width, tempContainer.Panel2.Height);
+        }
+
+        private void splitContainer_Resize(object sender, EventArgs e)
+        {
+            SplitContainer tempContainer = (SplitContainer)sender;
+
+            if (tempContainer.Panel1.Controls.Count > 0)
+                tempContainer.Panel1.Controls[0].Size = new Size(tempContainer.Panel1.Width, tempContainer.Panel1.Height);
+            if (tempContainer.Panel2.Controls.Count > 0)
+                tempContainer.Panel2.Controls[0].Size = new Size(tempContainer.Panel2.Width, tempContainer.Panel2.Height);
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public static bool CheckBlacklist(string ip)
+        {
+            if (blackList.Contains(ip))
+                return true;
+            return false;
+        }
+        #endregion
     }
 }

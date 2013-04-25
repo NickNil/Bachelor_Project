@@ -30,7 +30,7 @@
         {
             this.btnStart = new System.Windows.Forms.Button();
             this.nrOfModules = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.modulePanel = new System.Windows.Forms.Panel();
             this.labelNrOfModules = new System.Windows.Forms.Label();
             this.labelLayout = new System.Windows.Forms.Label();
             this.labelPanel = new System.Windows.Forms.Label();
@@ -66,13 +66,13 @@
             this.nrOfModules.TabIndex = 4;
             this.nrOfModules.SelectedIndexChanged += new System.EventHandler(this.nrOfModules_SelectedIndexChanged);
             // 
-            // panel1
+            // modulePanel
             // 
-            this.panel1.AllowDrop = true;
-            this.panel1.Location = new System.Drawing.Point(509, 41);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 150);
-            this.panel1.TabIndex = 9;
+            this.modulePanel.AllowDrop = true;
+            this.modulePanel.Location = new System.Drawing.Point(509, 41);
+            this.modulePanel.Name = "modulePanel";
+            this.modulePanel.Size = new System.Drawing.Size(150, 150);
+            this.modulePanel.TabIndex = 9;
             // 
             // labelNrOfModules
             // 
@@ -163,12 +163,11 @@
             this.Controls.Add(this.labelPanel);
             this.Controls.Add(this.labelLayout);
             this.Controls.Add(this.labelNrOfModules);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.modulePanel);
             this.Controls.Add(this.nrOfModules);
             this.Controls.Add(this.btnStart);
             this.Name = "Start";
             this.Text = "Setup";
-            this.Load += new System.EventHandler(this.Start_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,7 +177,7 @@
 
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.ComboBox nrOfModules;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel modulePanel;
         private System.Windows.Forms.Label labelNrOfModules;
         private System.Windows.Forms.Label labelLayout;
         private System.Windows.Forms.Label labelPanel;

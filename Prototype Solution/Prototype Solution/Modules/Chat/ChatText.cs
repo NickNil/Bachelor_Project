@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Prototype_Solution
 {
+    /// <summary>
+    /// Contains text to be written and IP address of sender.
+    /// </summary>
     public class ChatText
     {
         public string text;
@@ -16,6 +19,9 @@ namespace Prototype_Solution
                 this.ip = ip;
             }
 
+        /// <summary>
+        /// Returns text
+        /// </summary>
         public override string ToString()
         {
             return text;

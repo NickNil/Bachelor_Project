@@ -78,7 +78,6 @@ C:\Users\student\Desktop\Hovedprosjekt\Prototype Solution\Prototype Solution\obj
 C:\Users\student\Desktop\Hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.pdb
 C:\Users\student\Desktop\Hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.JB_offscreen.resources
 C:\Users\student\Desktop\Hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.JB_screen.resources
-C:\Users\student\Desktop\Hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.csprojResolveAssemblyReference.cache
 C:\Programming\Hovedprosjekt\Prototype Solution\Prototype Solution\bin\Debug\Prototype Solution.exe.config
 C:\Programming\Hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Interop.WMPLib.dll
 C:\Programming\Hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\AxInterop.WMPLib.dll

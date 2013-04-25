@@ -29,6 +29,7 @@ namespace Prototype_Solution
             InitializeComponent();
 
             this.jb_screen = jb_screen;
+            this.jb_screen.Resize += new System.EventHandler(this.JB_screen_Resize);
             mediaP_controls = (WMPLib.IWMPControls3)mediaP.Ctlcontrols;
 
             timer.Tick += new EventHandler(timer_Tick);
@@ -37,12 +38,14 @@ namespace Prototype_Solution
             timer.Stop();
         }
 
+        #region Private Methods
+
         private void JB_offscreen_Load(object sender, EventArgs e)
         {
 
         }
 
-        void timer_Tick(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -58,6 +61,7 @@ namespace Prototype_Solution
                 Console.WriteLine(er);
             }
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
@@ -93,42 +97,6 @@ namespace Prototype_Solution
                 {
                     timer.Start();
                 }
-            }
-        }
-
-        public void updateTxt()
-        {
-            songs2 = new List<string>();
-
-            //Remove file path & file extension
-            for (int i = 0; i < songs.Count; i++)
-            {
-                //Remove path
-                songs[i].name = songs[i].path.Substring(songs[i].path.LastIndexOf("\\") + 1, songs[i].path.LastIndexOf(".") - 1 - songs[i].path.LastIndexOf("\\"));
-
-                songs[i].name = songs[i].name.Replace("_", " ");
-
-                songs2.Add(songs[i].votes + ": " + songs[i].name);
-            }
-
-            updateLocal();
-        }
-
-        public void updateLocal()
-        {
-            if (jb_screen.label1.InvokeRequired)
-            {
-                jb_screen.label1.Invoke(new MethodInvoker(updateLocal));
-                return;
-            }
-
-            listBox_songs.DataSource = null;
-            listBox_songs.DataSource = songs2;
-
-            jb_screen.label1.Text = String.Empty;
-            foreach (string str in songs2)
-            {
-                jb_screen.label1.Text += str + "\n";
             }
         }
 
@@ -261,6 +229,66 @@ namespace Prototype_Solution
             }
         }
 
+        private void JB_screen_Resize(object sender, EventArgs e)
+        {
+            StringBuilder stringB = new StringBuilder();
+
+            Size textSize = TextRenderer.MeasureText("text", jb_screen.label1.Font);
+
+            int maxLines = ((jb_screen.Height - jb_screen.textNowP.Height) / textSize.Height);
+
+            foreach (string str in songs2.GetRange(0, maxLines))
+            {
+                stringB.Append(str + "\n");
+            }
+            jb_screen.label1.Text = stringB.ToString();
+        }
+        #endregion
+
+        #region Public Methods
+
+        public void updateTxt()
+        {
+            songs2 = new List<string>();
+
+            //Remove file path & file extension
+            for (int i = 0; i < songs.Count; i++)
+            {
+                //Remove path
+                songs[i].name = songs[i].path.Substring(songs[i].path.LastIndexOf("\\") + 1, songs[i].path.LastIndexOf(".") - 1 - songs[i].path.LastIndexOf("\\"));
+
+                songs[i].name = songs[i].name.Replace("_", " ");
+
+                songs2.Add(songs[i].votes + ": " + songs[i].name);
+            }
+
+            updateLocal();
+        }
+
+        public void updateLocal()
+        {
+            if (jb_screen.label1.InvokeRequired)
+            {
+                jb_screen.label1.Invoke(new MethodInvoker(updateLocal));
+                return;
+            }
+
+            StringBuilder stringB = new StringBuilder();
+
+            Size textSize = TextRenderer.MeasureText("text", jb_screen.label1.Font);
+
+            int maxLines = ((jb_screen.Height - jb_screen.textNowP.Height) / textSize.Height);
+            
+            listBox_songs.DataSource = null;
+            listBox_songs.DataSource = songs2;
+
+            foreach (string str in songs2.GetRange(0, maxLines))
+            {
+                stringB.Append(str + "\n");                
+            }
+            jb_screen.label1.Text = stringB.ToString();
+        }
+
         public void Vote(string name)
         {
             foreach (Song song in songs)
@@ -269,5 +297,6 @@ namespace Prototype_Solution
             updateTxt();
 
         }
+        #endregion
     }
 }

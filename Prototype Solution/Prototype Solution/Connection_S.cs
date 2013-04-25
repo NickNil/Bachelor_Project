@@ -59,6 +59,8 @@ namespace Prototype_Solution
             catch (Exception exc) { Debug.WriteLine(exc.ToString()); } 
         }
 
+        #region Public Methods
+
         public void AcceptCallback(IAsyncResult ar)
         {
             try
@@ -87,8 +89,8 @@ namespace Prototype_Solution
                 AsyncCallback aCallback = new AsyncCallback(AcceptCallback);
                 listener.BeginAccept(aCallback, listener);
             }
-            catch (Exception exc) { Debug.WriteLine(exc.ToString()); } 
-            
+            catch (Exception exc) { Debug.WriteLine(exc.ToString()); }
+
         }
 
 
@@ -134,8 +136,8 @@ namespace Prototype_Solution
 
                 }
             }
-            catch (Exception exc) { Debug.WriteLine(exc.ToString()); } 
-            
+            catch (Exception exc) { Debug.WriteLine(exc.ToString()); }
+
         }
 
         public void Send_msg(string message)
@@ -153,7 +155,7 @@ namespace Prototype_Solution
                         new AsyncCallback(SendCallback), handler);
                 }
             }
-            catch (Exception exc) { Debug.WriteLine(exc.ToString()); } 
+            catch (Exception exc) { Debug.WriteLine(exc.ToString()); }
 
         }
 
@@ -196,6 +198,7 @@ namespace Prototype_Solution
                 {
                     if (content.Contains("Page Load"))
                     {
+                        playlist = string.Empty;
                         foreach (string song in jukebox.jb_offscreen.songs2)
                             playlist += song + "\n";
 
@@ -209,9 +212,10 @@ namespace Prototype_Solution
                         jukebox.jb_offscreen.Vote(content);
                     }
 
-                } 
+                }
             }
             catch (Exception exc) { Debug.WriteLine("Error \n\n " + exc.ToString()); }
-        }
+        } 
+        #endregion
     }
 }
