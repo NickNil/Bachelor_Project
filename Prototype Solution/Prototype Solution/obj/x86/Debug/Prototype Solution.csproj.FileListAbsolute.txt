@@ -164,3 +164,24 @@ C:\Users\Jehson\Documents\Visual Studio 2012\Projects\hovedprosjekt-2\Prototype 
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\hovedprosjekt-2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.csproj.GenerateResource.Cache
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\hovedprosjekt-2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.exe
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\hovedprosjekt-2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.pdb
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\bin\Debug\Prototype Solution.exe.config
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\bin\Debug\Prototype Solution.exe
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\bin\Debug\Prototype Solution.pdb
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\bin\Debug\Interop.WMPLib.dll
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.csproj.ResolveComReference.cache
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.Ad_Image_offscreen.resources
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.Ad_Image_screen.resources
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.Base_offscreen.resources
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.Base_screen.resources
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.Chat_offscreen.resources
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.Chat_screen.resources
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.JB_offscreen.resources
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.JB_screen.resources
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.Properties.Resources.resources
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.Start.resources
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.csproj.GenerateResource.Cache
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.exe
+C:\Users\student\Documents\hovedprosjekt_2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.pdb

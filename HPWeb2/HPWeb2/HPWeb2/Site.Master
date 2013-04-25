@@ -9,34 +9,31 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server">
-    <div class="page">
-        <div class="header">
-            <div class="title">
-                <h1>
-                    Hello bitches!
-                </h1>
-            </div>
-            
-            <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+    <form runat="server" >
+    <div class="wrapper">
+        <div class="header"></div>
+        <div class="logo">
+            <a href="./" runat="server" >
+                <asp:Image runat="server" ImageUrl="../Images/newlogo.jpg"/>
+            </a>
+            <div class="header">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                    IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
-                        <asp:MenuItem NavigateUrl="~/Chat.aspx" Text="Chat"/>
-                        <asp:MenuItem NavigateUrl="~/Jukebox.aspx" Text="Jukebox"/>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                        <asp:MenuItem NavigateUrl="~/Chat.aspx" Text="Chat" />
+                        <asp:MenuItem NavigateUrl="~/Jukebox.aspx" Text="Jukebox" />
                     </Items>
                 </asp:Menu>
             </div>
         </div>
+        <br />
+
         <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
-        </div>
-        <div class="clear">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </div>
     </div>
     <div class="footer">
-        
     </div>
     </form>
 </body>
