@@ -9,14 +9,14 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server" >
-    <div class="wrapper">
-        <div class="header"></div>
-        <div class="logo">
-            <a href="./" runat="server" >
-                <asp:Image runat="server" ImageUrl="../Images/newlogo.jpg"/>
-            </a>
-            <div class="header">
+    <form runat="server">
+        <div class="wrapper">
+            <div class="header"></div>
+            <div class="logo">
+                <a href="./" title="Home">
+                    <img src="http://localhost:50794/Images/newlogo.jpg" alt="new logo" class="center" />
+                </a>
+                <div class="container">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
                     IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
@@ -25,16 +25,18 @@
                         <asp:MenuItem NavigateUrl="~/Jukebox.aspx" Text="Jukebox" />
                     </Items>
                 </asp:Menu>
+                </div>
+            </div>
+<div class="header-strip">
+
+                </div>
+
+            <div class="center">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </div>
         </div>
-        <br />
-
-        <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        <div class="footer">
         </div>
-    </div>
-    <div class="footer">
-    </div>
     </form>
 </body>
 </html>
