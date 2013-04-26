@@ -2,12 +2,6 @@
 ----------------------------------------------------------*/
 
 body {
-    /*background: #b6b7bc;
-    font-size: .80em;
-    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
-    margin: 0px;
-    padding: 0px;
-    color: #696969;*/
     background-image: url('../Images/bodybg.jpg');
     background-repeat: no-repeat;
 }
@@ -38,7 +32,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     font-size: 1.5em;
-    color: #666666;
+    color: #000000;
     font-variant: small-caps;
     text-transform: none;
     font-weight: 200;
@@ -86,7 +80,24 @@ first child of the left and right table columns */
     -webkit-box-shadow: 0 0 25px -5px;
     margin: auto;
     width: 900px;
+    height: auto;
 }
+.container 
+{
+    width:11%;
+    float:left;
+    padding-left:70px;
+}
+
+
+.Content 
+{
+    padding-top: 20px;
+	float:right;
+	text-align:left;
+	width:70%;
+	margin-right: 70px;
+	}
 
 .header {
     height: 35px;
@@ -129,6 +140,8 @@ first child of the left and right table columns */
 .main {
     border: 0 solid #EEEEEE;
     margin: 0 auto;
+    width: auto;
+    height: auto;
 }
 
 .leftCol {
@@ -150,19 +163,14 @@ first child of the left and right table columns */
 /* TAB MENU   
 ----------------------------------------------------------*/
 
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 900px;
-}
 
-div.menu {
-    padding: 4px 0px 4px 8px;
+div.menu 
+{
+    padding: 4px 0px 4px 4px;
 }
 
     div.menu ul {
         list-style: none;
-        margin: 0px;
         padding: 0px;
         width: auto;
     }

@@ -32,3 +32,4 @@ C:\Users\Jehson\Documents\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\bin\HPWeb2.pdb
 C:\Users\Jehson\Documents\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.csprojResolveAssemblyReference.cache
 C:\Users\Jehson\Documents\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.dll
 C:\Users\Jehson\Documents\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.pdb
+C:\Users\student\Documents\hovedprosjekt-2\HPWeb2\HPWeb2\HPWeb2\obj\Debug\HPWeb2.csprojResolveAssemblyReference.cache
