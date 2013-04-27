@@ -19,20 +19,6 @@ namespace Prototype_Solution
         List<ListBox> box;
         ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
 
-        public struct modules
-        {
-            public string name;
-            public string location;
-            public UserControl userControl;
-
-            public modules(string name, string location)
-            {
-                this.name = name;
-                this.location = location;
-                userControl = null;
-            }
-        }
-
         public Start()
         {
             InitializeComponent();
@@ -58,7 +44,7 @@ namespace Prototype_Solution
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            List<modules> list = new List<modules>();
+            List<Module> list = new List<Module>();
 
 
             foreach (ListBox listBox in box)
@@ -71,7 +57,7 @@ namespace Prototype_Solution
             {
                 foreach (ListBox listBox in box)
                 {
-                    list.Add(new modules(listBox.Items[0].ToString(), listBox.Name));
+                    list.Add(new Module(listBox.Items[0].ToString(), listBox.Name));
                 }
                 base_offscreen = new Base_offscreen(list, nrOfModules.SelectedItem.ToString());
             }
@@ -79,7 +65,7 @@ namespace Prototype_Solution
             {
                 foreach (ListBox listBox in box)
                 {
-                    list.Add(new modules(listBox.Items[0].ToString(), listBox.Name));
+                    list.Add(new Module(listBox.Items[0].ToString(), listBox.Name));
                 }
                 base_offscreen = new Base_offscreen(list, picName);
             }

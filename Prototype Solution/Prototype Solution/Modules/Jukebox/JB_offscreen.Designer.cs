@@ -200,7 +200,6 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "JB_offscreen";
             this.Size = new System.Drawing.Size(1042, 589);
-            this.Load += new System.EventHandler(this.JB_offscreen_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

@@ -210,6 +210,8 @@ namespace Prototype_Solution
                     else
                     {
                         jukebox.jb_offscreen.Vote(content);
+
+                        TryJukebox("Page Load");
                     }
 
                 }

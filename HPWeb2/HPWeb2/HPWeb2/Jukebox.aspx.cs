@@ -50,6 +50,24 @@ namespace HPWeb2
         {
             voteInput = "Jukebox=" + songList.SelectedItem;
             c.Send(voteInput);
+
+            //Receive updated list
+            c.ReceiveDataFromServer();
+            playlistString = c.receivedData;
+            if (playlistString != null)
+            {
+                playList.Clear();
+                songList.Items.Clear();
+                while (playlistString.IndexOf("\n") != -1)
+                {
+                    i = playlistString.IndexOf("\n");
+                    song = playlistString.Substring(0, i);
+                    playList.Add(song);
+                    playlistString = playlistString.Remove(0, i + 1);
+                }
+                foreach (string s in playList)
+                    songList.Items.Add(s);
+            }
         }
 
         protected void songList_SelectedIndexChanged(object sender, EventArgs e)

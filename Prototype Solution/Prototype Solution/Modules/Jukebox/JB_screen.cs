@@ -24,7 +24,7 @@ namespace Prototype_Solution
 
         private void JB_screen_Resize(object sender, EventArgs e)
         {
-            label1.Height = this.Parent.Height - textNowP.Height;
+            labelSongs.Height = this.Parent.Height - textNowP.Height;
         }
     }
 }

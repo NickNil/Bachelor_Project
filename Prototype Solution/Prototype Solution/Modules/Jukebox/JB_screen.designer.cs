@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelSongs = new System.Windows.Forms.Label();
             this.textNowP = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // labelSongs
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1042, 313);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "No Songs";
+            this.labelSongs.BackColor = System.Drawing.Color.Transparent;
+            this.labelSongs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelSongs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSongs.ForeColor = System.Drawing.Color.Gold;
+            this.labelSongs.Location = new System.Drawing.Point(0, 0);
+            this.labelSongs.Name = "labelSongs";
+            this.labelSongs.Size = new System.Drawing.Size(1042, 313);
+            this.labelSongs.TabIndex = 2;
+            this.labelSongs.Text = "No Songs";
             // 
             // textNowP
             // 
@@ -63,7 +63,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.textNowP);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelSongs);
             this.Name = "JB_screen";
             this.Size = new System.Drawing.Size(1042, 395);
             this.Resize += new System.EventHandler(this.JB_screen_Resize);
@@ -73,7 +73,7 @@
 
         #endregion
 
-        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label labelSongs;
         public System.Windows.Forms.Label textNowP;
     }
 }

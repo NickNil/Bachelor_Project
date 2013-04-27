@@ -16,7 +16,7 @@ namespace Prototype_Solution
         public Jukebox jukebox;
         public Chat chat;
         public Ad_Image ad_image;
-        List<Start.modules> modList;
+        List<Module> modList;
         NonFlickerSplitContainer split1, split2;
         string layout;
         Connection_S connection;
@@ -27,7 +27,7 @@ namespace Prototype_Solution
             InitializeComponent();
         }
 
-        public Base_offscreen(List<Start.modules> list, string layout)
+        public Base_offscreen(List<Module> list, string layout)
         {
             InitializeComponent();
             modList = list;
@@ -53,7 +53,7 @@ namespace Prototype_Solution
             base_screen.Show();
         }
 
-        private UserControl selectMods(Start.modules item, int nr)
+        private UserControl selectMods(Module item, int nr)
         {
             UserControl temp;
             if (item.name.Equals("Jukebox"))

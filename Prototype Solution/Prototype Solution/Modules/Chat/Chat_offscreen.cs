@@ -28,7 +28,7 @@ namespace Prototype_Solution
             this.chat_screen = chat_screen;
             this.chat_screen.Resize += new System.EventHandler(this.Chat_screen_Resize);
 
-            listBox1.ContextMenuStrip = contextMenuStrip;
+            listBoxChat.ContextMenuStrip = contextMenuStrip;
             contextMenuStrip.Items.Add("Delete");
             contextMenuStrip.Items.Add("Ban IP");
             contextMenuStrip.ItemClicked += new ToolStripItemClickedEventHandler(contextMenuStrip_ItemClicked);
@@ -68,20 +68,20 @@ namespace Prototype_Solution
 
             //Auto scroll
             int maxLines = (chat_screen.Height / textSize.Height);
-            while (listBox1.Items.Count >= MAX)
-                listBox1.Items.RemoveAt(0);
-            listBox1.Items.Add(new ChatText(text, ip));
+            while (listBoxChat.Items.Count >= MAX)
+                listBoxChat.Items.RemoveAt(0);
+            listBoxChat.Items.Add(new ChatText(text, ip));
 
             chat_screen.textChat.Text = String.Empty;
-            if (listBox1.Items.Count > maxLines)
+            if (listBoxChat.Items.Count > maxLines)
             {
-                for(int i = listBox1.Items.Count - maxLines; i < listBox1.Items.Count; i++)
+                for(int i = listBoxChat.Items.Count - maxLines; i < listBoxChat.Items.Count; i++)
                 {
-                    chat_screen.textChat.Text += ((ChatText)listBox1.Items[i]).text + "\n";
+                    chat_screen.textChat.Text += ((ChatText)listBoxChat.Items[i]).text + "\n";
                 }
             }
             else
-                foreach (ChatText str in listBox1.Items)
+                foreach (ChatText str in listBoxChat.Items)
                     chat_screen.textChat.Text += str.text + "\n";
         }
         #endregion
@@ -106,34 +106,34 @@ namespace Prototype_Solution
             Size textSize = TextRenderer.MeasureText("blah", chat_screen.textChat.Font);
             int maxLines = (chat_screen.Height / textSize.Height);
             chat_screen.textChat.Text = String.Empty;
-            if (listBox1.Items.Count > maxLines)
+            if (listBoxChat.Items.Count > maxLines)
             {
-                for (int i = listBox1.Items.Count - maxLines; i < listBox1.Items.Count; i++)
+                for (int i = listBoxChat.Items.Count - maxLines; i < listBoxChat.Items.Count; i++)
                 {
-                    chat_screen.textChat.Text += ((ChatText)listBox1.Items[i]).text + "\n";
+                    chat_screen.textChat.Text += ((ChatText)listBoxChat.Items[i]).text + "\n";
                 }
             }
             else
-                foreach (ChatText str in listBox1.Items)
+                foreach (ChatText str in listBoxChat.Items)
                     chat_screen.textChat.Text += str.text + "\n";
         }
 
         //Select on right mouse click
-        private void listBox1_MouseDown(object sender, MouseEventArgs e)
+        private void listBoxChat_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
-                listBox1.SelectedIndex = listBox1.IndexFromPoint(e.X, e.Y);
+                listBoxChat.SelectedIndex = listBoxChat.IndexFromPoint(e.X, e.Y);
             }
         }
 
         //Moderator chat
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        private void modChat_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                WriteText("Moderator: " + textBox1.Text, "Offscreen");
-                textBox1.Text = string.Empty;
+                WriteText("Moderator: " + modChat.Text, "Offscreen");
+                modChat.Text = string.Empty;
             }
         }
         #endregion

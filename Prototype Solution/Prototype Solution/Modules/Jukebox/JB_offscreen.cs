@@ -40,11 +40,6 @@ namespace Prototype_Solution
 
         #region Private Methods
 
-        private void JB_offscreen_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer_Tick(object sender, EventArgs e)
         {
             try
@@ -231,17 +226,19 @@ namespace Prototype_Solution
 
         private void JB_screen_Resize(object sender, EventArgs e)
         {
-            StringBuilder stringB = new StringBuilder();
-
-            Size textSize = TextRenderer.MeasureText("text", jb_screen.label1.Font);
-
+            Size textSize = TextRenderer.MeasureText("text", jb_screen.labelSongs.Font);
             int maxLines = ((jb_screen.Height - jb_screen.textNowP.Height) / textSize.Height);
 
-            foreach (string str in songs2.GetRange(0, maxLines))
+            if (songs2.Count > maxLines)
             {
-                stringB.Append(str + "\n");
+                StringBuilder stringB = new StringBuilder();
+
+                foreach (string str in songs2.GetRange(0, maxLines))
+                {
+                    stringB.Append(str + "\n");
+                }
+                jb_screen.labelSongs.Text = stringB.ToString();
             }
-            jb_screen.label1.Text = stringB.ToString();
         }
         #endregion
 
@@ -267,26 +264,37 @@ namespace Prototype_Solution
 
         public void updateLocal()
         {
-            if (jb_screen.label1.InvokeRequired)
+            if (jb_screen.labelSongs.InvokeRequired)
             {
-                jb_screen.label1.Invoke(new MethodInvoker(updateLocal));
+                jb_screen.labelSongs.Invoke(new MethodInvoker(updateLocal));
                 return;
             }
 
             StringBuilder stringB = new StringBuilder();
 
-            Size textSize = TextRenderer.MeasureText("text", jb_screen.label1.Font);
+            Size textSize = TextRenderer.MeasureText("text", jb_screen.labelSongs.Font);
 
             int maxLines = ((jb_screen.Height - jb_screen.textNowP.Height) / textSize.Height);
             
             listBox_songs.DataSource = null;
             listBox_songs.DataSource = songs2;
 
-            foreach (string str in songs2.GetRange(0, maxLines))
+            if (songs2.Count > maxLines)
             {
-                stringB.Append(str + "\n");                
+                foreach (string str in songs2.GetRange(0, maxLines))
+                {
+                    stringB.Append(str + "\n");
+                }
+                jb_screen.labelSongs.Text = stringB.ToString();
             }
-            jb_screen.label1.Text = stringB.ToString();
+            else
+            {
+                foreach (string str in songs2)
+                {
+                    stringB.Append(str + "\n");
+                }
+                jb_screen.labelSongs.Text = stringB.ToString();
+            }
         }
 
         public void Vote(string name)

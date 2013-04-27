@@ -12,7 +12,7 @@ namespace Prototype_Solution
     public partial class Base_screen : Form
     {
         NonFlickerSplitContainer split1, split2;
-        List<Start.modules> modList;
+        List<Module> modList;
         string layout;
 
         public Base_screen()
@@ -20,7 +20,7 @@ namespace Prototype_Solution
             InitializeComponent();
         }
 
-        public Base_screen(List<Start.modules> list, string layout)
+        public Base_screen(List<Module> list, string layout)
         {
             InitializeComponent();
             modList = list;
