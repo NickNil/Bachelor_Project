@@ -82,7 +82,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.listBox_songs);
             this.splitContainer1.Size = new System.Drawing.Size(1042, 589);
-            this.splitContainer1.SplitterDistance = 111;
+            this.splitContainer1.SplitterDistance = 89;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 5;
             // 
@@ -174,7 +174,7 @@
             // mediaP
             // 
             this.mediaP.Enabled = true;
-            this.mediaP.Location = new System.Drawing.Point(84, 42);
+            this.mediaP.Location = new System.Drawing.Point(84, 56);
             this.mediaP.Name = "mediaP";
             this.mediaP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mediaP.OcxState")));
             this.mediaP.Size = new System.Drawing.Size(279, 66);
@@ -189,7 +189,7 @@
             "No songs added"});
             this.listBox_songs.Location = new System.Drawing.Point(0, 0);
             this.listBox_songs.Name = "listBox_songs";
-            this.listBox_songs.Size = new System.Drawing.Size(1042, 477);
+            this.listBox_songs.Size = new System.Drawing.Size(1042, 499);
             this.listBox_songs.TabIndex = 1;
             this.listBox_songs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox_songs_KeyDown);
             // 

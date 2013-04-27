@@ -37,7 +37,7 @@
             this.labelSongs.BackColor = System.Drawing.Color.Transparent;
             this.labelSongs.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelSongs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSongs.ForeColor = System.Drawing.Color.Gold;
+            this.labelSongs.ForeColor = System.Drawing.Color.Orange;
             this.labelSongs.Location = new System.Drawing.Point(0, 0);
             this.labelSongs.Name = "labelSongs";
             this.labelSongs.Size = new System.Drawing.Size(1042, 313);
@@ -47,15 +47,15 @@
             // textNowP
             // 
             this.textNowP.BackColor = System.Drawing.Color.Transparent;
-            this.textNowP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textNowP.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.textNowP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNowP.ForeColor = System.Drawing.Color.Gold;
+            this.textNowP.ForeColor = System.Drawing.Color.Orange;
             this.textNowP.Location = new System.Drawing.Point(0, 366);
             this.textNowP.Name = "textNowP";
             this.textNowP.Size = new System.Drawing.Size(1042, 29);
             this.textNowP.TabIndex = 3;
             this.textNowP.Text = "Now Playing:";
+            this.textNowP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // JB_screen
             // 

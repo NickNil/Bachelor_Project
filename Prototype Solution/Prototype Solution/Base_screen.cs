@@ -46,13 +46,16 @@ namespace Prototype_Solution
             split2 = new NonFlickerSplitContainer();
             split1.BackColor = Color.Transparent;
             split2.BackColor = Color.Transparent;
+            split1.Panel1.Paint += Panel_Paint;
+            split1.Panel2.Paint += Panel_Paint;
+            split2.Panel1.Paint += Panel_Paint;
+            split2.Panel2.Paint += Panel_Paint;
             split1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer_SplitterMoved);
             split1.Resize += new System.EventHandler(this.splitContainer_Resize);
             split2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer_SplitterMoved);
             split2.Resize += new System.EventHandler(this.splitContainer_Resize);
-            split1.BorderStyle = split2.BorderStyle = BorderStyle.Fixed3D;
+           // split1.BorderStyle = split2.BorderStyle = BorderStyle.Fixed3D;
             
-
             switch (layout)
             {
                 case "1":
@@ -62,7 +65,7 @@ namespace Prototype_Solution
                     layoutPanel.Resize += new System.EventHandler(this.layoutPanel_Resize);
                     layoutPanel.Dock = DockStyle.Fill;
                     layoutPanel.Controls.Add(temp);
-                    this.Controls.Add(layoutPanel);
+                    splitContainer1.Panel2.Controls.Add(layoutPanel);
                     temp.Show();
                     break;
                 case "2_1":
@@ -70,13 +73,13 @@ namespace Prototype_Solution
                     control_Load(modList[1].userControl, split1.Panel2);
                     split1.Orientation = Orientation.Horizontal;
                     split1.Dock = DockStyle.Fill;
-                    this.Controls.Add(split1);
+                    splitContainer1.Panel2.Controls.Add(split1);
                     break;
                 case "2_2":
                     control_Load(modList[0].userControl, split1.Panel1);
                     control_Load(modList[1].userControl, split1.Panel2);
                     split1.Dock = DockStyle.Fill;
-                    this.Controls.Add(split1);
+                    splitContainer1.Panel2.Controls.Add(split1);
                     break;
                 case "3_1":
                     control_Load(modList[0].userControl, split1.Panel1);
@@ -86,7 +89,7 @@ namespace Prototype_Solution
                     split1.Orientation = Orientation.Horizontal;
                     split1.Panel2.Controls.Add(split2);
                     split2.Dock = DockStyle.Fill;
-                    this.Controls.Add(split1);
+                    splitContainer1.Panel2.Controls.Add(split1);
                     split2.SplitterDistance = split2.Width / 2;
                     break;
                 case "3_2":
@@ -97,7 +100,7 @@ namespace Prototype_Solution
                     split1.Orientation = Orientation.Horizontal;
                     split1.Panel1.Controls.Add(split2);
                     split1.Dock = DockStyle.Fill;
-                    this.Controls.Add(split1);
+                    splitContainer1.Panel2.Controls.Add(split1);
                     split2.SplitterDistance = split2.Width / 2;
                     break;
                 case "3_3":
@@ -108,7 +111,7 @@ namespace Prototype_Solution
                     split2.Orientation = Orientation.Horizontal;
                     split1.Panel1.Controls.Add(split2);
                     split1.Dock = DockStyle.Fill;
-                    this.Controls.Add(split1);
+                    splitContainer1.Panel2.Controls.Add(split1);
                     split2.SplitterDistance = split2.Height / 2;
                     break;
                 case "3_4":
@@ -119,7 +122,7 @@ namespace Prototype_Solution
                     split2.Orientation = Orientation.Horizontal;
                     split1.Panel2.Controls.Add(split2);
                     split1.Dock = DockStyle.Fill;
-                    this.Controls.Add(split1);
+                    splitContainer1.Panel2.Controls.Add(split1);
                     split2.SplitterDistance = split2.Height / 2;
                     break;
                 case "4":
@@ -127,14 +130,19 @@ namespace Prototype_Solution
                     control_Load(modList[1].userControl, split1.Panel2);
                     control_Load(modList[2].userControl, split2.Panel1);
                     control_Load(modList[3].userControl, split2.Panel2);
-                    split1.Width = this.Width;
-                    split1.Height = this.Height / 2;
+                    split1.Width = splitContainer1.Panel2.Width;
+                    split1.Height = splitContainer1.Panel2.Height / 2;
                     split2.Dock = DockStyle.Fill;
-                    this.Controls.Add(split1);
-                    this.Controls.Add(split2);
+                    splitContainer1.Panel2.Controls.Add(split1);
+                    splitContainer1.Panel2.Controls.Add(split2);
                     split2.SplitterDistance = split2.Width / 2;
                     break;
             }
+        }
+
+        void Panel_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.FromArgb(50, 255, 255, 255), ButtonBorderStyle.Solid);
         }
 
         private void splitContainer_SplitterMoved(object sender, SplitterEventArgs e)
