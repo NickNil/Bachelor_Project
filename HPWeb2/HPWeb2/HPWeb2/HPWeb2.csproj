@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Gisle.pubxml" />
+    <None Include="Properties\PublishProfiles\website.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
