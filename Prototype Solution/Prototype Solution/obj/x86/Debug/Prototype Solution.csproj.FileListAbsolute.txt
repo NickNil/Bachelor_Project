@@ -213,3 +213,7 @@ C:\Users\student\Documents\hovedprosjekt-2\Prototype Solution\Prototype Solution
 C:\Users\student\Documents\hovedprosjekt-2\Prototype Solution\Prototype Solution\obj\x86\Debug\AxInterop.WMPLib.dll
 C:\Users\student\Documents\hovedprosjekt-2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.JB_offscreen.resources
 C:\Users\student\Documents\hovedprosjekt-2\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype_Solution.JB_screen.resources
+C:\Users\Jehson\Documents\hovedprosjekt\Prototype Solution\Prototype Solution\bin\Debug\Prototype Solution.exe.config
+C:\Users\Jehson\Documents\hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Jehson\Documents\hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Jehson\Documents\hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.csproj.ResolveComReference.cache
