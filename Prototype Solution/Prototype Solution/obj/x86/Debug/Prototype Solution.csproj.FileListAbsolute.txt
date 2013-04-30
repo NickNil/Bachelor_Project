@@ -217,3 +217,9 @@ C:\Users\Jehson\Documents\hovedprosjekt\Prototype Solution\Prototype Solution\bi
 C:\Users\Jehson\Documents\hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Interop.WMPLib.dll
 C:\Users\Jehson\Documents\hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\AxInterop.WMPLib.dll
 C:\Users\Jehson\Documents\hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.csproj.ResolveComReference.cache
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\Hovedprosjekt\Prototype Solution\Prototype Solution\bin\Debug\Prototype Solution.exe.config
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\Hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\Hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\Hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.csproj.ResolveComReference.cache
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\Hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.exe
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\Hovedprosjekt\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.pdb
