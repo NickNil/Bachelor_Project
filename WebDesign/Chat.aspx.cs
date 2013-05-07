@@ -40,18 +40,30 @@ namespace WebDesign
 
         protected void btnSaveToCookie_Click(object sender, EventArgs e)
         {
-            HttpCookie cookie = new HttpCookie("UserName");
-            cookie["Name"] = tbName.Text;
-            cookie.Expires = DateTime.Now.AddDays(1);
-            Response.Cookies.Add(cookie);
+            if (tbName.Text.Contains(" ") || tbName.Text.Length > 15)
+            {
+                LbError.Text = "Ugyldig brukernavn. Bruker navnet skal ikke inneholder mellomrom og har maks 15 tegn";
+            }
+            else
+            {
+                HttpCookie cookie = new HttpCookie("UserName");
+                cookie["Name"] = tbName.Text;
+                cookie.Expires = DateTime.Now.AddDays(1);
+                Response.Cookies.Add(cookie);
 
-            lbName.Text = cookie["Name"];
-            MultiView.ActiveViewIndex = 1;
+                lbName.Text = cookie["Name"];
+                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            }
         }
 
         protected void BtnSend_Click(object sender, EventArgs e)
         {
-            
+            if (TBMsg.Text.Length > 30)
+            {
+                LbError.Text = "Melding skal maks ha 30 tegn";
+            }
+            else
+            {
                 HttpCookie cookie = Request.Cookies["UserName"];
 
                 TextBox chatText = TBMsg;
@@ -60,7 +72,7 @@ namespace WebDesign
                 chatInput += "Chat=" + username + ": " + chatText.Text;
                 chatText.Text = "";
                 c.Send(chatInput);
-        
+            }
 
 
         }
@@ -68,7 +80,7 @@ namespace WebDesign
         protected void BtnLogOut_Click(object sender, EventArgs e)
         {
             Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(-1);
-            MultiView.ActiveViewIndex = 0;
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
     }
 }

@@ -44,7 +44,7 @@ mark {
     padding-right: 5px;
 }
 
-.rounded-wrapper {
+.logo {
     background-color: white;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -136,7 +136,7 @@ header .content-wrapper {
 
 footer {
     clear: both;
-    background-color: #b97305;
+    background-color: #e2e2e2;
     font-size: .8em;
     height: 100px;
 }
@@ -158,6 +158,40 @@ footer {
         text-decoration: none;
     }
 
+
+/* login
+----------------------------------------------------------*/
+#login {
+    display: block;
+    font-size: .85em;
+    margin: 0 0 10px;
+    text-align: right;
+}
+
+    #login a {
+        background-color: #d3dce0;
+        margin-left: 10px;
+        margin-right: 3px;
+        padding: 2px 3px;
+        text-decoration: none;
+    }
+
+        #login a.username {
+            background: none;
+            margin-left: 0px;
+            text-decoration: underline;
+        }
+
+    #login ul {
+        margin: 0;
+    }
+
+    #login li {
+        display: inline;
+        list-style: none;
+    }
+
+
 /* menu
 ----------------------------------------------------------*/
 ul#menu {
@@ -176,12 +210,12 @@ ul#menu {
 
         ul#menu li a {
             background: none;
-            color: #000;
+            color: #999;
             text-decoration: none;
         }
 
             ul#menu li a:hover {
-                color: #b97305;
+                color: #333;
                 text-decoration: none;
             }
 
