@@ -64,11 +64,16 @@ namespace Prototype_Solution
             fileDialog.Filter = "Music(*.mp3)|*.mp3";
             fileDialog.ShowDialog();
 
-            songs.Clear();
             foreach (string name in fileDialog.FileNames)
             {
                 songs.Add(new Song(name));
             }
+            updateTxt();
+        }
+
+        private void btnEmpty_Click(object sender, EventArgs e)
+        {
+            songs.Clear();
             updateTxt();
         }
 
@@ -135,25 +140,8 @@ namespace Prototype_Solution
             }
         }
 
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            // Check first to be sure the operation is valid.
-            if (mediaP_controls.get_isAvailable("previous"))
-            {
-                mediaP_controls.previous();
-            }
-        }
-
         private void btnNext_Click(object sender, EventArgs e)
         {
-            /*
-            WMPLib.IWMPControls3 mediaP_controls = (WMPLib.IWMPControls3)mediaP.Ctlcontrols;
-            // Check first to be sure the operation is valid.
-            if (controls.get_isAvailable("next"))
-            {
-                controls.next();
-            }*/
-
             if (songs.Count > 0)
             {
                 mediaP.URL = songs[0].ToString();
@@ -306,5 +294,37 @@ namespace Prototype_Solution
 
         }
         #endregion
+
+        //Double click to play song
+        private void listBox_songs_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                if (listBox_songs.IndexFromPoint(e.X, e.Y) == -1 || songs.Count == 0)
+                    return;
+
+                string song = listBox_songs.Items[listBox_songs.IndexFromPoint(e.X, e.Y)].ToString();
+                song = song.Remove(0, song.IndexOf(" ") + 1);
+                int index = listBox_songs.IndexFromPoint(e.X, e.Y);
+
+                foreach (Song currentSong in songs)
+                {
+                    if (currentSong.name == song)
+                    {
+                        song = currentSong.path;
+                        break;
+                    }
+                }
+
+                if (song != string.Empty)
+                {
+                    mediaP.URL = song;
+                    songs.RemoveAt(index);
+                    songs.Add(new Song(song));
+                    updateTxt();
+                }
+                
+            }
+        }
     }
 }

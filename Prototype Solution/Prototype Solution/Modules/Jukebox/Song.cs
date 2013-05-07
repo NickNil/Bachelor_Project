@@ -27,10 +27,9 @@ namespace Prototype_Solution
 
         public void newVote(string s)
         {
-            if (s.Remove(0,3) == name)
+            if (s.Remove(0, s.IndexOf(" ") + 1) == name)
             {
                 votes++;
-                //MessageBox.Show("vote recieved for " + s);
             }
         }
     }

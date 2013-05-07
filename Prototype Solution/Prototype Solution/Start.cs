@@ -36,7 +36,7 @@ namespace Prototype_Solution
                 
             contextMenuStrip.Items.Add("Jukebox");
             contextMenuStrip.Items.Add("Chat");
-            contextMenuStrip.Items.Add("Ad_Image");
+            contextMenuStrip.Items.Add("Bilde");
             contextMenuStrip.ItemClicked += new ToolStripItemClickedEventHandler(contextMenuStrip_ItemClicked);
         }
 

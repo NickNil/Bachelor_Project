@@ -16,6 +16,7 @@ namespace Prototype_Solution
         delegate void SetTextCallback(string text, string ip);
         Chat_screen chat_screen;
         ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
+        int maxLines;
 
         public Chat_offscreen()
         {
@@ -26,11 +27,14 @@ namespace Prototype_Solution
         {
             InitializeComponent();
             this.chat_screen = chat_screen;
+
+            maxLines = TextRenderer.MeasureText("blah", chat_screen.textChat.Font).Height;
+
             this.chat_screen.Resize += new System.EventHandler(this.Chat_screen_Resize);
 
             listBoxChat.ContextMenuStrip = contextMenuStrip;
-            contextMenuStrip.Items.Add("Delete");
-            contextMenuStrip.Items.Add("Ban IP");
+            contextMenuStrip.Items.Add("Slett");
+            contextMenuStrip.Items.Add("Utesteng IP");
             contextMenuStrip.ItemClicked += new ToolStripItemClickedEventHandler(contextMenuStrip_ItemClicked);
         }
 
@@ -57,6 +61,7 @@ namespace Prototype_Solution
             if (text == String.Empty)
                 return;
 
+
             //If text.width > screen.width then split text at center and try again
             Size textSize = TextRenderer.MeasureText(text, chat_screen.textChat.Font);
             if (textSize.Width > chat_screen.Width)
@@ -66,16 +71,21 @@ namespace Prototype_Solution
                 return;
             }
 
+
             //Auto scroll
-            int maxLines = (chat_screen.Height / textSize.Height);
             while (listBoxChat.Items.Count >= MAX)
                 listBoxChat.Items.RemoveAt(0);
             listBoxChat.Items.Add(new ChatText(text, ip));
 
+            UpdateText();
+        }
+
+        public void UpdateText()
+        {
             chat_screen.textChat.Text = String.Empty;
             if (listBoxChat.Items.Count > maxLines)
             {
-                for(int i = listBoxChat.Items.Count - maxLines; i < listBoxChat.Items.Count; i++)
+                for (int i = listBoxChat.Items.Count - maxLines; i < listBoxChat.Items.Count; i++)
                 {
                     chat_screen.textChat.Text += ((ChatText)listBoxChat.Items[i]).text + "\n";
                 }
@@ -90,21 +100,32 @@ namespace Prototype_Solution
 
         private void contextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            ChatText test = (ChatText)(((ListBox)(((ContextMenuStrip)sender).SourceControl)).SelectedItem);
-            if (e.ClickedItem.Text == "Delete")
-                throw new NotImplementedException();
-            else if (e.ClickedItem.Text == "Ban IP")
+            if (listBoxChat.SelectedItem == null)
+                return;
+
+            ChatText temp = (ChatText)listBoxChat.SelectedItem;
+            if (e.ClickedItem.Text == "Slett")
             {
-                if (!Base_offscreen.CheckBlacklist(test.ip))
-                    Base_offscreen.blackList.Add(test.ip);
+                listBoxChat.Items.RemoveAt(listBoxChat.SelectedIndex);
+                UpdateText();
+            }
+            else if (e.ClickedItem.Text == "Utesteng IP")
+            {
+                if (!Base_offscreen.CheckBlacklist(temp.ip))
+                    Base_offscreen.blackList.Add(temp.ip);
+
+                for (int i = 0; i < listBoxChat.Items.Count; i++)
+                {
+                    if (((ChatText)listBoxChat.Items[i]).ip == temp.ip)
+                        listBoxChat.Items.RemoveAt(i);
+                }
+                UpdateText();
             }
         }
 
         private void Chat_screen_Resize(object sender, EventArgs e)
         {
             //Get height of font
-            Size textSize = TextRenderer.MeasureText("blah", chat_screen.textChat.Font);
-            int maxLines = (chat_screen.Height / textSize.Height);
             chat_screen.textChat.Text = String.Empty;
             if (listBoxChat.Items.Count > maxLines)
             {
@@ -132,7 +153,7 @@ namespace Prototype_Solution
         {
             if (e.KeyCode == Keys.Enter)
             {
-                WriteText("Moderator: " + modChat.Text, "Offscreen");
+                WriteText("Moderator: " + modChat.Text, "Mod");
                 modChat.Text = string.Empty;
             }
         }

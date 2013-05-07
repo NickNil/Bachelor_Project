@@ -36,9 +36,9 @@
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdd.Location = new System.Drawing.Point(0, 0);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(284, 261);
+            this.btnAdd.Size = new System.Drawing.Size(942, 629);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add Image";
+            this.btnAdd.Text = "Velg Bilde";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -46,11 +46,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.btnAdd);
-            this.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Name = "Ad_Image_offscreen";
-            this.Text = "Ad_Image_offscreen";
+            this.Size = new System.Drawing.Size(942, 629);
             this.ResumeLayout(false);
 
         }

@@ -72,9 +72,11 @@
             this.ClientSize = new System.Drawing.Size(731, 520);
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Base_screen";
             this.Padding = new System.Windows.Forms.Padding(50, 0, 50, 50);
             this.Text = "Base_screen";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Base_screen_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
