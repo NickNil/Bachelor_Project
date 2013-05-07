@@ -27,9 +27,7 @@ namespace Prototype_Solution
         {
             InitializeComponent();
             this.chat_screen = chat_screen;
-
-            maxLines = TextRenderer.MeasureText("blah", chat_screen.textChat.Font).Height;
-
+            this.listBoxChat.ItemAdded += new EventHandler<ListBoxItemEventArgs>(listBoxChat_ItemAdded);
             this.chat_screen.Resize += new System.EventHandler(this.Chat_screen_Resize);
 
             listBoxChat.ContextMenuStrip = contextMenuStrip;
@@ -75,7 +73,7 @@ namespace Prototype_Solution
             //Auto scroll
             while (listBoxChat.Items.Count >= MAX)
                 listBoxChat.Items.RemoveAt(0);
-            listBoxChat.Items.Add(new ChatText(text, ip));
+            listBoxChat.AddItem(new ChatText(text, ip));
 
             UpdateText();
         }
@@ -126,6 +124,8 @@ namespace Prototype_Solution
         private void Chat_screen_Resize(object sender, EventArgs e)
         {
             //Get height of font
+            maxLines = (chat_screen.Height / TextRenderer.MeasureText("blah", chat_screen.textChat.Font).Height);
+
             chat_screen.textChat.Text = String.Empty;
             if (listBoxChat.Items.Count > maxLines)
             {
@@ -156,6 +156,12 @@ namespace Prototype_Solution
                 WriteText("Moderator: " + modChat.Text, "Mod");
                 modChat.Text = string.Empty;
             }
+        }
+
+        private void listBoxChat_ItemAdded(object sender, EventArgs e)
+        {
+            //Autoscroll offscreen
+            listBoxChat.TopIndex = listBoxChat.Items.Count - 1;
         }
         #endregion
     }

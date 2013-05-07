@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxChat = new System.Windows.Forms.ListBox();
+            this.listBoxChat = new Prototype_Solution.ListBoxWithEvents();
             this.modChat = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBoxChat;
+        private Prototype_Solution.ListBoxWithEvents listBoxChat;
         private System.Windows.Forms.TextBox modChat;
 
     }

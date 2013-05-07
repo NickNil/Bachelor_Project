@@ -53,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection_S.cs" />
+    <Compile Include="ListBoxWithEvents.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Module.cs" />
     <Compile Include="Modules\Ad_Image\Ad_Image.cs" />
     <Compile Include="Modules\Ad_Image\Ad_Image_offscreen.cs">
