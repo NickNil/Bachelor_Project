@@ -13,13 +13,22 @@ namespace WebDesign {
     public partial class Jukebox {
         
         /// <summary>
+        /// LbJukebox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LbJukebox;
+        
+        /// <summary>
         /// songList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox songList;
+        protected global::System.Web.UI.WebControls.DropDownList songList;
         
         /// <summary>
         /// voteBtn control.

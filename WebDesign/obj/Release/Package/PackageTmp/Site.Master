@@ -4,7 +4,7 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - Interactive TV</title>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
@@ -38,52 +38,35 @@
         <header>
             <script src="Scripts/WebForms/imgScript.js"></script>
             <div class="content-wrapper">
-                <div class="logo">
-                    <div class="content">
-                        <a href="./" title="Home">
-                            <img id="logo" src="../Images/newlogo.jpg" alt="new logo" class="center" />
-                        </a>
-                    </div>
+                <div class="rounded-wrapper">
+                    <a href="./" title="Home">
+                        <img id="logo" src="../Images/newlogo.jpg" alt="new logo" class="center" />
+                    </a>
                 </div>
-            <div class="float-right">
-                <section id="login">
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul>
-                                <li><a id="registerLink" runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a id="loginLink" runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <p>
-                                Hello, <a runat="server" class="username" href="~/Account/Manage" title="Manage your account">
-                                    <asp:LoginName runat="server" CssClass="username" />
-                                </a>!
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
-                            </p>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
-                </section>
-                <nav>
-                    <ul id="menu">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Chat">Chat</a></li>
-                        <li><a runat="server" href="~/Jukebox">Jukebox</a></li>
-                    </ul>
-                </nav>
-            </div>
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                            <li><a runat="server" href="~/">Home</a></li>
+                            <li><a runat="server" href="~/Chat">Chat</a></li>
+                            <li><a runat="server" href="~/Jukebox">Jukebox</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </header>
+
         <div id="body">
-            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-            <section class="content-wrapper main-content clear-fix">
-                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-            </section>
+            <div class="content-wrapper">
+                <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+                <section class="content-wrapper main-content clear-fix">
+                    <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                </section>
+            </div>
         </div>
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                    <p>&copy; <%: DateTime.Now.Year %> - Interactive TV</p>
                 </div>
             </div>
         </footer>

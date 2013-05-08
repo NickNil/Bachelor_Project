@@ -1,5 +1,5 @@
 ﻿$("document").ready(function () {
-    var ratio = $("#logo").width() / $("#MyPic").height();
-    $("#logo").css("width", "100%");
+    var ratio = $("#logo").width() / $("#logo").height();
+    $("#logo").css("width", "90%");
     $("#logo").css("height", $("#logo").width() / ratio + "px");
 });

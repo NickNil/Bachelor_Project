@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Chat" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="True"
     CodeBehind="Chat.aspx.cs" Inherits="WebDesign.Chat" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+<asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:MultiView ID="MultiView" runat="server">
@@ -22,5 +22,5 @@
     </asp:View>
 
     </asp:MultiView>
-    <asp:Label ID="LbError" runat="server"/>
+    <asp:Label ID="LbError" runat="server" class="message-error"/>
 </asp:Content>

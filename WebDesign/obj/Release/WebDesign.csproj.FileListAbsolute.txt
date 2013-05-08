@@ -3,12 +3,6 @@ C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\We
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\Antlr3.Runtime.dll
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\AspNet.ScriptManager.jQuery.dll
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.AspNet.dll
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.Core.dll
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.OAuth.Consumer.dll
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.OAuth.dll
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.OpenId.dll
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\EntityFramework.dll
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\Microsoft.AspNet.FriendlyUrls.dll
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\Microsoft.AspNet.Membership.OpenAuth.dll
@@ -20,13 +14,8 @@ C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\Sy
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\System.Web.Providers.dll
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\WebGrease.dll
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\EntityFramework.xml
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.Core.xml
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.OAuth.xml
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.OAuth.Consumer.xml
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.OpenId.xml
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\DotNetOpenAuth.AspNet.xml
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\Microsoft.AspNet.Membership.OpenAuth.xml
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\obj\Release\WebDesign.dll
 C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\obj\Release\WebDesign.pdb
+C:\Users\Jehson\Documents\Visual Studio 2012\Projects\WebDesign\WebDesign\obj\Release\WebDesign.csprojResolveAssemblyReference.cache
