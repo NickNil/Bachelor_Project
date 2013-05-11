@@ -9,7 +9,7 @@ namespace WebDesign
 {
     public partial class Jukebox : System.Web.UI.Page
     {
-        Connection_C c;
+        TCP_Client c;
         string playlistString;
         List<string> playList = new List<string>();
 
@@ -19,7 +19,7 @@ namespace WebDesign
         protected void Page_Load(object sender, EventArgs e)
         {
             if (c == null)
-                c = new Connection_C();
+                c = new TCP_Client();
             if (songList.Items.Count == 0)
                 createList();
             
@@ -28,15 +28,14 @@ namespace WebDesign
         protected void createList()
         {
             c.Send("Jukebox=Page Load");
-            c.ReceiveDataFromServer();
-            playlistString = c.receivedData;
+            playlistString = c.ReceiveDataFromServer();
             if (playlistString != null)
             {
                 playList.Clear();
                 songList.Items.Clear();
-                while (playlistString.IndexOf("\n") != -1)
+                while (playlistString.IndexOf(";;") != -1)
                 {
-                    i = playlistString.IndexOf("\n");
+                    i = playlistString.IndexOf(";;");
                     song = playlistString.Substring(0, i);
                     playList.Add(song);
                     playlistString = playlistString.Remove(0, i + 1);

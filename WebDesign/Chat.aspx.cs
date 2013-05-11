@@ -9,7 +9,7 @@ namespace WebDesign
 {
     public partial class Chat : System.Web.UI.Page
     {
-        Connection_C c;
+        TCP_Client c;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +22,7 @@ namespace WebDesign
             else
                 MultiView.ActiveViewIndex = 0;
 
-            c = new Connection_C();
+            c = new TCP_Client();
         }
 
         protected string CheckIP()

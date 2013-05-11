@@ -19,7 +19,7 @@ namespace Prototype_Solution
         List<Module> modList;
         NonFlickerSplitContainer split1, split2;
         string layout;
-        Connection_S connection;
+        TCP_Server connection;
         public static List<string> blackList = new List<string>();
 
         public Base_offscreen()
@@ -46,7 +46,7 @@ namespace Prototype_Solution
 
             createLayout();
 
-            connection = new Connection_S(chat, jukebox);
+            connection = new TCP_Server(chat, jukebox);
 
             //Base_screen
             base_screen = new Base_screen(modList, layout);

@@ -122,6 +122,7 @@
     <Compile Include="Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
+    <Compile Include="TCP_Server.cs" />
     <EmbeddedResource Include="Modules\Ad_Image\Ad_Image_offscreen.resx">
       <DependentUpon>Ad_Image_offscreen.cs</DependentUpon>
     </EmbeddedResource>
