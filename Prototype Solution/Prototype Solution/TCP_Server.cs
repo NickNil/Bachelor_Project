@@ -49,6 +49,11 @@ namespace Prototype_Solution
 
                 Console.WriteLine("Connected: {0}", soc.RemoteEndPoint);
 
+                //Check blacklist
+                string ip = ((IPEndPoint)(soc.RemoteEndPoint)).Address.ToString();
+                if (Base_offscreen.CheckBlacklist(ip))
+                    return;
+
                 try
                 {
                     Stream s = new NetworkStream(soc);
@@ -58,8 +63,11 @@ namespace Prototype_Solution
 
                     string content = sr.ReadLine();
 
+                    if (content.IndexOf("IP=") == 0)
+                        content = CheckIP(content, ref ip);
+
                     if (content.IndexOf("Chat=") == 0)
-                        TryChat(content.Remove(0, 5));
+                        TryChat(content.Remove(0, 5), ip);
 
                     if (content.IndexOf("Jukebox=") == 0)
                         TryJukebox(sw, content.Remove(0, 8));
@@ -87,10 +95,20 @@ namespace Prototype_Solution
 
         }
 
-        public void TryChat(string content)
+        public string CheckIP(string content, ref string ip)
+        {
+            content = content.Remove(0, content.IndexOf("[") + 1);
+            ip = content.Remove(content.IndexOf("]"));
+            if (Base_offscreen.CheckBlacklist(ip))
+                return "";
+            else
+                return content.Remove(0, content.IndexOf("]") + 1);
+        }
+
+        public void TryChat(string content, string ip)
         {
             if (chat != null)
-                chat.chat_screen.SetText(content);
+                chat.chat_offscreen.SetText(content, ip);
         }
 
         public void TryJukebox(StreamWriter sw, string content)
