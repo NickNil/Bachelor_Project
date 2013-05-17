@@ -64,6 +64,12 @@ namespace WebDesign
             if (TBMsg.Text.Length > 30)
             {
                 LbError.Text = "Melding skal maks ha 30 tegn";
+                TBMsg.Text = String.Empty;
+            }
+            else if (string.IsNullOrWhiteSpace(TBMsg.Text))
+            {
+                LbError.Text = "Meldingen er tomt!";
+                TBMsg.Text = String.Empty;
             }
             else
             {
@@ -76,6 +82,8 @@ namespace WebDesign
                 chatInput += "Chat=" + username + ": " + chatText.Text;
                 chatText.Text = "";
                 c.Send(chatInput);
+
+                LbError.Text = String.Empty;
             }
 
 

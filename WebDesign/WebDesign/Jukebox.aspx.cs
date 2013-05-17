@@ -25,6 +25,14 @@ namespace WebDesign
                 c.Send("Jukebox=Page Load");
                 createList();
             }
+            if (HttpContext.Current.Request.Cookies["Voted"] != null)
+            {
+                HttpCookie cookie = Request.Cookies["Voted"];
+                MultiView2.ActiveViewIndex = 1;
+            }
+            else
+                MultiView2.ActiveViewIndex = 0;
+
 
         }
 
@@ -55,11 +63,26 @@ namespace WebDesign
             //Receive updated list
 
             createList();
+            //create cookie, save name of song and expiration 
+            HttpCookie cookie = new HttpCookie("Voted");
+            cookie["VotedSong"] = songList.SelectedItem.Text;
+            cookie.Expires = DateTime.Now.AddDays(0.00347222);
+            Response.Cookies.Add(cookie);
+
+            lbSongName.Text = cookie["VotedSong"];
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 
         protected void songList_SelectedIndexChanged(object sender, EventArgs e)
         {
             voteBtn.Enabled = true;
+        }
+
+        protected void DeleteCook_Click(object sender, EventArgs e)
+        {
+            Response.Cookies["Voted"].Expires = DateTime.Now.AddDays(-1);
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+
         }
     }
 }
