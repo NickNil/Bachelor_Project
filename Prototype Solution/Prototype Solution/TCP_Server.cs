@@ -17,18 +17,18 @@ namespace Prototype_Solution
         Chat chat;
         Jukebox jukebox;
 
+        int test = 0;
+
         string playlist;
 
         static TcpListener listener;
-        const int LIMIT = 5; //5 concurrent clients
+        const int LIMIT = 50; //50 concurrent clients
 
         public TCP_Server(Chat chat, Jukebox jukebox)
         {
             this.chat = chat;
             this.jukebox = jukebox;
 
-            IPHostEntry ipHost = Dns.GetHostEntry("");
-            IPAddress ipAddr = ipHost.AddressList[0];
             listener = new TcpListener(IPAddress.Loopback, 2055);
             listener.Start();
 
@@ -47,12 +47,12 @@ namespace Prototype_Solution
             {
                 Socket soc = listener.AcceptSocket();
 
+                test++;
                 Console.WriteLine("Connected: {0}", soc.RemoteEndPoint);
+                Console.WriteLine(test);
 
-                //Check blacklist
-                string ip = ((IPEndPoint)(soc.RemoteEndPoint)).Address.ToString();
-                if (Base_offscreen.CheckBlacklist(ip))
-                    return;
+
+                string ip = string.Empty;
 
                 try
                 {
@@ -76,10 +76,12 @@ namespace Prototype_Solution
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    Console.WriteLine(e + "\npnothing");
                 }
 
+                test--;
                 Console.WriteLine("Disconnected: {0}", soc.RemoteEndPoint);
+                Console.WriteLine(test);
 
                 soc.Close();
             }
@@ -91,7 +93,7 @@ namespace Prototype_Solution
             {
                 sw.WriteLine(message);
             }
-            catch (Exception exc) { Debug.WriteLine(exc.ToString()); }
+            catch (Exception exc) { Debug.WriteLine(exc.ToString() + "\n failed to send message for some reason"); }
 
         }
 

@@ -13,7 +13,7 @@ namespace WebDesign
 {
     public class TCP_Client
     {
-        TcpClient client = new TcpClient();
+        public TcpClient client = new TcpClient();
 
         Stream s;
         StreamReader sr;
@@ -26,11 +26,11 @@ namespace WebDesign
             IPAddress ipAddr = ipHost.AddressList[0];
 
             IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Loopback, 2055);
-            client.Connect(ipEndPoint);
+            
             
             try
             {
-                
+                client.Connect(ipEndPoint);
                 s = client.GetStream();
                 sr = new StreamReader(s);
                 sw = new StreamWriter(s);

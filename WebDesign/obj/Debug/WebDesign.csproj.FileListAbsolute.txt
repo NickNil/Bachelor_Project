@@ -1,0 +1,57 @@
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\WebDesign.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\WebDesign.pdb
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\Antlr3.Runtime.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\AspNet.ScriptManager.jQuery.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\EntityFramework.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\Microsoft.AspNet.FriendlyUrls.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\Microsoft.ScriptManager.MSAjax.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\Microsoft.ScriptManager.WebForms.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\Microsoft.Web.Infrastructure.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\System.Web.Optimization.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\System.Web.Providers.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\WebGrease.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\EntityFramework.xml
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\bin\Microsoft.AspNet.FriendlyUrls.xml
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\obj\Debug\WebDesign.csprojResolveAssemblyReference.cache
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\obj\Debug\WebDesign.dll
+c:\users\jehson\documents\visual studio 2012\Projects\WebDesign\WebDesign\obj\Debug\WebDesign.pdb
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\obj\Debug\WebDesign.csprojResolveAssemblyReference.cache
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\obj\Debug\WebDesign.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\obj\Debug\WebDesign.pdb
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\WebDesign.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\WebDesign.pdb
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\Antlr3.Runtime.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\EntityFramework.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\System.Web.Optimization.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\System.Web.Providers.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\WebGrease.dll
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\EntityFramework.xml
+C:\Users\Jehson\Desktop\WebDesign\WebDesign\bin\Microsoft.AspNet.FriendlyUrls.xml
+G:\WebDesign\WebDesign\bin\WebDesign.dll
+G:\WebDesign\WebDesign\bin\WebDesign.pdb
+G:\WebDesign\WebDesign\bin\Antlr3.Runtime.dll
+G:\WebDesign\WebDesign\bin\AspNet.ScriptManager.jQuery.dll
+G:\WebDesign\WebDesign\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+G:\WebDesign\WebDesign\bin\EntityFramework.dll
+G:\WebDesign\WebDesign\bin\Microsoft.AspNet.FriendlyUrls.dll
+G:\WebDesign\WebDesign\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+G:\WebDesign\WebDesign\bin\Microsoft.ScriptManager.MSAjax.dll
+G:\WebDesign\WebDesign\bin\Microsoft.ScriptManager.WebForms.dll
+G:\WebDesign\WebDesign\bin\Microsoft.Web.Infrastructure.dll
+G:\WebDesign\WebDesign\bin\System.Web.Optimization.dll
+G:\WebDesign\WebDesign\bin\System.Web.Providers.dll
+G:\WebDesign\WebDesign\bin\WebGrease.dll
+G:\WebDesign\WebDesign\bin\EntityFramework.xml
+G:\WebDesign\WebDesign\bin\Microsoft.AspNet.FriendlyUrls.xml
+G:\WebDesign\WebDesign\obj\Debug\WebDesign.csprojResolveAssemblyReference.cache
+G:\WebDesign\WebDesign\obj\Debug\WebDesign.dll
+G:\WebDesign\WebDesign\obj\Debug\WebDesign.pdb

@@ -15,7 +15,6 @@ namespace WebDesign
         {
             // Code that runs on application startup
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
 

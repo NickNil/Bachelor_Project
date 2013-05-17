@@ -9,7 +9,7 @@ namespace WebDesign
 {
     public partial class Chat : System.Web.UI.Page
     {
-        TCP_Client c;
+       TCP_Client c;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +22,7 @@ namespace WebDesign
             else
                 MultiView.ActiveViewIndex = 0;
 
-            c = new TCP_Client();
+            
         }
 
         protected string CheckIP()
@@ -53,17 +53,21 @@ namespace WebDesign
 
                 lbName.Text = cookie["Name"];
                 Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                //c.client.Close();
             }
         }
 
         protected void BtnSend_Click(object sender, EventArgs e)
         {
+            
+
             if (TBMsg.Text.Length > 30)
             {
                 LbError.Text = "Melding skal maks ha 30 tegn";
             }
             else
             {
+                c = new TCP_Client();
                 HttpCookie cookie = Request.Cookies["UserName"];
 
                 TextBox chatText = TBMsg;
