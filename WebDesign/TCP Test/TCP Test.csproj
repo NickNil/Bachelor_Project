@@ -79,7 +79,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="F:\WebDesign\WebDesign\WebDesign.csproj">
+    <ProjectReference Include="..\WebDesign\WebDesign.csproj">
       <Project>{7d13822b-ae78-4d54-bbc7-1b5a6f4f4841}</Project>
       <Name>WebDesign</Name>
     </ProjectReference>
