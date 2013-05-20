@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 
 namespace Prototype_Solution
 {
@@ -31,6 +32,18 @@ namespace Prototype_Solution
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Multiselect = true;
+
+            StringBuilder allImageExtensions = new StringBuilder();
+            string separator = "";
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageEncoders();
+            foreach (ImageCodecInfo codec in codecs)
+            {
+                allImageExtensions.Append(separator);
+                allImageExtensions.Append(codec.FilenameExtension);
+                separator = ";";
+            }
+            fileDialog.Filter = "All Image Files|" + allImageExtensions;
+            
             fileDialog.ShowDialog();
 
             timer.Stop();
@@ -38,10 +51,12 @@ namespace Prototype_Solution
             nextImage = 1;
             images.AddRange(fileDialog.FileNames);
 
-            ad_image_screen.pictureBox.ImageLocation = images[0];
-            if (images.Count > 1)
-                startTimer();
-                
+            if (images.Count > 0)
+            {
+                ad_image_screen.pictureBox.ImageLocation = images[0];
+                if (images.Count > 1)
+                    startTimer();
+            }   
         }
 
         private void startTimer()

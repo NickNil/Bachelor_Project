@@ -228,6 +228,24 @@ namespace Prototype_Solution
                 jb_screen.labelSongs.Text = stringB.ToString();
             }
         }
+
+        //Double click to play song
+        private void listBox_songs_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                int index = listBox_songs.IndexFromPoint(e.X, e.Y);
+
+                if (index == -1 || songs.Count == 0)
+                    return;
+
+                Song temp = songs[index];
+                mediaP.URL = temp.path;
+                songs.RemoveAt(index);
+                songs.Add(new Song(temp.path));
+                updateTxt();
+            }
+        }
         #endregion
 
         #region Public Methods
@@ -295,36 +313,6 @@ namespace Prototype_Solution
         }
         #endregion
 
-        //Double click to play song
-        private void listBox_songs_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
-            {
-                if (listBox_songs.IndexFromPoint(e.X, e.Y) == -1 || songs.Count == 0)
-                    return;
-
-                string song = listBox_songs.Items[listBox_songs.IndexFromPoint(e.X, e.Y)].ToString();
-                song = song.Remove(0, song.IndexOf(" ") + 1);
-                int index = listBox_songs.IndexFromPoint(e.X, e.Y);
-
-                foreach (Song currentSong in songs)
-                {
-                    if (currentSong.name == song)
-                    {
-                        song = currentSong.path;
-                        break;
-                    }
-                }
-
-                if (song != string.Empty)
-                {
-                    mediaP.URL = song;
-                    songs.RemoveAt(index);
-                    songs.Add(new Song(song));
-                    updateTxt();
-                }
-                
-            }
-        }
+        
     }
 }

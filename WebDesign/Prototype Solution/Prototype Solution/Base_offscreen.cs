@@ -50,6 +50,14 @@ namespace Prototype_Solution
 
             //Base_screen
             base_screen = new Base_screen(modList, layout);
+
+            //Show on second monitor
+            var mainScreen = Screen.FromControl(this);
+            var secondScreen = Screen.AllScreens.FirstOrDefault(s => !s.Equals(mainScreen)) ?? mainScreen;
+            base_screen.Left = secondScreen.WorkingArea.Left;
+            base_screen.Top = secondScreen.WorkingArea.Top;
+            base_screen.StartPosition = FormStartPosition.Manual;
+
             base_screen.Show();
         }
 

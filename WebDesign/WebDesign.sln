@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDesign", "WebDesign\WebDesign.csproj", "{7D13822B-AE78-4D54-BBC7-1B5A6F4F4841}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{EB59FB85-62F1-45C6-964E-517D185D58F5}"
@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{EB59FB
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype Solution", "Prototype Solution\Prototype Solution\Prototype Solution.csproj", "{68B435FC-E90B-41AA-B3F8-BF4FDB8DE2B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCP Test", "TCP Test\TCP Test.csproj", "{651AD585-67A9-4191-A49E-3FA5C38CB9EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,16 @@ Global
 		{68B435FC-E90B-41AA-B3F8-BF4FDB8DE2B1}.Release|Mixed Platforms.Build.0 = Release|x86
 		{68B435FC-E90B-41AA-B3F8-BF4FDB8DE2B1}.Release|x86.ActiveCfg = Release|x86
 		{68B435FC-E90B-41AA-B3F8-BF4FDB8DE2B1}.Release|x86.Build.0 = Release|x86
+		{651AD585-67A9-4191-A49E-3FA5C38CB9EB}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{651AD585-67A9-4191-A49E-3FA5C38CB9EB}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{651AD585-67A9-4191-A49E-3FA5C38CB9EB}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{651AD585-67A9-4191-A49E-3FA5C38CB9EB}.Debug|x86.ActiveCfg = Debug|x86
+		{651AD585-67A9-4191-A49E-3FA5C38CB9EB}.Debug|x86.Build.0 = Debug|x86
+		{651AD585-67A9-4191-A49E-3FA5C38CB9EB}.Release|Any CPU.ActiveCfg = Release|x86
+		{651AD585-67A9-4191-A49E-3FA5C38CB9EB}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{651AD585-67A9-4191-A49E-3FA5C38CB9EB}.Release|Mixed Platforms.Build.0 = Release|x86
+		{651AD585-67A9-4191-A49E-3FA5C38CB9EB}.Release|x86.ActiveCfg = Release|x86
+		{651AD585-67A9-4191-A49E-3FA5C38CB9EB}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

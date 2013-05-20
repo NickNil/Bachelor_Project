@@ -76,7 +76,7 @@ namespace Prototype_Solution
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e + "\npnothing");
+                    Console.WriteLine(e + "\n nothing");
                 }
 
                 test--;
