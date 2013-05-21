@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection_S.cs" />
     <Compile Include="ListBoxWithEvents.cs">
       <SubType>Component</SubType>
     </Compile>

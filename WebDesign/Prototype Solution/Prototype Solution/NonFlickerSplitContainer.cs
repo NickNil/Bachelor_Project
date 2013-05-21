@@ -11,6 +11,8 @@ namespace Prototype_Solution
     {
         public NonFlickerSplitContainer()
         {
+            //Ignore paint background, control paints itself and doublebuffer is optimized
+            //Reduces flickering
             this.SetStyle(ControlStyles.AllPaintingInWmPaint |
                                ControlStyles.UserPaint |
                                ControlStyles.OptimizedDoubleBuffer, true);
@@ -21,6 +23,7 @@ namespace Prototype_Solution
                                                                 ControlStyles.UserPaint |
                                                                ControlStyles.OptimizedDoubleBuffer, true };
 
+            //Splitterpanels SetStyle control is set to mirror that of parent container
             objMethodInfo.Invoke(this.Panel1, objArgs);
             objMethodInfo.Invoke(this.Panel2, objArgs);
         }

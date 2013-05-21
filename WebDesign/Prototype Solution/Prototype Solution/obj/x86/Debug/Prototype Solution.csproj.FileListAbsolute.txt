@@ -316,3 +316,7 @@ C:\Users\student\Desktop\interactivetv-hovedprosjekt-2-0adaeccde71b\WebDesign\Pr
 C:\Users\student\Desktop\interactivetv-hovedprosjekt-2-0adaeccde71b\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.csproj.GenerateResource.Cache
 C:\Users\student\Desktop\interactivetv-hovedprosjekt-2-0adaeccde71b\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.exe
 C:\Users\student\Desktop\interactivetv-hovedprosjekt-2-0adaeccde71b\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.pdb
+C:\Users\student\Documents\hovedprosjekt-2\WebDesign\Prototype Solution\Prototype Solution\bin\Debug\Prototype Solution.exe.config
+C:\Users\student\Documents\hovedprosjekt-2\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\student\Documents\hovedprosjekt-2\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\student\Documents\hovedprosjekt-2\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.csproj.ResolveComReference.cache

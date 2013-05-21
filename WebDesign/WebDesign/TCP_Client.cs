@@ -60,7 +60,7 @@ namespace WebDesign
                 return receivedData;
             }
             catch (Exception exc) { Debug.WriteLine(exc.ToString()); }
-            return "failed to get playlist";
+            return "Failed to receive data";
         } 
 
     }

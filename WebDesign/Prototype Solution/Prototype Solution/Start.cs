@@ -23,6 +23,7 @@ namespace Prototype_Solution
         {
             InitializeComponent();
 
+            //Try to load last used layout from Settings
             nrOfModules.SelectedIndex = Properties.Settings.Default.nrOfModules;
             selectedLayout = Properties.Settings.Default.selectedLayout;
             if (nrOfModules.SelectedIndex == 1 || nrOfModules.SelectedIndex == 2)
@@ -34,9 +35,11 @@ namespace Prototype_Solution
                 }
             }
                 
+            //Moduler
             contextMenuStrip.Items.Add("Jukebox");
             contextMenuStrip.Items.Add("Chat");
             contextMenuStrip.Items.Add("Bilde");
+
             contextMenuStrip.ItemClicked += new ToolStripItemClickedEventHandler(contextMenuStrip_ItemClicked);
         }
 
@@ -46,13 +49,7 @@ namespace Prototype_Solution
         {
             List<Module> list = new List<Module>();
 
-
-            foreach (ListBox listBox in box)
-            {
-                if (listBox.Items.Count <= 0)
-                    return;
-            }
-
+            //Save content of each listbox in list and pass to Base_offscreen along with selected layout
             if (nrOfModules.SelectedItem.ToString() == "1" || nrOfModules.SelectedItem.ToString() == "4")
             {
                 foreach (ListBox listBox in box)
@@ -83,6 +80,7 @@ namespace Prototype_Solution
 
         private void picBtn_Click(object sender, EventArgs e)
         {
+            //Image.Tag is used to determine layout in setPanel()
             picName = ((Button)sender).Image.Tag.ToString();
             modulePanel.Controls.Clear();
 
@@ -95,6 +93,7 @@ namespace Prototype_Solution
             string nr = ((ComboBox)sender).SelectedItem.ToString();
             modulePanel.Controls.Clear();
 
+            //Show right layout images for number of modules selected
             switch (nr)
             {
                 case "1":
@@ -141,6 +140,7 @@ namespace Prototype_Solution
                 CheckBoxes();
         }
 
+        //Create mini layout for module selection
         private void setPanel(string pic)
         {
             box = new List<ListBox>();
@@ -149,6 +149,7 @@ namespace Prototype_Solution
             split1.BackColor = Color.White;
             split1.BorderStyle = split2.BorderStyle = BorderStyle.Fixed3D;
 
+            //Create one listbox for each module
             for (int i = 0; i < int.Parse(nrOfModules.SelectedItem.ToString()); i++)
             {
                 box.Add(new ListBox());
@@ -158,6 +159,8 @@ namespace Prototype_Solution
                 box[i].BorderStyle = BorderStyle.None;
             }
 
+            //Add listboxes to splitterpanels and splitcontainers to panel
+            //pic determines layout based on image tag
             switch (pic)
             {
                 case "1":
@@ -246,6 +249,7 @@ namespace Prototype_Solution
         {
             ListBox temp = (ListBox)(((ContextMenuStrip)sender).SourceControl);
 
+            //Delete selected module from other listboxes
             foreach (ListBox boks in box)
             {
                 if (boks.Items.Count > 0 && boks.Items[0].ToString() == e.ClickedItem.Text)
@@ -259,6 +263,7 @@ namespace Prototype_Solution
             CheckBoxes();
         }
 
+        //Check if every listbox contains 1 module, if true then enable Start button
         public void CheckBoxes()
         {
             int boxes = 0;

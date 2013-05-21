@@ -42,7 +42,7 @@ namespace WebDesign
         {
             if (tbName.Text.Contains(" ") || tbName.Text.Length > 15)
             {
-                LbError.Text = "Ugyldig brukernavn. Bruker navnet skal ikke inneholder mellomrom og har maks 15 tegn";
+                LbError.Text = "Ugyldig brukernavn. Brukernavnet skal ikke inneholder mellomrom og har maks 15 tegn";
             }
             else
             {
@@ -53,7 +53,6 @@ namespace WebDesign
 
                 lbName.Text = cookie["Name"];
                 Page.Response.Redirect(Page.Request.Url.ToString(), true);
-                //c.client.Close();
             }
         }
 
@@ -68,7 +67,7 @@ namespace WebDesign
             }
             else if (string.IsNullOrWhiteSpace(TBMsg.Text))
             {
-                LbError.Text = "Meldingen er tomt!";
+                LbError.Text = "Meldingen er tom!";
                 TBMsg.Text = String.Empty;
             }
             else

@@ -13,13 +13,18 @@ namespace Prototype_Solution
     public partial class Base_offscreen : Form
     {
         Base_screen base_screen;
+
+        //Moduler
         public Jukebox jukebox;
         public Chat chat;
         public Ad_Image ad_image;
+
         List<Module> modList;
         NonFlickerSplitContainer split1, split2;
         string layout;
         TCP_Server connection;
+
+        //Blacklist
         public static List<string> blackList = new List<string>();
 
         public Base_offscreen()
@@ -38,14 +43,14 @@ namespace Prototype_Solution
 
         private void Base_offscreen_Load(object sender, EventArgs e)
         {
+            //Moduler
             chat = null;
             jukebox = null;
             ad_image = null;
 
-
-
             createLayout();
 
+            //New TCP server is created
             connection = new TCP_Server(chat, jukebox);
 
             //Base_screen
@@ -64,6 +69,10 @@ namespace Prototype_Solution
         private UserControl selectMods(Module item, int nr)
         {
             UserControl temp;
+
+            //Determines module to start by mods selected in Start.cs
+            //Onscreen is saved to item.userControl and passed to Base_screen.cs
+            //Moduler
             if (item.name.Equals("Jukebox"))
             {
                 jukebox = new Jukebox();
@@ -99,6 +108,10 @@ namespace Prototype_Solution
             split2.Resize += new System.EventHandler(this.splitContainer_Resize);
             split1.BorderStyle = split2.BorderStyle = BorderStyle.Fixed3D;
 
+            //control_Load receives 1 module from selectMods and 1 splitterpanel
+            //and adds the module to the splitterpanel
+            //splitcontainers are later added to splitcontainers and/or a panel
+            //orientation is set based on layout
             switch (layout)
             {
                 case "1":
@@ -183,6 +196,7 @@ namespace Prototype_Solution
             }
         }
 
+        //Resizes panel controls[0] to parent size
         private void layoutPanel_Resize(object sender, EventArgs e)
         {
             Panel tempPanel = (Panel)sender;
@@ -199,6 +213,7 @@ namespace Prototype_Solution
             userControl.Show();
         }
 
+        //Resizes splitterpanels controls[0] to parent size
         private void splitContainer_SplitterMoved(object sender, SplitterEventArgs e)
         {
             SplitContainer tempContainer = (SplitContainer)sender;
@@ -209,6 +224,7 @@ namespace Prototype_Solution
                 tempContainer.Panel2.Controls[0].Size = new Size(tempContainer.Panel2.Width, tempContainer.Panel2.Height);
         }
 
+        //Resizes splitterpanels controls[0] to parent size
         private void splitContainer_Resize(object sender, EventArgs e)
         {
             SplitContainer tempContainer = (SplitContainer)sender;
@@ -223,6 +239,7 @@ namespace Prototype_Solution
 
         #region Public Methods
 
+        //Returns true if IP is blacklisted
         public static bool CheckBlacklist(string ip)
         {
             if (blackList.Contains(ip))

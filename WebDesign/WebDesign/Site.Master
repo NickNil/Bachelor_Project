@@ -46,6 +46,7 @@
                 <div class="float-left">
                     <nav>
                         <ul id="menu">
+                            <%--Moduler--%>
                             <li><a runat="server" href="~/">Home</a></li>
                             <li><a runat="server" href="~/Chat">Chat</a></li>
                             <li><a runat="server" href="~/Jukebox">Jukebox</a></li>

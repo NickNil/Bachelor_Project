@@ -32,15 +32,6 @@ namespace Prototype_Solution
         public event EventHandler<ListBoxItemEventArgs> ItemAdded;
         public event EventHandler<ListBoxItemEventArgs> ItemRemoved;
 
-        //public new ListBox.ObjectCollection Items
-        //{
-        //    get
-        //    {
-        //        throw (new InvalidOperationException(
-        //            "Use the built in methods instead for manipulating the collection directly"));
-        //    }
-        //}
-
         public void AddItemRange(object[] items)
         {
             foreach (object item in items)

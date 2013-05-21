@@ -14,6 +14,7 @@ namespace Prototype_Solution
 {
     class TCP_Server
     {
+        //Moduler
         Chat chat;
         Jukebox jukebox;
 
@@ -26,6 +27,7 @@ namespace Prototype_Solution
 
         public TCP_Server(Chat chat, Jukebox jukebox)
         {
+            //Moduler
             this.chat = chat;
             this.jukebox = jukebox;
 
@@ -62,10 +64,11 @@ namespace Prototype_Solution
                     sw.AutoFlush = true; // enable automatic flushing
 
                     string content = sr.ReadLine();
-
+                    
                     if (content.IndexOf("IP=") == 0)
                         content = CheckIP(content, ref ip);
 
+                    //Moduler
                     if (content.IndexOf("Chat=") == 0)
                         TryChat(content.Remove(0, 5), ip);
 
@@ -107,6 +110,8 @@ namespace Prototype_Solution
                 return content.Remove(0, content.IndexOf("]") + 1);
         }
 
+        //Moduler
+
         public void TryChat(string content, string ip)
         {
             if (chat != null)
@@ -130,6 +135,5 @@ namespace Prototype_Solution
 
             }
         }
-
     }
 }

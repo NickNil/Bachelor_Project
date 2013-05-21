@@ -40,8 +40,10 @@ namespace Prototype_Solution
             userControl.Show(); 
         }
 
+        
         private void createLayout()
         {
+            //Splitcontainer background is set to transparent
             split1 = new NonFlickerSplitContainer();
             split2 = new NonFlickerSplitContainer();
             split1.BackColor = Color.Transparent;
@@ -54,8 +56,12 @@ namespace Prototype_Solution
             split1.Resize += new System.EventHandler(this.splitContainer_Resize);
             split2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer_SplitterMoved);
             split2.Resize += new System.EventHandler(this.splitContainer_Resize);
-           // split1.BorderStyle = split2.BorderStyle = BorderStyle.Fixed3D;
-            
+
+
+            //control_Load receives 1 module from selectMods and 1 splitterpanel
+            //and adds the module to the splitterpanel
+            //splitcontainers are later added to splitcontainers and/or a panel
+            //orientation is set based on layout
             switch (layout)
             {
                 case "1":
@@ -142,9 +148,11 @@ namespace Prototype_Solution
 
         void Panel_Paint(object sender, PaintEventArgs e)
         {
+            //Draws custom border with reduced alpha value for partial transparency
             ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.FromArgb(50, 255, 255, 255), ButtonBorderStyle.Solid);
         }
 
+        //Resizes splitterpanels controls[0] to parent size
         private void splitContainer_SplitterMoved(object sender, SplitterEventArgs e)
         {
             NonFlickerSplitContainer tempContainer = (NonFlickerSplitContainer)sender;
@@ -155,6 +163,7 @@ namespace Prototype_Solution
                 tempContainer.Panel2.Controls[0].Size = new Size(tempContainer.Panel2.Width, tempContainer.Panel2.Height);
         }
 
+        //Resizes splitterpanels controls[0] to parent size
         private void splitContainer_Resize(object sender, EventArgs e)
         {
             NonFlickerSplitContainer tempContainer = (NonFlickerSplitContainer)sender;
@@ -165,6 +174,7 @@ namespace Prototype_Solution
                 tempContainer.Panel2.Controls[0].Size = new Size(tempContainer.Panel2.Width, tempContainer.Panel2.Height);
         }
 
+        //Resizes panel controls[0] to parent size
         private void layoutPanel_Resize(object sender, EventArgs e)
         {
             Panel tempPanel = (Panel)sender;
