@@ -1,14 +1,12 @@
 ﻿<%@ Page Title="Chat" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="True"
     CodeBehind="Chat.aspx.cs" Inherits="WebDesign.Chat" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="ChatMainContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:MultiView ID="MultiView" runat="server">
 
         <asp:View ID="View1" runat="server">
-            <div>
-                <asp:Label ID="logInLb" Text="Velg brukernavn" runat="server" /></div>
+
+            <asp:Label ID="logInLb" Text="Velg brukernavn" runat="server" />
 
             <asp:TextBox ID="tbName" runat="server" />
             <asp:Button ID="btnSaveToCookie" Text="Save!" runat="server" OnClick="btnSaveToCookie_Click" />

@@ -14,16 +14,5 @@
     </section>
 </asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h3>Cool Peoples:</h3>
-    <ol class="round">
-        <li class="one">
-            <h5>Jehson Go</h5>
-        </li>
-        <li class="two">
-            <h5>Nicklas Nilsen</h5>
-        </li>
-        <li class="three">
-            <h5>Gisle Kvalvik</h5>
-        </li>
-    </ol>
+
 </asp:Content>

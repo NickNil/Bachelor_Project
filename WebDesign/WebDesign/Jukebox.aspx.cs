@@ -52,7 +52,7 @@ namespace WebDesign
                 }
                 foreach (string s in playList)
                     songList.Items.Add(s);
-            }       
+            }
         }
 
         protected void voteBtn_Click(object sender, EventArgs e)
@@ -69,7 +69,6 @@ namespace WebDesign
             cookie.Expires = DateTime.Now.AddDays(0.00347222);
             Response.Cookies.Add(cookie);
 
-            lbSongName.Text = cookie["VotedSong"];
             Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 

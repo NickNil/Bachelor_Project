@@ -4,14 +4,9 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
+    <title><%: Page.Title %> - Interactive TV</title>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
-    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
 <body>
     <form runat="server">
@@ -46,7 +41,6 @@
                 <div class="float-left">
                     <nav>
                         <ul id="menu">
-                            <%--Moduler--%>
                             <li><a runat="server" href="~/">Home</a></li>
                             <li><a runat="server" href="~/Chat">Chat</a></li>
                             <li><a runat="server" href="~/Jukebox">Jukebox</a></li>
@@ -67,7 +61,7 @@
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; <%: DateTime.Now.Year %> - Interactive TV</p>
+                    <p><%: DateTime.Now.Year %> - Interactive TV</p>
                 </div>
             </div>
         </footer>
