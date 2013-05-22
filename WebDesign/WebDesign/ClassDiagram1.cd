@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WebDesign.BundleConfig" Collapsed="true">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebDesign.RouteConfig" Collapsed="true">
+    <Position X="1" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebDesign.Chat" Collapsed="true">
+    <Position X="10.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAQQAQEAACAIAAgAAYACAAAAASAgACAAAIAACA=</HashCode>
+      <FileName>Chat.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebDesign._Default" Collapsed="true">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Default.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebDesign.Global" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAEAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebDesign.Jukebox" Collapsed="true">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAECAAAAAAAgAABAwAAAACAAYGACAIAAQAAMAAAI=</HashCode>
+      <FileName>Jukebox.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebDesign.SiteMaster" Collapsed="true">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQKBAAAAAAAEIAABAAAAAAIAAAA=</HashCode>
+      <FileName>Site.Master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebDesign.TCP_Client" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAEAAAAAAAAAAAgEAAIAABAAAAAA=</HashCode>
+      <FileName>TCP_Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Web.UI.Page" Collapsed="true">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="4" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

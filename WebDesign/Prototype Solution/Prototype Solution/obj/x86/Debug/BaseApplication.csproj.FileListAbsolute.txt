@@ -1,0 +1,22 @@
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\bin\Debug\Prototype Solution.exe.config
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\Interop.WMPLib.dll
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\AxInterop.WMPLib.dll
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.csproj.ResolveComReference.cache
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.exe
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\Prototype Solution.pdb
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\bin\Debug\Prototype Solution.exe
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\bin\Debug\Prototype Solution.pdb
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\bin\Debug\Interop.WMPLib.dll
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\bin\Debug\AxInterop.WMPLib.dll
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.csprojResolveAssemblyReference.cache
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.Ad_Image_offscreen.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.Ad_Image_screen.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.Base_offscreen.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.Base_screen.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.Chat_offscreen.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.Chat_screen.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.JB_offscreen.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.JB_screen.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.Properties.Resources.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.Start.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\Prototype Solution\Prototype Solution\obj\x86\Debug\BaseApplication.csproj.GenerateResource.Cache

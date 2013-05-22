@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using WMPLib;
 
-namespace Prototype_Solution
+namespace BaseApplication
 {
     public partial class Base_offscreen : Form
     {

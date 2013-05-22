@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using WMPLib;
 using System.IO;
 
-namespace Prototype_Solution
+namespace BaseApplication
 {
     public partial class JB_offscreen : UserControl
     {

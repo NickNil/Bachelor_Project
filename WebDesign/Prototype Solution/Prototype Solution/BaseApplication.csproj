@@ -8,7 +8,7 @@
     <ProjectGuid>{68B435FC-E90B-41AA-B3F8-BF4FDB8DE2B1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Prototype_Solution</RootNamespace>
+    <RootNamespace>BaseApplication</RootNamespace>
     <AssemblyName>Prototype Solution</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
@@ -160,6 +160,7 @@
       <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

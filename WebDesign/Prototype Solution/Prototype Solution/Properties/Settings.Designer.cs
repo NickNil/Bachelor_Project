@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Prototype_Solution.Properties {
+namespace BaseApplication.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
 
-namespace Prototype_Solution
+namespace BaseApplication
 {
     public partial class NonFlickerSplitContainer : SplitContainer
     {

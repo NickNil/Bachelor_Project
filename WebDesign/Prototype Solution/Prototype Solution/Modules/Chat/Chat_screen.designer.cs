@@ -1,4 +1,4 @@
-﻿namespace Prototype_Solution
+﻿namespace BaseApplication
 {
     partial class Chat_screen
     {

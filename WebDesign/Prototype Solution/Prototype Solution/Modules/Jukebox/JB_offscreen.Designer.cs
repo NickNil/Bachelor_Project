@@ -1,4 +1,4 @@
-﻿namespace Prototype_Solution
+﻿namespace BaseApplication
 {
     partial class JB_offscreen
     {
@@ -110,7 +110,7 @@
             // 
             this.btnNext.AutoSize = true;
             this.btnNext.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNext.Image = global::Prototype_Solution.Properties.Resources.next_icon;
+            this.btnNext.Image = global::BaseApplication.Properties.Resources.next_icon;
             this.btnNext.Location = new System.Drawing.Point(215, 6);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
@@ -123,7 +123,7 @@
             // 
             this.btnStop.AutoSize = true;
             this.btnStop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnStop.Image = global::Prototype_Solution.Properties.Resources.stop_icon;
+            this.btnStop.Image = global::BaseApplication.Properties.Resources.stop_icon;
             this.btnStop.Location = new System.Drawing.Point(176, 6);
             this.btnStop.Margin = new System.Windows.Forms.Padding(2);
             this.btnStop.Name = "btnStop";
@@ -136,7 +136,7 @@
             // 
             this.btnPause.AutoSize = true;
             this.btnPause.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnPause.Image = global::Prototype_Solution.Properties.Resources.pause_icon;
+            this.btnPause.Image = global::BaseApplication.Properties.Resources.pause_icon;
             this.btnPause.Location = new System.Drawing.Point(138, 6);
             this.btnPause.Margin = new System.Windows.Forms.Padding(2);
             this.btnPause.Name = "btnPause";
@@ -149,7 +149,7 @@
             // 
             this.btnPlay.AutoSize = true;
             this.btnPlay.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnPlay.Image = global::Prototype_Solution.Properties.Resources.play_icon;
+            this.btnPlay.Image = global::BaseApplication.Properties.Resources.play_icon;
             this.btnPlay.Location = new System.Drawing.Point(99, 6);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(2);
             this.btnPlay.Name = "btnPlay";

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Prototype_Solution
+namespace BaseApplication
 {
     /// <summary>
     /// Contains text to be written and IP address of sender.

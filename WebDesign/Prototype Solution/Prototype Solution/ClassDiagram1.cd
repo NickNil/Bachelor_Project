@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BaseApplication.Base_offscreen" Collapsed="true">
+    <Position X="15.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAhAAAACBAEICABAAggAAEBAICIACgEA=</HashCode>
+      <FileName>Base_offscreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Base_screen" Collapsed="true">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAKAAAAAAAACAAEICABAAgwAAEAAACABAgAA=</HashCode>
+      <FileName>Base_screen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.ListBoxItemEventArgs" Collapsed="true">
+    <Position X="7.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAA=</HashCode>
+      <FileName>ListBoxWithEvents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.ListBoxWithEvents" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAQAAAAQAAAAAAxAAAiAAEAAAAAAAAAAE=</HashCode>
+      <FileName>ListBoxWithEvents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Module" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAEAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Module.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Ad_Image" Collapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Modules\Ad_Image\Ad_Image.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Ad_Image_offscreen" Collapsed="true">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAEAAAACAAAABAAACAABACEAAQgABCAAAAAAAAAAI=</HashCode>
+      <FileName>Modules\Ad_Image\Ad_Image_offscreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Ad_Image_screen" Collapsed="true">
+    <Position X="2" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modules\Ad_Image\Ad_Image_screen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Chat" Collapsed="true">
+    <Position X="12.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Modules\Chat\Chat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Chat_offscreen" Collapsed="true">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAABAAACgAEIAAAICCAEACAAACAoAAIAgAAAAQAAA=</HashCode>
+      <FileName>Modules\Chat\Chat_offscreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Chat_screen" Collapsed="true">
+    <Position X="2" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAACACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modules\Chat\Chat_screen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.ChatText" Collapsed="true">
+    <Position X="12.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAgAAAAAAA=</HashCode>
+      <FileName>Modules\Chat\ChatText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.JB_offscreen" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEQAgIAAAOADGAQAgACgIBACAIAEgQhAAAICBAQFAAI=</HashCode>
+      <FileName>Modules\Jukebox\JB_offscreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.JB_screen" Collapsed="true">
+    <Position X="2" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAACAAQAAAAACAAAACAAAAAAAAAAAAIQAAAAA=</HashCode>
+      <FileName>Modules\Jukebox\JB_screen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Jukebox" Collapsed="true">
+    <Position X="12.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAACAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modules\Jukebox\Jukebox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Song" Collapsed="true">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAACAAgAAAAEAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Modules\Jukebox\Song.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.NonFlickerSplitContainer" Collapsed="true">
+    <Position X="14.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NonFlickerSplitContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Program" Collapsed="true">
+    <Position X="17.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Start" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAZAAAHgAEACAAACAAgCSABAAAACCIAACAQASAIA=</HashCode>
+      <FileName>Start.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.TCP_Server" Collapsed="true">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQAABAAAAAAAAAACIAAQQAIAAAIAgAAEAA=</HashCode>
+      <FileName>TCP_Server.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Properties.Resources" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAEEAAACAAAADABEAAAAQAAEAAgAAAAAAAAIIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseApplication.Properties.Settings" Collapsed="true">
+    <Position X="17.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAEAAAAIAAQAAABAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.UserControl" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.ListBox" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.EventArgs" Collapsed="true">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.SplitContainer" Collapsed="true">
+    <Position X="14.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

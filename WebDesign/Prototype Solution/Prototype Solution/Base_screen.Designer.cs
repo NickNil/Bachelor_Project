@@ -1,4 +1,4 @@
-﻿namespace Prototype_Solution
+﻿namespace BaseApplication
 {
     partial class Base_screen
     {
@@ -55,7 +55,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Prototype_Solution.Properties.Resources.Logo;
+            this.pictureBox1.Image = global::BaseApplication.Properties.Resources.Logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(631, 131);
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Prototype_Solution.Properties.Resources.background;
+            this.BackgroundImage = global::BaseApplication.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(731, 520);
             this.Controls.Add(this.splitContainer1);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Prototype_Solution
+namespace BaseApplication
 {
     public class Ad_Image
     {

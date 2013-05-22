@@ -10,7 +10,7 @@ using System.Net.Sockets;
 using System.Configuration;
 using System.Diagnostics;
 
-namespace Prototype_Solution
+namespace BaseApplication
 {
     class TCP_Server
     {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Prototype_Solution
+namespace BaseApplication
 {
     public partial class JB_screen : UserControl
     {

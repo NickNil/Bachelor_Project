@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
 
-namespace Prototype_Solution
+namespace BaseApplication
 {
     public partial class Ad_Image_offscreen : UserControl
     {

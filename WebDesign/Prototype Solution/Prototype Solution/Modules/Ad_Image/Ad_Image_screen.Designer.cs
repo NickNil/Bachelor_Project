@@ -1,4 +1,4 @@
-﻿namespace Prototype_Solution
+﻿namespace BaseApplication
 {
     partial class Ad_Image_screen
     {

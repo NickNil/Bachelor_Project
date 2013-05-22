@@ -1,0 +1,15 @@
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\bin\Debug\WindowsFormsApplication1.exe.config
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\bin\Debug\WindowsFormsApplication1.exe
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\bin\Debug\WindowsFormsApplication1.pdb
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\bin\Debug\WebDesign.dll
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\bin\Debug\System.Web.Optimization.dll
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\bin\Debug\Microsoft.AspNet.FriendlyUrls.dll
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\bin\Debug\WebGrease.dll
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\bin\Debug\Antlr3.Runtime.dll
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\bin\Debug\WebDesign.pdb
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\bin\Debug\Microsoft.AspNet.FriendlyUrls.xml
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\obj\x86\Debug\TCP Test.csprojResolveAssemblyReference.cache
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\obj\x86\Debug\TCP Test.csproj.GenerateResource.Cache
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\Users\Nicklas\Desktop\Hovedprosjekt\WebDesign\TCP Test\obj\x86\Debug\WindowsFormsApplication1.pdb

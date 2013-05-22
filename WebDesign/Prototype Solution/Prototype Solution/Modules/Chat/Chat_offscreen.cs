@@ -8,7 +8,7 @@ using System.Net;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Prototype_Solution
+namespace BaseApplication
 {
     public partial class Chat_offscreen : UserControl
     {

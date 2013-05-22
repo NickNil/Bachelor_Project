@@ -1,4 +1,4 @@
-﻿namespace Prototype_Solution
+﻿namespace BaseApplication
 {
     partial class Chat_offscreen
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxChat = new Prototype_Solution.ListBoxWithEvents();
+            this.listBoxChat = new BaseApplication.ListBoxWithEvents();
             this.modChat = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
 
         #endregion
 
-        private Prototype_Solution.ListBoxWithEvents listBoxChat;
+        private BaseApplication.ListBoxWithEvents listBoxChat;
         private System.Windows.Forms.TextBox modChat;
 
     }
