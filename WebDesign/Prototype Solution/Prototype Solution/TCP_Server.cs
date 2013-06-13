@@ -124,6 +124,7 @@ namespace BaseApplication
             {
                 if (content.Contains("Page Load"))
                 {
+                    playlist = string.Empty;
                     foreach (string song in jukebox.jb_offscreen.songs2)
                         playlist += song + ";;";
                     Send_msg(sw, playlist);

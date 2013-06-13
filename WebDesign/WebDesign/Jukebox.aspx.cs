@@ -18,13 +18,13 @@ namespace WebDesign
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (c == null)
-                c = new TCP_Client();
-            if (songList.Items.Count == 0)
-            {
-                c.Send("Jukebox=Page Load");
-                createList();
-            }
+            c = new TCP_Client();
+
+            songList.Items.Clear();
+            c.Send("Jukebox=Page Load");
+            createList();
+
+
             if (HttpContext.Current.Request.Cookies["Voted"] != null)
             {
                 HttpCookie cookie = Request.Cookies["Voted"];

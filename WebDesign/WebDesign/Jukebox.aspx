@@ -7,7 +7,7 @@
         <asp:View ID="View1" runat="server">
             <asp:Label ID="LbJukebox" runat="server" Text=" Stem på en sang!"></asp:Label>
             <div>
-                <asp:DropDownList ID="songList" runat="server" OnSelectedIndexChanged="songList_SelectedIndexChanged" Width="150px"></asp:DropDownList>
+                <asp:DropDownList ID="songList" enableViewstate="false" runat="server" OnSelectedIndexChanged="songList_SelectedIndexChanged" Width="150px"></asp:DropDownList>
             </div>
             <asp:Button ID="voteBtn" runat="server" Height="29px" Style="margin-top: 0px" Text="Stem" Width="54px" OnClick="voteBtn_Click" />
         </asp:View>
